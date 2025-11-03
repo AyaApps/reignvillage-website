@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers - ReignVillage</title>
-    <meta name="description" content="Join ReignVillage LLC - Building apps for niche communities">
+    <title>Contact Us - ReignVillage</title>
+    <meta name="description" content="Get in touch with ReignVillage LLC">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
@@ -15,13 +15,6 @@
 
         html {
             scroll-behavior: smooth;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #2A4A5E 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         @keyframes fadeIn {
@@ -38,10 +31,6 @@
         .animate-fade-in {
             animation: fadeIn 0.8s ease-out forwards;
         }
-
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
 
         /* Custom scrollbar */
         ::-webkit-scrollbar {
@@ -73,7 +62,7 @@
                 <div class="hidden md:flex space-x-8 mx-auto">
                     <a href="index-new.html" class="text-gray-300 hover:text-white transition">Home</a>
                     <a href="company.html" class="text-gray-300 hover:text-white transition">Company</a>
-                    <a href="careers.html" class="text-white">Careers</a>
+                    <a href="careers.html" class="text-gray-300 hover:text-white transition">Careers</a>
                     <a href="index-new.html#apps" class="text-gray-300 hover:text-white transition">Apps</a>
                 </div>
                 <div class="flex space-x-4">
@@ -102,20 +91,43 @@
         <!-- Hero text -->
         <div class="relative z-10 text-center max-w-5xl mx-auto">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight animate-fade-in" style="text-transform: uppercase; letter-spacing: -0.02em;">
-                Open Positions
+                Get in Touch
             </h1>
         </div>
     </section>
 
-    <!-- Careers Content -->
+    <!-- Contact Content -->
     <section class="py-20 px-6 bg-black">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="bg-white/5 rounded-3xl p-16 backdrop-blur-sm border border-white/10">
-                <p class="text-2xl text-gray-300 mb-6">
-                    No open positions at the moment.
+        <div class="max-w-3xl mx-auto">
+            <!-- Contact Info Cards -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <!-- General Inquiries -->
+                <div class="bg-white/5 rounded-3xl p-8 backdrop-blur-sm border border-white/10 hover:border-purple-500/50 transition">
+                    <div class="text-4xl mb-4">💬</div>
+                    <h3 class="text-2xl font-bold mb-3">General Inquiries</h3>
+                    <a href="mailto:hello@reignvillage.com" class="text-purple-400 hover:text-purple-300 transition">
+                        hello@reignvillage.com
+                    </a>
+                </div>
+
+                <!-- Support -->
+                <div class="bg-white/5 rounded-3xl p-8 backdrop-blur-sm border border-white/10 hover:border-purple-500/50 transition">
+                    <div class="text-4xl mb-4">🛟</div>
+                    <h3 class="text-2xl font-bold mb-3">Support</h3>
+                    <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300 transition">
+                        support@reignvillage.com
+                    </a>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="text-center">
+                <p class="text-gray-400 text-lg mb-8">
+                    We typically respond within 24-48 hours during business days.
                 </p>
-                <p class="text-lg text-gray-400">
-                    Check back soon!
+                <p class="text-gray-500 text-sm">
+                    ReignVillage LLC<br/>
+                    Bellevue, WA
                 </p>
             </div>
         </div>
@@ -146,7 +158,7 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Support</h4>
                     <ul class="space-y-2">
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
