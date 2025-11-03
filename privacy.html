@@ -18,7 +18,7 @@
         }
 
         .prose h2 {
-            scroll-margin-top: 100px;
+            scroll-margin-top: 120px;
         }
 
         .gradient-text {
@@ -45,6 +45,43 @@
 
         ::-webkit-scrollbar-thumb:hover {
             background: #6a6a6a;
+        }
+
+        /* Sidebar Navigation Styles */
+        .sidebar-nav {
+            position: sticky;
+            top: 120px;
+            max-height: calc(100vh - 140px);
+            overflow-y: auto;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 10px 16px;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .sidebar-nav a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left-color: #a855f7;
+        }
+
+        .sidebar-nav a.active {
+            color: #a855f7;
+            background-color: rgba(168, 85, 247, 0.1);
+            border-left-color: #a855f7;
+            font-weight: 500;
+        }
+
+        /* Hide sidebar on mobile */
+        @media (max-width: 768px) {
+            .sidebar-nav {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -77,42 +114,50 @@
     </nav>
 
     <!-- Header -->
-    <section class="pt-32 pb-16 px-6">
-        <div class="max-w-4xl mx-auto">
+    <section class="pt-32 pb-12 px-6 border-b border-white/10">
+        <div class="max-w-7xl mx-auto">
             <h1 class="text-5xl md:text-6xl font-bold mb-4">Privacy Policy</h1>
             <p class="text-xl text-gray-400">Your privacy matters to us</p>
-            <p class="text-sm text-gray-500 mt-4">Effective Date: February 1, 2025 | Last Updated: January 31, 2025</p>
+            <p class="text-sm text-gray-500 mt-4">Effective Date: February 1, 2025 | Last Updated: November 3, 2025</p>
         </div>
     </section>
 
-    <!-- Table of Contents -->
-    <section class="px-6 pb-8">
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-white/10">
-                <h2 class="text-lg font-semibold mb-4">Quick Navigation</h2>
-                <div class="grid md:grid-cols-2 gap-2 text-sm">
-                    <a href="#introduction" class="text-purple-400 hover:text-purple-300 transition">→ Introduction</a>
-                    <a href="#information-we-collect" class="text-purple-400 hover:text-purple-300 transition">→ Information We Collect</a>
-                    <a href="#how-we-use" class="text-purple-400 hover:text-purple-300 transition">→ How We Use Your Information</a>
-                    <a href="#sharing" class="text-purple-400 hover:text-purple-300 transition">→ How We Share Information</a>
-                    <a href="#ai-features" class="text-purple-400 hover:text-purple-300 transition">→ AI and Machine Learning</a>
-                    <a href="#location-privacy" class="text-purple-400 hover:text-purple-300 transition">→ Location Privacy Protection</a>
-                    <a href="#your-rights" class="text-purple-400 hover:text-purple-300 transition">→ Your Privacy Rights</a>
-                    <a href="#contact" class="text-purple-400 hover:text-purple-300 transition">→ Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Content with Sidebar -->
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex gap-12">
 
-    <!-- Content -->
-    <main class="px-6 pb-24">
-        <div class="max-w-4xl mx-auto prose prose-invert prose-lg">
+            <!-- Left Sidebar Navigation -->
+            <aside class="w-64 flex-shrink-0">
+                <nav class="sidebar-nav">
+                    <div class="space-y-1">
+                        <a href="#introduction" class="sidebar-link">Introduction</a>
+                        <a href="#information-we-collect" class="sidebar-link">Information We Collect</a>
+                        <a href="#legal-basis" class="sidebar-link">Legal Basis for Processing</a>
+                        <a href="#how-we-use" class="sidebar-link">How We Use Your Information</a>
+                        <a href="#sharing" class="sidebar-link">How We Share Information</a>
+                        <a href="#international-transfers" class="sidebar-link">International Data Transfers</a>
+                        <a href="#cookies-tracking" class="sidebar-link">Cookies and Tracking</a>
+                        <a href="#data-retention" class="sidebar-link">Data Retention</a>
+                        <a href="#ai-features" class="sidebar-link">AI and Machine Learning</a>
+                        <a href="#location-privacy" class="sidebar-link">Location Privacy Protection</a>
+                        <a href="#your-rights" class="sidebar-link">Your Privacy Rights</a>
+                        <a href="#california-rights" class="sidebar-link">California Residents</a>
+                        <a href="#data-security" class="sidebar-link">Data Security</a>
+                        <a href="#children" class="sidebar-link">Children's Privacy</a>
+                        <a href="#contact" class="sidebar-link">Contact Us</a>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="flex-1 min-w-0">
+                <div class="prose prose-invert prose-lg max-w-none">
 
             <!-- Introduction -->
             <section id="introduction" class="mb-12">
                 <h2 class="text-3xl font-bold mb-6">1. Introduction</h2>
                 <p class="text-gray-300 leading-relaxed">
-                    Welcome to ReignVillage LLC. We operate a family of mobile applications designed for enthusiast communities, including our flagship app <strong>RevvRadar</strong>, an AI-powered automotive community platform.
+                    Welcome to ReignVillage LLC. We operate a family of mobile applications designed for enthusiast communities, including our flagship app <strong>RevvRadar</strong>, an automotive community platform.
                 </p>
                 <p class="text-gray-300 leading-relaxed mt-4">
                     This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you use our mobile applications, websites, and related services. By using our Services, you agree to the collection and use of information in accordance with this Privacy Policy.
@@ -161,9 +206,73 @@
                 </div>
             </section>
 
+            <!-- Legal Basis for Processing (GDPR Article 6) -->
+            <section id="legal-basis" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">3. Legal Basis for Data Processing</h2>
+
+                <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-6 mb-6">
+                    <p class="text-blue-300 mb-4">
+                        <strong>For GDPR Compliance:</strong> We process your personal data only when we have a lawful basis under Article 6 of the GDPR.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Contract Performance</h3>
+                        <p class="text-gray-300 mb-3">Processing necessary to provide our services to you:</p>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• Account creation and authentication</li>
+                            <li>• Vehicle identification and capture features</li>
+                            <li>• Event discovery and participation</li>
+                            <li>• Subscription management and payment processing</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Legitimate Interests</h3>
+                        <p class="text-gray-300 mb-3">Processing necessary for our legitimate business interests:</p>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• Improving app performance and user experience</li>
+                            <li>• Fraud prevention and security monitoring</li>
+                            <li>• Analytics and product development</li>
+                            <li>• Marketing and promotional communications</li>
+                            <li>• Customer support and service improvement</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 mt-3 italic">
+                            We balance these interests against your rights and only process data where our legitimate interests do not override your privacy rights.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Consent</h3>
+                        <p class="text-gray-300 mb-3">Processing based on your explicit consent:</p>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• Location data collection for map-based features</li>
+                            <li>• Push notifications and marketing communications</li>
+                            <li>• Camera access for vehicle photography</li>
+                            <li>• Personalized advertising</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 mt-3">
+                            You may withdraw consent at any time through iOS Settings or in-app preferences.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Legal Obligation</h3>
+                        <p class="text-gray-300 mb-3">Processing required to comply with legal requirements:</p>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• Tax and financial reporting (subscription revenue)</li>
+                            <li>• Responding to law enforcement requests</li>
+                            <li>• Compliance with data protection laws</li>
+                            <li>• Child safety and age verification</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             <!-- How We Use Information -->
             <section id="how-we-use" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">3. How We Use Your Information</h2>
+                <h2 class="text-3xl font-bold mb-6">4. How We Use Your Information</h2>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-white/5 rounded-lg p-6">
@@ -210,7 +319,7 @@
 
             <!-- Information Sharing -->
             <section id="sharing" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">4. How We Share Your Information</h2>
+                <h2 class="text-3xl font-bold mb-6">5. How We Share Your Information</h2>
 
                 <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-6 mb-6">
                     <p class="text-red-300 font-semibold">
@@ -227,31 +336,655 @@
                     </div>
 
                     <div class="bg-white/5 rounded-lg p-6">
-                        <h4 class="font-semibold mb-2">Service Providers</h4>
-                        <p class="text-gray-300 text-sm">Trusted partners like Firebase, Google Gemini AI, Mapbox, and Cloudflare help us operate our services.</p>
+                        <h4 class="font-semibold mb-2">Legal Requirements</h4>
+                        <p class="text-gray-300 text-sm">We may disclose information to comply with laws, court orders, or protect rights and safety.</p>
+                    </div>
+                </div>
+
+                <!-- Service Providers Detail -->
+                <div class="mt-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-400">Service Providers</h3>
+                    <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg p-6 mb-6">
+                        <p class="text-gray-300">
+                            ReignVillage works with trusted third-party service providers to deliver RevvRadar's features. These providers are contractually obligated to protect your data and use it only for the purposes we specify.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Category 1: Backend Infrastructure -->
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-purple-400">Backend Infrastructure & Authentication Services</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="font-semibold mb-2">Purpose:</h4>
+                                    <p class="text-sm text-gray-400">User authentication, database management, cloud functions, push notifications, app performance monitoring</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Data Shared:</h4>
+                                    <p class="text-sm text-gray-400">Account credentials (securely hashed), user profile data, device identifiers, usage analytics, crash reports</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Privacy Safeguards:</h4>
+                                    <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                        <li>• EU-U.S. Data Privacy Framework participation</li>
+                                        <li>• Standard Contractual Clauses for international transfers</li>
+                                        <li>• Data encryption in transit (TLS) and at rest (AES-256)</li>
+                                        <li>• Regular security audits and compliance certifications</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 2: AI & Machine Learning -->
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-purple-400">AI & Machine Learning Services</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="font-semibold mb-2">Purpose:</h4>
+                                    <p class="text-sm text-gray-400">Vehicle identification from user-uploaded photos, content safety filtering</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Data Shared:</h4>
+                                    <p class="text-sm text-gray-400">User-uploaded vehicle photos (no personally identifiable information attached), device identifiers for rate limiting</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Privacy Safeguards:</h4>
+                                    <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                        <li>• Images processed immediately and not retained by AI provider</li>
+                                        <li>• No personal information (name, email, location) sent with images</li>
+                                        <li>• Content safety filters block inappropriate content</li>
+                                        <li>• EU-U.S. Data Privacy Framework compliance</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 3: Mapping & Location -->
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-purple-400">Mapping & Location Services</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="font-semibold mb-2">Purpose:</h4>
+                                    <p class="text-sm text-gray-400">Interactive map display, geocoding (address to coordinates conversion), residential area detection, location-based features</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Data Shared:</h4>
+                                    <p class="text-sm text-gray-400">GPS coordinates, city/region data, map interaction events (zoom, pan, marker clicks), device identifiers</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Privacy Safeguards:</h4>
+                                    <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                        <li>• Standard Contractual Clauses for EU/UK data transfers</li>
+                                        <li>• Residential privacy filtering applied before public display</li>
+                                        <li>• Location resolution automatically reduced over time (see Section 10)</li>
+                                        <li>• Users can disable location access in iOS Settings</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 4: Cloud Storage -->
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-purple-400">Cloud Storage & Content Delivery</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="font-semibold mb-2">Purpose:</h4>
+                                    <p class="text-sm text-gray-400">Image hosting, global content delivery network (CDN) for fast photo loading</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Data Shared:</h4>
+                                    <p class="text-sm text-gray-400">User-uploaded vehicle photos, public profile images</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Privacy Safeguards:</h4>
+                                    <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                        <li>• Encryption at rest and in transit</li>
+                                        <li>• Global CDN infrastructure with edge caching</li>
+                                        <li>• Standard Contractual Clauses for international transfers</li>
+                                        <li>• Automatic deletion when content is removed from RevvRadar</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 5: Search -->
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-purple-400">Search Infrastructure</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="font-semibold mb-2">Purpose:</h4>
+                                    <p class="text-sm text-gray-400">Fast event and user search functionality with typo tolerance and instant results</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Data Shared:</h4>
+                                    <p class="text-sm text-gray-400">Indexed public content (event names, locations, usernames), search queries, device identifiers</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Privacy Safeguards:</h4>
+                                    <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                        <li>• Standard Contractual Clauses for EU/UK data transfers</li>
+                                        <li>• EU hosting options available for compliance</li>
+                                        <li>• Search queries not linked to personal profiles</li>
+                                        <li>• Only public content indexed (private profiles excluded)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category 6: Advertising -->
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-purple-400">Advertising Networks (All Tiers)</h3>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="font-semibold mb-2">Purpose:</h4>
+                                    <p class="text-sm text-gray-400">Display ads to support app features, ad measurement, fraud prevention (all tiers see ads, reduced for Pro/Premium)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Data Shared:</h4>
+                                    <p class="text-sm text-gray-400">IDFA (iOS Advertising Identifier, with explicit user consent), device information, ad interaction metrics (clicks, views), approximate city-level location</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Privacy Safeguards:</h4>
+                                    <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                        <li>• EU-U.S. Data Privacy Framework compliance</li>
+                                        <li>• Explicit consent required via iOS App Tracking Transparency prompt</li>
+                                        <li>• Users can opt out in iOS Settings > Privacy & Security > Tracking</li>
+                                        <li>• Pro/Premium subscribers receive reduced ads and significantly reduced tracking</li>
+                                        <li>• No precise location shared (city-level only)</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4 mt-3">
+                                    <p class="text-xs text-purple-300">
+                                        <strong>Reduce Ads:</strong> Upgrade to Pro ($4.99/month) or Premium ($9.99/month) for a reduced advertising experience with limited ads and reduced tracking.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Provider Transparency -->
+                        <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-4">Service Provider Transparency</h3>
+                            <p class="text-gray-300 mb-4">
+                                We work with industry-standard service providers across the categories listed above. All providers are contractually bound to protect your data and comply with applicable privacy laws.
+                            </p>
+
+                            <div class="bg-white/5 rounded-lg p-4 mt-6">
+                                <p class="text-sm text-gray-300">
+                                    <strong>Service Provider Disclosure:</strong> For a complete list of specific service providers and their privacy policies, contact us at <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300">support@reignvillage.com</a> with subject "Service Provider Inquiry."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Data Processing Agreements -->
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-purple-400">Data Processing Agreements</h3>
+                            <p class="text-gray-300 mb-3">
+                                All third-party service providers that process personal data on our behalf are bound by:
+                            </p>
+                            <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                                <li>• <strong>Data Processing Agreements (DPAs):</strong> Contractual obligations to protect your data and process it only as we instruct</li>
+                                <li>• <strong>Standard Contractual Clauses (SCCs):</strong> EU-approved safeguards for international data transfers</li>
+                                <li>• <strong>Security Requirements:</strong> Minimum security standards including encryption, access controls, and breach notification</li>
+                                <li>• <strong>Audit Rights:</strong> Our ability to audit providers' compliance with privacy obligations</li>
+                                <li>• <strong>Subprocessor Restrictions:</strong> Providers must notify us before engaging additional subprocessors</li>
+                            </ul>
+                            <p class="text-xs text-gray-400 mt-4">
+                                EU/EEA and UK residents can request copies of relevant DPAs and SCCs by contacting <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300">support@reignvillage.com</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- International Data Transfers -->
+            <section id="international-transfers" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">6. International Data Transfers</h2>
+
+                <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 mb-6">
+                    <p class="text-gray-300 mb-4">
+                        ReignVillage LLC is based in Washington State, USA. When you use our services, your personal data may be transferred to and processed in the United States and other countries where our service providers operate.
+                    </p>
+                </div>
+
+                <h3 class="text-xl font-semibold mb-4 text-purple-400">Cross-Border Transfer Safeguards</h3>
+
+                <div class="space-y-4">
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3">For EU/EEA Residents:</h4>
+                        <p class="text-gray-300 mb-3">
+                            When we transfer personal data outside the European Economic Area, we ensure appropriate safeguards are in place:
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• <strong>Standard Contractual Clauses (SCCs):</strong> We use European Commission-approved SCCs with all service providers that process EU personal data</li>
+                            <li>• <strong>EU-U.S. Data Privacy Framework:</strong> Certain providers participate in the EU-U.S. Data Privacy Framework</li>
+                            <li>• <strong>Adequacy Decisions:</strong> We rely on European Commission adequacy decisions where available</li>
+                            <li>• <strong>Additional Security Measures:</strong> Encryption in transit and at rest, access controls, regular security audits</li>
+                        </ul>
                     </div>
 
                     <div class="bg-white/5 rounded-lg p-6">
-                        <h4 class="font-semibold mb-2">Legal Requirements</h4>
-                        <p class="text-gray-300 text-sm">We may disclose information to comply with laws, court orders, or protect rights and safety.</p>
+                        <h4 class="font-semibold mb-3">For UK Residents:</h4>
+                        <p class="text-gray-300 mb-3">
+                            UK data transfers are protected under UK GDPR and the UK International Data Transfer Agreement (IDTA):
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• UK Addendum to EU Standard Contractual Clauses</li>
+                            <li>• UK-recognized adequacy decisions</li>
+                            <li>• Compliance with UK Information Commissioner's Office (ICO) guidelines</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3">Service Provider Categories and Locations:</h4>
+                        <div class="overflow-x-auto mt-3">
+                            <table class="w-full text-sm">
+                                <thead class="bg-white/10">
+                                    <tr>
+                                        <th class="text-left p-3">Service Category</th>
+                                        <th class="text-left p-3">Data Processing Location</th>
+                                        <th class="text-left p-3">Transfer Mechanism</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-300">
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">Backend Infrastructure & Auth</td>
+                                        <td class="p-3">U.S. & Global</td>
+                                        <td class="p-3">EU-U.S. DPF, SCCs</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">AI & Machine Learning</td>
+                                        <td class="p-3">U.S.</td>
+                                        <td class="p-3">EU-U.S. DPF, SCCs</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">Mapping & Location Services</td>
+                                        <td class="p-3">U.S.</td>
+                                        <td class="p-3">SCCs</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">Cloud Storage & CDN</td>
+                                        <td class="p-3">U.S. & Global CDN</td>
+                                        <td class="p-3">SCCs, Global Infrastructure</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">Search Infrastructure</td>
+                                        <td class="p-3">U.S. & EU</td>
+                                        <td class="p-3">SCCs, EU Hosting Available</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">Advertising Networks</td>
+                                        <td class="p-3">U.S. & Global</td>
+                                        <td class="p-3">EU-U.S. DPF, SCCs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+                        <p class="text-sm text-blue-300">
+                            <strong>Your Rights:</strong> If you are located in the EU/EEA or UK, you have the right to obtain a copy of the safeguards we use for international data transfers. Contact us at <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300">support@reignvillage.com</a> to request this information.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cookies and Tracking Technologies -->
+            <section id="cookies-tracking" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">7. Cookies and Tracking Technologies</h2>
+
+                <div class="bg-white/5 rounded-lg p-6 mb-6">
+                    <p class="text-gray-300 mb-4">
+                        RevvRadar uses various tracking technologies to improve your experience, analyze app usage, and deliver personalized advertising. Here's what we use and why:
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Mobile Identifiers</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold mb-2">Identifier for Advertisers (IDFA)</h4>
+                                <p class="text-sm text-gray-300 mb-2">
+                                    We collect your device's IDFA (iOS Advertising Identifier) to deliver personalized ads through our advertising network partners.
+                                </p>
+                                <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                    <li>• <strong>Purpose:</strong> Personalized advertising, ad measurement, fraud prevention</li>
+                                    <li>• <strong>Collection Basis:</strong> Your explicit consent (App Tracking Transparency prompt)</li>
+                                    <li>• <strong>Control:</strong> iOS Settings > Privacy & Security > Tracking > RevvRadar (toggle off)</li>
+                                    <li>• <strong>Impact of Disabling:</strong> You'll still see ads, but they won't be personalized</li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-4">
+                                <h4 class="font-semibold mb-2">Device Identifiers</h4>
+                                <p class="text-sm text-gray-300 mb-2">
+                                    We collect non-resettable device identifiers for security and fraud prevention:
+                                </p>
+                                <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                    <li>• iOS Vendor ID (IDFV) - scoped to ReignVillage apps</li>
+                                    <li>• Analytics Installation ID - for analytics and push notifications</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Analytics and Performance</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold mb-2">Analytics Services</h4>
+                                <p class="text-sm text-gray-300 mb-2">
+                                    We use analytics services to understand how users interact with RevvRadar:
+                                </p>
+                                <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                    <li>• <strong>Data Collected:</strong> Screen views, button taps, session duration, device info, app version</li>
+                                    <li>• <strong>Purpose:</strong> Improve app performance, understand feature usage, fix crashes</li>
+                                    <li>• <strong>Retention:</strong> 2 months (raw events), 14 months (aggregated data)</li>
+                                    <li>• <strong>Sharing:</strong> Data stays within our analytics infrastructure, not shared with advertisers</li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-4">
+                                <h4 class="font-semibold mb-2">Crash Reporting</h4>
+                                <p class="text-sm text-gray-300 mb-2">
+                                    Automatically collects crash data to help us fix bugs:
+                                </p>
+                                <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                    <li>• Stack traces, device model, OS version, app state at crash</li>
+                                    <li>• No personally identifiable information is included</li>
+                                    <li>• Retained for 90 days</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Advertising Technologies</h3>
+                        <div>
+                            <h4 class="font-semibold mb-2">Advertising Networks</h4>
+                            <p class="text-sm text-gray-300 mb-2">
+                                RevvRadar displays ads through advertising network partners to provide free access to app features:
+                            </p>
+                            <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                <li>• <strong>Data Used:</strong> IDFA (if authorized), device info, ad interaction data, approximate location</li>
+                                <li>• <strong>Purpose:</strong> Display relevant ads, measure ad performance, prevent ad fraud</li>
+                                <li>• <strong>Third-Party Sharing:</strong> Our advertising partners share data with their ad networks and advertisers according to their respective privacy policies</li>
+                                <li>• <strong>User Control:</strong> Limit Ad Tracking in iOS Settings or upgrade to Pro/Premium subscription (reduced ads)</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4 mt-4">
+                            <p class="text-xs text-purple-300">
+                                <strong>Subscription Note:</strong> Pro ($4.99/month) and Premium ($9.99/month) users receive reduced advertising experiences. Advertising tracking is significantly reduced for subscribers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Location Tracking</h3>
+                        <p class="text-sm text-gray-300 mb-3">
+                            Location services are core to RevvRadar's map-based discovery features:
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-400 ml-4">
+                            <li>• <strong>Precision:</strong> GPS coordinates for vehicle capture, city-level for event discovery</li>
+                            <li>• <strong>Usage:</strong> Display sightings on map, find nearby events, prevent residential privacy exposure</li>
+                            <li>• <strong>Control:</strong> iOS Settings > Privacy > Location Services > RevvRadar (choose "Never", "While Using", or "Always")</li>
+                            <li>• <strong>Background Access:</strong> Optional, only for passive event notifications near your location</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 mt-3">
+                            See <a href="#location-privacy" class="text-purple-400 hover:text-purple-300">Section 9: Location Privacy Protection</a> for details on residential privacy safeguards.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">Managing Your Preferences</h3>
+                        <div class="space-y-3 text-sm text-gray-300">
+                            <div>
+                                <h4 class="font-semibold mb-1">To Disable Personalized Ads:</h4>
+                                <p class="text-xs text-gray-400">iOS Settings > Privacy & Security > Tracking > Turn off for RevvRadar</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">To Limit Analytics:</h4>
+                                <p class="text-xs text-gray-400">iOS Settings > Privacy & Security > Analytics & Improvements > Turn off "Share iPhone Analytics"</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">To Disable Location:</h4>
+                                <p class="text-xs text-gray-400">iOS Settings > Privacy > Location Services > RevvRadar > Select "Never"</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">To Reduce Ads:</h4>
+                                <p class="text-xs text-gray-400">Upgrade to Pro ($4.99/month) or Premium ($9.99/month) in-app for reduced advertising</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+                        <p class="text-xs text-blue-300">
+                            <strong>Website Cookies:</strong> This website (reignvillage.com) does not use cookies. All tracking is app-based and controlled through iOS permissions.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Retention -->
+            <section id="data-retention" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">8. Data Retention Periods</h2>
+
+                <div class="bg-white/5 rounded-lg p-6 mb-6">
+                    <p class="text-gray-300 mb-4">
+                        We retain your personal data only as long as necessary to provide our services, comply with legal obligations, resolve disputes, and enforce our agreements.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Account and Profile Data</h3>
+                        <table class="w-full text-sm">
+                            <thead class="bg-white/10">
+                                <tr>
+                                    <th class="text-left p-3">Data Type</th>
+                                    <th class="text-left p-3">Retention Period</th>
+                                    <th class="text-left p-3">Reason</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300">
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Active Account Data</td>
+                                    <td class="p-3">Duration of account</td>
+                                    <td class="p-3">Service provision</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Deleted Account Data</td>
+                                    <td class="p-3">30 days</td>
+                                    <td class="p-3">Recovery window, fraud prevention</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Username/Email (post-deletion)</td>
+                                    <td class="p-3">Reserved indefinitely</td>
+                                    <td class="p-3">Prevent impersonation</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Phone Number</td>
+                                    <td class="p-3">Duration of account</td>
+                                    <td class="p-3">Authentication, security</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">User-Generated Content</h3>
+                        <table class="w-full text-sm">
+                            <thead class="bg-white/10">
+                                <tr>
+                                    <th class="text-left p-3">Data Type</th>
+                                    <th class="text-left p-3">Retention Period</th>
+                                    <th class="text-left p-3">Reason</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300">
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Vehicle Capture Photos</td>
+                                    <td class="p-3">Until user deletion or account closure</td>
+                                    <td class="p-3">Community content</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Comments & Likes</td>
+                                    <td class="p-3">Until user deletion</td>
+                                    <td class="p-3">Social features</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Event Check-ins</td>
+                                    <td class="p-3">2 years or until deletion</td>
+                                    <td class="p-3">Event analytics</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Anonymized Content (post-deletion)</td>
+                                    <td class="p-3">Indefinitely</td>
+                                    <td class="p-3">Community integrity, cannot re-identify</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-xs text-gray-400 mt-3">
+                            <strong>Note:</strong> When you delete your account, your content is anonymized (user association removed) but may remain visible to maintain community threads.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Usage and Analytics Data</h3>
+                        <table class="w-full text-sm">
+                            <thead class="bg-white/10">
+                                <tr>
+                                    <th class="text-left p-3">Data Type</th>
+                                    <th class="text-left p-3">Retention Period</th>
+                                    <th class="text-left p-3">Reason</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300">
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Analytics (raw events)</td>
+                                    <td class="p-3">2 months</td>
+                                    <td class="p-3">Service provider policy</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Analytics (aggregated)</td>
+                                    <td class="p-3">14 months</td>
+                                    <td class="p-3">Trend analysis</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Crash Reports</td>
+                                    <td class="p-3">90 days</td>
+                                    <td class="p-3">Bug fixes</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Location History</td>
+                                    <td class="p-3">6 months or until deletion</td>
+                                    <td class="p-3">Map features, privacy detection</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Advertising Data</td>
+                                    <td class="p-3">Per advertising network policy (varies)</td>
+                                    <td class="p-3">Ad delivery, fraud prevention</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Financial and Subscription Data</h3>
+                        <table class="w-full text-sm">
+                            <thead class="bg-white/10">
+                                <tr>
+                                    <th class="text-left p-3">Data Type</th>
+                                    <th class="text-left p-3">Retention Period</th>
+                                    <th class="text-left p-3">Reason</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300">
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Subscription Status</td>
+                                    <td class="p-3">Duration of subscription + 1 year</td>
+                                    <td class="p-3">Service access, refunds</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Transaction Records</td>
+                                    <td class="p-3">7 years</td>
+                                    <td class="p-3">Tax compliance, financial audits</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Payment Method Details</td>
+                                    <td class="p-3">Not stored (Apple/Google handles)</td>
+                                    <td class="p-3">In-app purchases via platform</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Legal and Compliance Data</h3>
+                        <table class="w-full text-sm">
+                            <thead class="bg-white/10">
+                                <tr>
+                                    <th class="text-left p-3">Data Type</th>
+                                    <th class="text-left p-3">Retention Period</th>
+                                    <th class="text-left p-3">Reason</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300">
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Support Tickets</td>
+                                    <td class="p-3">3 years</td>
+                                    <td class="p-3">Service improvement, legal defense</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Content Moderation Logs</td>
+                                    <td class="p-3">2 years</td>
+                                    <td class="p-3">Policy enforcement, appeals</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Legal Hold Data</td>
+                                    <td class="p-3">Duration of legal matter + 1 year</td>
+                                    <td class="p-3">Litigation, regulatory inquiry</td>
+                                </tr>
+                                <tr class="border-t border-white/10">
+                                    <td class="p-3">Security Incident Logs</td>
+                                    <td class="p-3">5 years</td>
+                                    <td class="p-3">Fraud prevention, security analysis</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+                        <p class="text-sm text-blue-300">
+                            <strong>Your Control:</strong> You can request early deletion of your data by contacting <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300">support@reignvillage.com</a>. Some data may be retained longer if required by law or legitimate business interests (e.g., fraud prevention, legal defense).
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6 mt-4">
+                        <h4 class="font-semibold mb-3">Automated Deletion</h4>
+                        <p class="text-sm text-gray-300">
+                            We use automated systems to delete data according to these retention schedules. You can verify deletion by requesting a data export or contacting our privacy team.
+                        </p>
                     </div>
                 </div>
             </section>
 
             <!-- AI Features -->
             <section id="ai-features" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">5. AI and Machine Learning</h2>
+                <h2 class="text-3xl font-bold mb-6">9. AI and Machine Learning</h2>
 
                 <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg p-6 mb-6">
                     <h3 class="text-xl font-semibold mb-4">Vehicle Identification Technology</h3>
                     <p class="text-gray-300 mb-4">
-                        RevvRadar uses Google Gemini AI to identify vehicles from photos. Here's what happens:
+                        RevvRadar uses AI and machine learning services to identify vehicles from photos. Here's what happens:
                     </p>
                     <ul class="space-y-2 text-gray-300">
-                        <li>• Photos are sent to Google Gemini for analysis</li>
+                        <li>• Photos are sent to our AI service provider for analysis</li>
                         <li>• No personal information is included with images</li>
                         <li>• Images are processed and immediately discarded</li>
-                        <li>• We receive vehicle details (make, model, year, value)</li>
+                        <li>• We receive vehicle details (make, model, year, trim, weight, torque, value)</li>
                     </ul>
                 </div>
 
@@ -265,45 +998,209 @@
 
             <!-- Location Privacy -->
             <section id="location-privacy" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">6. Location Data and Privacy Protection</h2>
+                <h2 class="text-3xl font-bold mb-6">10. Location Data and Privacy Protection</h2>
 
-                <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-6 mb-6">
-                    <h3 class="text-xl font-semibold mb-4 text-green-400">Residential Privacy Protection System</h3>
-                    <p class="text-gray-300 mb-4">
-                        We automatically protect residential privacy using our proprietary detection system:
+                <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-400">Location Services Overview</h3>
+                    <p class="text-gray-300 mb-3">
+                        <strong>Location access is optional but recommended for full functionality.</strong> With location enabled, you can share captures on the public map and discover nearby events. Without location, you can still capture vehicles privately—they'll be saved to your profile but won't appear on the map.
+                    </p>
+                    <p class="text-sm text-gray-400">
+                        RevvRadar is currently available only in the United States. The app is not geofenced—U.S. users traveling internationally can still use the app and capture vehicles. However, our content (events, map data) is optimized for the U.S. market. Location data captured anywhere is transmitted to our U.S.-based servers and protected by U.S. privacy laws and the safeguards described below. International data transfers are secured using encryption in transit and at rest.
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-6">
+                    <!-- How We Use Location Data -->
                     <div class="bg-white/5 rounded-lg p-6">
-                        <h4 class="font-semibold mb-3 text-red-400">What Gets Hidden</h4>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li>• Private driveways & homes</li>
-                            <li>• Residential neighborhoods</li>
-                            <li>• Gated communities</li>
-                            <li>• Numbered street addresses</li>
-                        </ul>
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">How We Use Your Location</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold mb-2">Precise GPS Coordinates:</h4>
+                                <ul class="space-y-1 text-sm text-gray-300 ml-4">
+                                    <li>• <strong>Vehicle Capture:</strong> Tag exact location of vehicles you photograph</li>
+                                    <li>• <strong>Residential Privacy Detection:</strong> Automatically filter out home driveways and private neighborhoods</li>
+                                    <li>• <strong>Map Display:</strong> Show your current position on the map interface</li>
+                                    <li>• <strong>Nearby Content:</strong> Display vehicle sightings and events close to you</li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-4">
+                                <h4 class="font-semibold mb-2">City/Region Level Location:</h4>
+                                <ul class="space-y-1 text-sm text-gray-300 ml-4">
+                                    <li>• <strong>Event Discovery:</strong> Find car shows, meets, and events in your area</li>
+                                    <li>• <strong>Local Community:</strong> Connect with nearby automotive enthusiasts</li>
+                                    <li>• <strong>Content Personalization:</strong> Show region-specific content and trends</li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-4">
+                                <h4 class="font-semibold mb-2">Background Location (Optional):</h4>
+                                <ul class="space-y-1 text-sm text-gray-300 ml-4">
+                                    <li>• <strong>Event Notifications:</strong> Alert you when car events happen near your location</li>
+                                    <li>• <strong>Passive Discovery:</strong> Notify about rare vehicle sightings in your area</li>
+                                    <li>• <strong>User Control:</strong> You can disable background access in iOS Settings at any time</li>
+                                </ul>
+                                <p class="text-xs text-gray-400 mt-2">
+                                    Background location is never required. All core features work with "While Using App" permission.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
+                    <!-- Location Resolution Management -->
                     <div class="bg-white/5 rounded-lg p-6">
-                        <h4 class="font-semibold mb-3 text-green-400">What Gets Shown</h4>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li>• Car dealerships</li>
-                            <li>• Car shows & events</li>
-                            <li>• Public parking areas</li>
-                            <li>• Commercial areas</li>
-                        </ul>
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Location Data Resolution and Retention</h3>
+                        <p class="text-gray-300 mb-3">
+                            To protect your privacy over time, we automatically reduce the precision of historical location data:
+                        </p>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold mb-2">Real-Time Location (Current Session):</h4>
+                                <p class="text-sm text-gray-400">Precise GPS coordinates used for active vehicle capture and map navigation. Cleared when you close the app.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Recent History (Last 7 Days):</h4>
+                                <p class="text-sm text-gray-400">Precise coordinates retained for your recent vehicle sightings and event check-ins.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Older History (7-30 Days):</h4>
+                                <p class="text-sm text-gray-400">Location resolution reduced to street-level (removes precise coordinates, keeps street name).</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Archive (30-180 Days):</h4>
+                                <p class="text-sm text-gray-400">Location resolution reduced to city-level only (removes street addresses, keeps city/state).</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Beyond 180 Days:</h4>
+                                <p class="text-sm text-gray-400">Precise location data permanently deleted. Only aggregated, anonymized location trends retained for analytics.</p>
+                            </div>
+                        </div>
+                        <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4 mt-4">
+                            <p class="text-xs text-purple-300">
+                                <strong>Data Minimization:</strong> This automatic resolution reduction follows GDPR data minimization principles and protects your long-term privacy even if you forget to manually delete old data.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Residential Privacy Protection -->
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Residential Privacy Protection System</h3>
+                        <p class="text-gray-300 mb-4">
+                            We automatically protect residential privacy using our proprietary detection system. If you photograph a vehicle in a residential area, your capture will be filtered from public view to prevent exposing private homes:
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-4">
+                            <div class="bg-white/5 rounded-lg p-6">
+                                <h4 class="font-semibold mb-3 text-red-400">What Gets Hidden</h4>
+                                <ul class="space-y-2 text-sm text-gray-300">
+                                    <li>• Private driveways & homes</li>
+                                    <li>• Residential neighborhoods</li>
+                                    <li>• Gated communities</li>
+                                    <li>• Numbered street addresses</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-white/5 rounded-lg p-6">
+                                <h4 class="font-semibold mb-3 text-green-400">What Gets Shown</h4>
+                                <ul class="space-y-2 text-sm text-gray-300">
+                                    <li>• Car dealerships</li>
+                                    <li>• Car shows & events</li>
+                                    <li>• Public parking areas</li>
+                                    <li>• Commercial areas</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-gray-400">
+                            Our detection system uses geocoding services and machine learning to classify locations. If a vehicle is wrongly classified, you can appeal via in-app reporting.
+                        </p>
+                    </div>
+
+                    <!-- User Controls -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Your Location Controls</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold mb-2">iOS Settings Controls:</h4>
+                                <ul class="space-y-1 text-sm text-gray-300 ml-4">
+                                    <li>• <strong>Never:</strong> Location access completely disabled (core features still work, but map-based features unavailable)</li>
+                                    <li>• <strong>While Using App:</strong> Location access only when app is open (recommended for most users)</li>
+                                    <li>• <strong>Always:</strong> Background location for event notifications (optional, can be disabled anytime)</li>
+                                </ul>
+                                <p class="text-xs text-gray-400 mt-2">
+                                    Access these settings: iOS Settings > Privacy > Location Services > RevvRadar
+                                </p>
+                            </div>
+
+                            <div class="mt-4">
+                                <h4 class="font-semibold mb-2">In-App Location Controls:</h4>
+                                <ul class="space-y-1 text-sm text-gray-300 ml-4">
+                                    <li>• <strong>Location History:</strong> View and delete individual vehicle capture locations</li>
+                                    <li>• <strong>Location Visibility:</strong> Control whether your sightings show your approximate location to other users</li>
+                                    <li>• <strong>Nearby Notifications:</strong> Toggle location-based event alerts on/off</li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-4">
+                                <h4 class="font-semibold mb-2">Private Capture Mode (Location Disabled):</h4>
+                                <p class="text-sm text-gray-300 mb-2">
+                                    You can capture vehicles even with location services disabled. These captures will:
+                                </p>
+                                <ul class="space-y-1 text-sm text-gray-300 ml-4">
+                                    <li>• Be saved to your private profile and collection</li>
+                                    <li>• NOT appear on the public map or in location-based feeds</li>
+                                    <li>• Remain completely private unless you choose to share them</li>
+                                    <li>• Have no location metadata attached to the photo</li>
+                                    <li>• Still use AI identification to detect vehicle make/model</li>
+                                </ul>
+                                <p class="text-xs text-gray-400 mt-2">
+                                    <strong>Why offer this?</strong> We believe you should be able to document your automotive passion anywhere, anytime—even in privacy-sensitive locations like your home or workplace—without compromising your location privacy.
+                                </p>
+                            </div>
+
+                            <div class="mt-4">
+                                <h4 class="font-semibold mb-2">Limited Functionality with Location Disabled:</h4>
+                                <ul class="space-y-1 text-sm text-gray-300 ml-4">
+                                    <li>• Map-based discovery features will not work</li>
+                                    <li>• Event discovery limited to manual search only (no "near me" results)</li>
+                                    <li>• Cannot share captures to public map</li>
+                                    <li>• Residential privacy protection system not available (no location to check)</li>
+                                    <li>• You can still view other users' public content</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location Sharing with Third Parties -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Location Data Sharing</h3>
+                        <p class="text-gray-300 mb-3">
+                            We share your location data only with service providers necessary to operate RevvRadar:
+                        </p>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold mb-2">Service Providers with Location Access:</h4>
+                                <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                    <li>• <strong>Mapping Services:</strong> Map display, geocoding, residential area detection</li>
+                                    <li>• <strong>Cloud Infrastructure:</strong> Location data storage, event proximity calculations</li>
+                                    <li>• <strong>Advertising Networks (All Tiers):</strong> Approximate city-level location for ad targeting (never precise coordinates, reduced for Pro/Premium)</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4 mt-4">
+                                <p class="text-sm text-red-300">
+                                    <strong>We do not sell your location data.</strong> Location information is never shared with advertisers beyond city-level approximation for free tier users who consent to tracking.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <p class="text-gray-300 mt-6">
-                    You control location access through iOS Settings > Privacy > Location Services > RevvRadar
-                </p>
             </section>
 
             <!-- Your Rights -->
             <section id="your-rights" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">7. Your Privacy Rights</h2>
+                <h2 class="text-3xl font-bold mb-6">11. Your Privacy Rights</h2>
 
                 <div class="bg-white/5 rounded-lg p-6 mb-6">
                     <h3 class="text-xl font-semibold mb-4">You have the right to:</h3>
@@ -342,7 +1239,7 @@
                 <h3 class="text-xl font-semibold mb-4">State-Specific Rights</h3>
                 <div class="bg-white/5 rounded-lg p-6">
                     <p class="text-gray-300 mb-4">
-                        Residents of California, Virginia, Colorado, Connecticut, and Utah have additional privacy rights under state law. EU residents have rights under GDPR.
+                        Residents of California, Virginia, Colorado, Connecticut, and Utah have additional privacy rights under state law. EU residents have rights under GDPR. See <a href="#california-rights" class="text-purple-400 hover:text-purple-300">Section 12</a> for detailed California privacy rights.
                     </p>
                     <a href="#contact" class="text-purple-400 hover:text-purple-300 transition">
                         Contact us to exercise your rights →
@@ -350,9 +1247,318 @@
                 </div>
             </section>
 
+            <!-- California Residents (CCPA/CPRA) -->
+            <section id="california-rights" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">12. California Residents - CCPA/CPRA Rights</h2>
+
+                <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg p-6 mb-6">
+                    <p class="text-gray-300">
+                        <strong>California Privacy Rights Notice:</strong> If you are a California resident, the California Consumer Privacy Act (CCPA) as amended by the California Privacy Rights Act (CPRA) provides you with specific rights regarding your personal information.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Categories of Personal Information -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Categories of Personal Information We Collect</h3>
+                        <p class="text-sm text-gray-300 mb-4">In the preceding 12 months, we have collected the following categories of personal information:</p>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead class="bg-white/10">
+                                    <tr>
+                                        <th class="text-left p-3">Category</th>
+                                        <th class="text-left p-3">Examples</th>
+                                        <th class="text-left p-3">Collected</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-300">
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">A. Identifiers</td>
+                                        <td class="p-3">Email, username, phone number, device ID, IDFA, IP address</td>
+                                        <td class="p-3 text-green-400">YES</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">B. Personal Information (Cal. Civ. Code § 1798.80)</td>
+                                        <td class="p-3">Name, phone number, profile photo</td>
+                                        <td class="p-3 text-green-400">YES</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">C. Protected Classifications</td>
+                                        <td class="p-3">Age (for COPPA compliance only)</td>
+                                        <td class="p-3 text-green-400">YES</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">D. Commercial Information</td>
+                                        <td class="p-3">Subscription tier, purchase history, transaction records</td>
+                                        <td class="p-3 text-green-400">YES</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">E. Biometric Information</td>
+                                        <td class="p-3">Fingerprints, voiceprints, facial recognition</td>
+                                        <td class="p-3 text-red-400">NO</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">F. Internet/Network Activity</td>
+                                        <td class="p-3">App usage, screen views, button clicks, crash logs</td>
+                                        <td class="p-3 text-green-400">YES</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">G. Geolocation Data</td>
+                                        <td class="p-3">GPS coordinates, city/region, vehicle capture locations</td>
+                                        <td class="p-3 text-green-400">YES</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">H. Sensory Information</td>
+                                        <td class="p-3">Photos of vehicles (user-uploaded)</td>
+                                        <td class="p-3 text-green-400">YES</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">I. Professional/Employment Information</td>
+                                        <td class="p-3">Job title, employer</td>
+                                        <td class="p-3 text-red-400">NO</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">J. Education Information</td>
+                                        <td class="p-3">School records, transcripts</td>
+                                        <td class="p-3 text-red-400">NO</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">K. Inferences</td>
+                                        <td class="p-3">User preferences, interests, behavior predictions</td>
+                                        <td class="p-3 text-green-400">YES</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">L. Sensitive Personal Information</td>
+                                        <td class="p-3">Precise geolocation, account login credentials</td>
+                                        <td class="p-3 text-green-400">YES</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Business/Commercial Purpose -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Business or Commercial Purpose for Collection</h3>
+                        <p class="text-sm text-gray-300 mb-3">We collect personal information for the following purposes:</p>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• <strong>Service Provision:</strong> Account creation, vehicle identification, map-based features, event discovery</li>
+                            <li>• <strong>Personalization:</strong> Customizing your feed, recommending events, tailoring notifications</li>
+                            <li>• <strong>Analytics:</strong> Understanding app usage, improving features, fixing bugs</li>
+                            <li>• <strong>Advertising:</strong> Displaying relevant ads (free tier users only), measuring ad performance</li>
+                            <li>• <strong>Security:</strong> Fraud prevention, account protection, content moderation</li>
+                            <li>• <strong>Legal Compliance:</strong> Tax reporting, regulatory obligations, law enforcement requests</li>
+                            <li>• <strong>Customer Support:</strong> Responding to inquiries, resolving issues</li>
+                            <li>• <strong>Research & Development:</strong> Developing new features, AI model improvements</li>
+                        </ul>
+                    </div>
+
+                    <!-- Sources of Personal Information -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Sources of Personal Information</h3>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• <strong>Directly from you:</strong> Account registration, profile updates, vehicle photos, event check-ins</li>
+                            <li>• <strong>Automatically collected:</strong> Device information, usage data, location data (with permission)</li>
+                            <li>• <strong>Third-party authentication:</strong> Apple Sign-In, Google Sign-In, phone authentication</li>
+                            <li>• <strong>Service providers:</strong> Analytics services (usage data), advertising networks (ad interaction data), mapping services (location data)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Sharing of Personal Information -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Disclosure of Personal Information</h3>
+                        <p class="text-sm text-gray-300 mb-3">We may disclose personal information to the following categories of third parties:</p>
+
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold mb-2">Service Providers:</h4>
+                                <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                    <li>• <strong>Authentication & Cloud Infrastructure:</strong> User auth, database, analytics, push notifications</li>
+                                    <li>• <strong>AI & Machine Learning:</strong> Vehicle identification from photos</li>
+                                    <li>• <strong>Mapping & Location:</strong> Map display and location services</li>
+                                    <li>• <strong>Cloud Storage & CDN:</strong> Image storage and content delivery</li>
+                                    <li>• <strong>Search Infrastructure:</strong> Search functionality</li>
+                                    <li>• <strong>Advertising Networks:</strong> Ad delivery (all tiers, reduced for Pro/Premium)</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold mb-2">Advertising Partners (All Tiers):</h4>
+                                <p class="text-xs text-gray-400 ml-4">
+                                    Our advertising network partners and their sub-partners receive device identifiers, ad interaction data, and approximate location for personalized advertising. Pro/Premium subscribers see reduced ads with significantly reduced tracking.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold mb-2">Other Users (Public Information):</h4>
+                                <p class="text-xs text-gray-400 ml-4">
+                                    Your username, profile photo, and vehicle sightings are visible to other RevvRadar users (with residential privacy protection).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sale/Share Disclosure -->
+                    <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-red-400">Sale or Sharing of Personal Information</h3>
+                        <p class="text-red-300 mb-3">
+                            <strong>We do not sell your personal information.</strong>
+                        </p>
+                        <p class="text-sm text-gray-300 mb-3">
+                            However, under the CCPA's broad definition, the following may be considered "sharing" for cross-context behavioral advertising:
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300 ml-4">
+                            <li>• <strong>IDFA (Advertising Identifier):</strong> Shared with advertising network partners for personalized ads (free tier users who consent to tracking)</li>
+                            <li>• <strong>Ad Interaction Data:</strong> Clicks, views, engagement metrics shared with advertising networks</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 mt-3">
+                            <strong>How to Opt Out:</strong> Disable tracking in iOS Settings > Privacy & Security > Tracking > RevvRadar, or upgrade to Pro/Premium for a reduced advertising experience.
+                        </p>
+                    </div>
+
+                    <!-- Sensitive Personal Information -->
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Use of Sensitive Personal Information</h3>
+                        <p class="text-sm text-gray-300 mb-3">
+                            We collect and use the following sensitive personal information (as defined by CPRA):
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300 ml-4">
+                            <li>• <strong>Precise Geolocation:</strong> GPS coordinates for vehicle capture and event discovery (with your permission)</li>
+                            <li>• <strong>Account Credentials:</strong> Email/password, phone number for authentication (securely hashed and encrypted)</li>
+                        </ul>
+                        <p class="text-xs text-gray-300 mt-3">
+                            <strong>Purpose:</strong> This sensitive information is used only for the purposes disclosed in this Privacy Policy and as necessary to provide our services. We do not use or disclose sensitive personal information for purposes other than those permitted under CPRA § 1798.121.
+                        </p>
+                    </div>
+
+                    <!-- Retention Period -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Retention Periods</h3>
+                        <p class="text-sm text-gray-300 mb-3">
+                            We retain each category of personal information for the periods specified in <a href="#data-retention" class="text-purple-400 hover:text-purple-300">Section 8: Data Retention Periods</a>.
+                        </p>
+                    </div>
+
+                    <!-- Your California Rights -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Your California Privacy Rights</h3>
+                        <p class="text-sm text-gray-300 mb-4">California residents have the following rights:</p>
+
+                        <div class="space-y-3">
+                            <div class="bg-white/5 rounded-lg p-4">
+                                <h4 class="font-semibold mb-2">Right to Know</h4>
+                                <p class="text-xs text-gray-400">
+                                    Request disclosure of: (1) categories of personal information collected; (2) categories of sources; (3) business purpose for collection; (4) categories of third parties with whom we share; (5) specific pieces of personal information collected about you.
+                                </p>
+                            </div>
+
+                            <div class="bg-white/5 rounded-lg p-4">
+                                <h4 class="font-semibold mb-2">Right to Delete</h4>
+                                <p class="text-xs text-gray-400">
+                                    Request deletion of your personal information, subject to certain exceptions (e.g., completing transactions, security purposes, legal compliance).
+                                </p>
+                            </div>
+
+                            <div class="bg-white/5 rounded-lg p-4">
+                                <h4 class="font-semibold mb-2">Right to Correct</h4>
+                                <p class="text-xs text-gray-400">
+                                    Request correction of inaccurate personal information we maintain about you.
+                                </p>
+                            </div>
+
+                            <div class="bg-white/5 rounded-lg p-4">
+                                <h4 class="font-semibold mb-2">Right to Opt-Out of Sale/Sharing</h4>
+                                <p class="text-xs text-gray-400">
+                                    Opt out of the "sale" or "sharing" of your personal information for cross-context behavioral advertising. Control via iOS Settings > Tracking or upgrade to Pro/Premium.
+                                </p>
+                            </div>
+
+                            <div class="bg-white/5 rounded-lg p-4">
+                                <h4 class="font-semibold mb-2">Right to Limit Use of Sensitive Personal Information</h4>
+                                <p class="text-xs text-gray-400">
+                                    Limit the use of sensitive personal information (precise geolocation, account credentials) to purposes permitted under CPRA. Note: This may limit app functionality (e.g., disabling location prevents map-based features).
+                                </p>
+                            </div>
+
+                            <div class="bg-white/5 rounded-lg p-4">
+                                <h4 class="font-semibold mb-2">Right to Non-Discrimination</h4>
+                                <p class="text-xs text-gray-400">
+                                    You will not receive discriminatory treatment for exercising your CCPA rights. However, subscription features (Pro/Premium) may offer different service levels based on payment.
+                                </p>
+                            </div>
+
+                            <div class="bg-white/5 rounded-lg p-4">
+                                <h4 class="font-semibold mb-2">Right to Data Portability</h4>
+                                <p class="text-xs text-gray-400">
+                                    Receive a copy of your personal information in a portable, readily usable format.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How to Exercise Rights -->
+                    <div class="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">How to Exercise Your Rights</h3>
+                        <div class="space-y-4 text-sm text-gray-300">
+                            <div>
+                                <h4 class="font-semibold mb-2">Submit a Request:</h4>
+                                <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                    <li>• Email: <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300">support@reignvillage.com</a></li>
+                                    <li>• Subject Line: "California Privacy Rights Request"</li>
+                                    <li>• Include: Your name, email associated with your RevvRadar account, and specific request</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold mb-2">Verification Process:</h4>
+                                <p class="text-xs text-gray-400">
+                                    To protect your privacy, we will verify your identity before processing requests. We may ask you to confirm account details, respond to an email verification, or provide government-issued ID for sensitive requests.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold mb-2">Response Timeline:</h4>
+                                <p class="text-xs text-gray-400">
+                                    We will acknowledge receipt within 10 business days and respond within 45 days. If we need more time (up to 90 days total), we will notify you of the extension and reason.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold mb-2">Authorized Agents:</h4>
+                                <p class="text-xs text-gray-400">
+                                    You may designate an authorized agent to make requests on your behalf. The agent must provide proof of authorization (signed permission or power of attorney). We may still require you to verify your identity.
+                                </p>
+                            </div>
+
+                            <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mt-4">
+                                <p class="text-xs text-blue-300">
+                                    <strong>Request Limits:</strong> You may make up to 2 requests for information disclosure per 12-month period. We do not charge fees for reasonable requests, but may charge for excessive or manifestly unfounded requests.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- California Shine the Light Law -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">California "Shine the Light" Law</h3>
+                        <p class="text-sm text-gray-300">
+                            Under California Civil Code Section 1798.83, California residents may request information about our disclosure of personal information to third parties for direct marketing purposes. As stated above, we do not sell your personal information to third parties for their direct marketing purposes.
+                        </p>
+                    </div>
+
+                    <!-- Contact for California Residents -->
+                    <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg p-4">
+                        <p class="text-sm text-gray-300">
+                            <strong>Questions about California privacy rights?</strong> Contact us at <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300">support@reignvillage.com</a> with "California Privacy" in the subject line.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             <!-- Data Security -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">8. Data Security</h2>
+            <section id="data-security" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">13. Data Security</h2>
 
                 <div class="bg-white/5 rounded-lg p-6">
                     <h3 class="text-xl font-semibold mb-4">How We Protect Your Data</h3>
@@ -367,7 +1573,7 @@
                         </li>
                         <li class="flex items-start space-x-3">
                             <span class="text-green-400 mt-1">🔒</span>
-                            <span>Secure Firebase authentication</span>
+                            <span>Secure cloud authentication</span>
                         </li>
                         <li class="flex items-start space-x-3">
                             <span class="text-green-400 mt-1">🔒</span>
@@ -378,19 +1584,223 @@
             </section>
 
             <!-- Children's Privacy -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">9. Children's Privacy</h2>
+            <section id="children" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">14. Children's Privacy</h2>
 
-                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-6">
-                    <p class="text-yellow-300">
-                        <strong>Age Requirement:</strong> RevvRadar is not intended for users under 13 years of age. We do not knowingly collect personal information from children under 13.
+                <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6 mb-6">
+                    <p class="text-purple-300 mb-3">
+                        <strong>Age Requirement:</strong> RevvRadar requires users to be at least 13 years of age to create an account and use our services.
                     </p>
+                    <p class="text-purple-300 text-sm">
+                        We are committed to protecting the privacy of children and comply with the Children's Online Privacy Protection Act (COPPA) and applicable international regulations.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Age Verification -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Age Verification</h3>
+                        <p class="text-gray-300 mb-3">
+                            When you create a RevvRadar account, we collect your date of birth to verify you meet our minimum age requirement:
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• <strong>Under 13:</strong> Account creation is blocked. Users are informed of the age requirement.</li>
+                            <li>• <strong>Ages 13-17:</strong> Account creation permitted with limited features and enhanced privacy protections.</li>
+                            <li>• <strong>18 and over:</strong> Full access to all RevvRadar features.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Limited Features for Minors -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Enhanced Privacy for Users Under 18</h3>
+                        <p class="text-gray-300 mb-3">
+                            Users aged 13-17 have additional privacy safeguards applied to their accounts:
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• <strong>Profile Visibility:</strong> Profiles are private by default and cannot be set to fully public</li>
+                            <li>• <strong>Location Sharing:</strong> Enhanced residential privacy filtering with stricter radius requirements</li>
+                            <li>• <strong>Contact Restrictions:</strong> Limited ability to receive messages from users outside their approved connections</li>
+                            <li>• <strong>Content Restrictions:</strong> Additional content safety filters applied to user-generated content</li>
+                            <li>• <strong>Advertising:</strong> No personalized advertising (IDFA tracking disabled regardless of iOS settings)</li>
+                            <li>• <strong>Data Retention:</strong> Shorter retention periods for usage analytics and location history</li>
+                        </ul>
+                        <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mt-4">
+                            <p class="text-xs text-blue-300">
+                                <strong>Age Transition:</strong> When a user turns 18, their account is not automatically upgraded to full access. Users must opt-in to adult features and review updated privacy settings.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Parental Rights -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Parental Rights and Controls</h3>
+                        <p class="text-gray-300 mb-3">
+                            Parents or legal guardians of users under 18 have the following rights:
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• <strong>Access:</strong> Request a copy of the personal information we hold about their child</li>
+                            <li>• <strong>Review:</strong> Review their child's account activity, vehicle sightings, and interactions</li>
+                            <li>• <strong>Correction:</strong> Request correction of inaccurate information</li>
+                            <li>• <strong>Deletion:</strong> Request deletion of their child's account and all associated data</li>
+                            <li>• <strong>Consent Withdrawal:</strong> Withdraw consent for data processing and request account termination</li>
+                            <li>• <strong>Communication Preferences:</strong> Control marketing and promotional communications</li>
+                        </ul>
+                        <div class="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg p-4 mt-4">
+                            <p class="text-sm text-gray-300 mb-2">
+                                <strong>To Exercise Parental Rights:</strong>
+                            </p>
+                            <p class="text-xs text-gray-400">
+                                Email <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300">support@reignvillage.com</a> with subject line "Parental Rights Request" and include:
+                            </p>
+                            <ul class="space-y-1 text-xs text-gray-400 ml-4 mt-2">
+                                <li>1. Your name and relationship to the child</li>
+                                <li>2. Child's username and date of birth</li>
+                                <li>3. Proof of parental/guardian status (e.g., government-issued ID, birth certificate)</li>
+                                <li>4. Specific request (access, deletion, correction, etc.)</li>
+                            </ul>
+                            <p class="text-xs text-gray-400 mt-2">
+                                We will verify your identity and parental status before fulfilling requests. Response time: 10 business days.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Data Collection from Minors -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Information We Collect from Users Under 18</h3>
+                        <p class="text-gray-300 mb-3">
+                            For users aged 13-17, we collect only the minimum necessary data to provide services:
+                        </p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold mb-2">Account Information:</h4>
+                                <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                    <li>• Email address (hashed for authentication, not used for marketing)</li>
+                                    <li>• Date of birth (for age verification, not displayed publicly)</li>
+                                    <li>• Username (user-selected, no real name required)</li>
+                                    <li>• Phone number (optional, for account security only)</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold mb-2">Service Data:</h4>
+                                <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                    <li>• Vehicle photos (user-uploaded, optional)</li>
+                                    <li>• Location data (with iOS parental controls respected, filtered for residential areas)</li>
+                                    <li>• Device information (model, OS, for app performance only)</li>
+                                    <li>• Usage analytics (aggregated, anonymized, retained for 30 days max)</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold mb-2">What We Do NOT Collect from Minors:</h4>
+                                <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                                    <li>• Social Security Number or government ID</li>
+                                    <li>• Biometric information</li>
+                                    <li>• Precise home address</li>
+                                    <li>• Financial information (subscriptions disabled for under-18 users)</li>
+                                    <li>• Advertising identifiers (IDFA) or tracking data</li>
+                                    <li>• Real name or contact information beyond email/phone for authentication</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-gray-400 mt-4 italic">
+                            All data processing for users under 18 is limited to service provision and internal operations only. We do not share, sell, or use minor's data for advertising purposes.
+                        </p>
+                    </div>
+
+                    <!-- Accidental Collection -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Protection Against Underage Users (Under 13)</h3>
+                        <p class="text-gray-300 mb-3">
+                            RevvRadar does not knowingly collect personal information from children under 13 years of age without parental consent.
+                        </p>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold mb-2">If We Discover Underage Use:</h4>
+                                <ul class="space-y-1 text-sm text-gray-300 ml-4">
+                                    <li>1. We will immediately suspend the account</li>
+                                    <li>2. Notify the account email address of the violation</li>
+                                    <li>3. Delete all personal information collected within 30 days</li>
+                                    <li>4. Provide opportunity for parental consent to reinstate (if state law permits)</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+                                <p class="text-sm text-red-300">
+                                    <strong>Parent/Guardian Alert:</strong> If you believe your child under 13 has created a RevvRadar account without your consent, contact us immediately at <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300">support@reignvillage.com</a> with subject "Underage Account Report" and we will delete the account within 24 hours.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Regional Variations -->
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Regional Age Requirements</h3>
+                        <p class="text-gray-300 mb-3">
+                            Certain regions have different minimum age requirements or parental consent rules:
+                        </p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead class="bg-white/10">
+                                    <tr>
+                                        <th class="text-left p-3">Region</th>
+                                        <th class="text-left p-3">Minimum Age</th>
+                                        <th class="text-left p-3">Additional Requirements</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-300">
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">United States</td>
+                                        <td class="p-3">13</td>
+                                        <td class="p-3">COPPA compliance, enhanced privacy for 13-17</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">European Union</td>
+                                        <td class="p-3">13-16 (varies by country)</td>
+                                        <td class="p-3">GDPR Article 8, parental consent required under 16</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">United Kingdom</td>
+                                        <td class="p-3">13</td>
+                                        <td class="p-3">UK GDPR, Age Appropriate Design Code</td>
+                                    </tr>
+                                    <tr class="border-t border-white/10">
+                                        <td class="p-3">California (CCPA)</td>
+                                        <td class="p-3">13 (enhanced under 16)</td>
+                                        <td class="p-3">No sale of data for under 16 without consent</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-3">
+                            RevvRadar applies the most protective standard globally: no data sharing, selling, or personalized advertising for any user under 18.
+                        </p>
+                    </div>
+
+                    <!-- App Store Compliance -->
+                    <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">Third-Party Platform Parental Controls</h3>
+                        <p class="text-gray-300 mb-3">
+                            RevvRadar respects parental control settings configured through iOS:
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300 ml-4">
+                            <li>• <strong>Screen Time Restrictions:</strong> App usage limits set by parents are honored</li>
+                            <li>• <strong>Location Services:</strong> iOS parental controls over location access are respected</li>
+                            <li>• <strong>In-App Purchases:</strong> Disabled for users under 18; requires parental approval via Apple Family Sharing</li>
+                            <li>• <strong>Content Restrictions:</strong> App content rating is 12+ (mild infrequent language, user-generated content)</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 mt-3">
+                            Parents can configure additional restrictions via iOS Settings > Screen Time > Content & Privacy Restrictions > Apps.
+                        </p>
+                    </div>
                 </div>
             </section>
 
             <!-- Contact -->
             <section id="contact" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">10. Contact Us</h2>
+                <h2 class="text-3xl font-bold mb-6">15. Contact Us</h2>
 
                 <div class="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg p-8">
                     <h3 class="text-xl font-semibold mb-4">Privacy Questions and Requests</h3>
@@ -400,8 +1810,8 @@
                     <div class="space-y-3">
                         <div>
                             <span class="text-gray-400">Email:</span>
-                            <a href="mailto:privacy@reignvillage.com" class="text-purple-400 hover:text-purple-300 ml-2">
-                                privacy@reignvillage.com
+                            <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300 ml-2">
+                                support@reignvillage.com
                             </a>
                         </div>
                         <div>
@@ -419,62 +1829,11 @@
                 </div>
             </section>
 
-            <!-- Summary -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">Summary of Third-Party Services</h2>
-
-                <div class="overflow-x-auto">
-                    <table class="w-full bg-white/5 rounded-lg overflow-hidden">
-                        <thead class="bg-white/10">
-                            <tr>
-                                <th class="text-left p-4">Service</th>
-                                <th class="text-left p-4">Purpose</th>
-                                <th class="text-left p-4">Privacy Policy</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-t border-white/10">
-                                <td class="p-4">Firebase</td>
-                                <td class="p-4 text-gray-400">Backend, auth, analytics</td>
-                                <td class="p-4">
-                                    <a href="https://firebase.google.com/support/privacy" class="text-purple-400 hover:text-purple-300" target="_blank">View →</a>
-                                </td>
-                            </tr>
-                            <tr class="border-t border-white/10">
-                                <td class="p-4">Google Gemini AI</td>
-                                <td class="p-4 text-gray-400">Vehicle identification</td>
-                                <td class="p-4">
-                                    <a href="https://policies.google.com/privacy" class="text-purple-400 hover:text-purple-300" target="_blank">View →</a>
-                                </td>
-                            </tr>
-                            <tr class="border-t border-white/10">
-                                <td class="p-4">Mapbox</td>
-                                <td class="p-4 text-gray-400">Maps and location</td>
-                                <td class="p-4">
-                                    <a href="https://www.mapbox.com/legal/privacy" class="text-purple-400 hover:text-purple-300" target="_blank">View →</a>
-                                </td>
-                            </tr>
-                            <tr class="border-t border-white/10">
-                                <td class="p-4">Cloudflare R2</td>
-                                <td class="p-4 text-gray-400">Image storage</td>
-                                <td class="p-4">
-                                    <a href="https://www.cloudflare.com/privacypolicy/" class="text-purple-400 hover:text-purple-300" target="_blank">View →</a>
-                                </td>
-                            </tr>
-                            <tr class="border-t border-white/10">
-                                <td class="p-4">AdMob</td>
-                                <td class="p-4 text-gray-400">Advertising</td>
-                                <td class="p-4">
-                                    <a href="https://policies.google.com/privacy" class="text-purple-400 hover:text-purple-300" target="_blank">View →</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
-            </section>
+            </main>
 
         </div>
-    </main>
+    </div>
 
     <!-- Footer -->
     <footer class="py-16 px-6 border-t border-white/10">
@@ -490,6 +1849,36 @@
             </div>
         </div>
     </footer>
+
+    <!-- Active Section Tracking Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.sidebar-link');
+
+            function setActiveLink() {
+                let currentSection = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    if (window.scrollY >= sectionTop - 150) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', setActiveLink);
+            setActiveLink(); // Set initial state
+        });
+    </script>
 
 </body>
 </html>

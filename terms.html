@@ -18,7 +18,7 @@
         }
 
         .prose h2 {
-            scroll-margin-top: 100px;
+            scroll-margin-top: 120px;
         }
 
         .gradient-text {
@@ -45,6 +45,43 @@
 
         ::-webkit-scrollbar-thumb:hover {
             background: #6a6a6a;
+        }
+
+        /* Sidebar Navigation Styles */
+        .sidebar-nav {
+            position: sticky;
+            top: 120px;
+            max-height: calc(100vh - 140px);
+            overflow-y: auto;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 10px 16px;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .sidebar-nav a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left-color: #a855f7;
+        }
+
+        .sidebar-nav a.active {
+            color: #a855f7;
+            background-color: rgba(168, 85, 247, 0.1);
+            border-left-color: #a855f7;
+            font-weight: 500;
+        }
+
+        /* Hide sidebar on mobile */
+        @media (max-width: 768px) {
+            .sidebar-nav {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -77,429 +114,928 @@
     </nav>
 
     <!-- Header -->
-    <section class="pt-32 pb-16 px-6">
-        <div class="max-w-4xl mx-auto">
+    <section class="pt-32 pb-12 px-6 border-b border-white/10">
+        <div class="max-w-7xl mx-auto">
             <h1 class="text-5xl md:text-6xl font-bold mb-4">Terms of Service</h1>
             <p class="text-xl text-gray-400">Clear rules for a thriving community</p>
             <p class="text-sm text-gray-500 mt-4">Effective Date: February 1, 2025 | Last Updated: January 31, 2025</p>
         </div>
     </section>
 
-    <!-- Table of Contents -->
-    <section class="px-6 pb-8">
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-white/5 rounded-xl p-6 backdrop-blur-sm border border-white/10">
-                <h2 class="text-lg font-semibold mb-4">Quick Navigation</h2>
-                <div class="grid md:grid-cols-2 gap-2 text-sm">
-                    <a href="#acceptance" class="text-purple-400 hover:text-purple-300 transition">→ Acceptance of Terms</a>
-                    <a href="#services" class="text-purple-400 hover:text-purple-300 transition">→ Description of Service</a>
-                    <a href="#eligibility" class="text-purple-400 hover:text-purple-300 transition">→ Eligibility & Age Requirements</a>
-                    <a href="#accounts" class="text-purple-400 hover:text-purple-300 transition">→ User Accounts</a>
-                    <a href="#subscriptions" class="text-purple-400 hover:text-purple-300 transition">→ Subscription Terms</a>
-                    <a href="#content" class="text-purple-400 hover:text-purple-300 transition">→ User Content</a>
-                    <a href="#community" class="text-purple-400 hover:text-purple-300 transition">→ Community Guidelines</a>
-                    <a href="#ai-features" class="text-purple-400 hover:text-purple-300 transition">→ AI-Powered Features</a>
-                    <a href="#termination" class="text-purple-400 hover:text-purple-300 transition">→ Termination</a>
-                    <a href="#contact" class="text-purple-400 hover:text-purple-300 transition">→ Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Content with Sidebar -->
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex gap-12">
 
-    <!-- Content -->
-    <main class="px-6 pb-24">
-        <div class="max-w-4xl mx-auto prose prose-invert prose-lg">
+            <!-- Left Sidebar Navigation -->
+            <aside class="w-64 flex-shrink-0">
+                <nav class="sidebar-nav">
+                    <div class="space-y-1">
+                        <a href="#acceptance" class="sidebar-link">Acceptance of Terms</a>
+                        <a href="#changes" class="sidebar-link">Changes to Terms</a>
+                        <a href="#services" class="sidebar-link">Description of Service</a>
+                        <a href="#eligibility" class="sidebar-link">Eligibility & Age</a>
+                        <a href="#accounts" class="sidebar-link">User Accounts</a>
+                        <a href="#subscriptions" class="sidebar-link">Subscriptions & Billing</a>
+                        <a href="#purchases" class="sidebar-link">In-App Purchases</a>
+                        <a href="#refunds" class="sidebar-link">Refund Policy</a>
+                        <a href="#content" class="sidebar-link">User Content</a>
+                        <a href="#community" class="sidebar-link">Community Guidelines</a>
+                        <a href="#conduct" class="sidebar-link">Prohibited Conduct</a>
+                        <a href="#ai-features" class="sidebar-link">AI-Powered Features</a>
+                        <a href="#location" class="sidebar-link">Location Services</a>
+                        <a href="#intellectual-property" class="sidebar-link">Intellectual Property</a>
+                        <a href="#privacy" class="sidebar-link">Privacy</a>
+                        <a href="#disclaimers" class="sidebar-link">Disclaimers</a>
+                        <a href="#liability" class="sidebar-link">Limitation of Liability</a>
+                        <a href="#indemnification" class="sidebar-link">Indemnification</a>
+                        <a href="#termination" class="sidebar-link">Termination</a>
+                        <a href="#disputes" class="sidebar-link">Dispute Resolution</a>
+                        <a href="#governing-law" class="sidebar-link">Governing Law</a>
+                        <a href="#miscellaneous" class="sidebar-link">Miscellaneous</a>
+                        <a href="#contact" class="sidebar-link">Contact Us</a>
+                    </div>
+                </nav>
+            </aside>
 
-            <!-- Acceptance of Terms -->
-            <section id="acceptance" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">1. Acceptance of Terms</h2>
-                <p class="text-gray-300 leading-relaxed">
-                    By downloading, installing, accessing, or using any mobile application, website, or service provided by ReignVillage LLC, including <strong>RevvRadar</strong>, you agree to be bound by these Terms of Service.
-                </p>
-                <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4 mt-6">
-                    <p class="text-sm text-red-300">
-                        <strong>Important:</strong> If you do not agree to these Terms, do not use our Services.
+            <!-- Main Content -->
+            <main class="flex-1 prose prose-invert prose-lg max-w-none">
+
+                <!-- Acceptance of Terms -->
+                <section id="acceptance" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">1. Acceptance of Terms</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        By downloading, installing, accessing, or using any mobile application, website, or service provided by ReignVillage LLC, including <strong>RevvRadar</strong>, you agree to be bound by these Terms of Service ("Terms").
                     </p>
-                </div>
-                <p class="text-gray-300 leading-relaxed mt-4">
-                    These Terms constitute a legally binding agreement between you and ReignVillage LLC, a Washington State limited liability company. We reserve the right to modify these Terms at any time with notice.
-                </p>
-            </section>
-
-            <!-- Description of Service -->
-            <section id="services" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">2. Description of Service</h2>
-
-                <h3 class="text-xl font-semibold mb-4 text-purple-400">RevvRadar Features</h3>
-                <div class="bg-white/5 rounded-lg p-6 mb-6">
-                    <ul class="space-y-2 text-gray-300">
-                        <li>• AI-powered vehicle identification using Google Gemini</li>
-                        <li>• Interactive map-based discovery of automotive sightings</li>
-                        <li>• Community-driven social features</li>
-                        <li>• Real-time car show and event discovery</li>
-                        <li>• Location-based vehicle spotting</li>
-                        <li>• Gamification with badges and achievements</li>
-                        <li>• Subscription tiers (Free, Pro, Premium)</li>
-                    </ul>
-                </div>
-
-                <p class="text-gray-300 leading-relaxed">
-                    We strive to provide reliable service but do not guarantee 100% uptime, error-free operation, or compatibility with all devices. We reserve the right to modify or discontinue features at any time.
-                </p>
-            </section>
-
-            <!-- Eligibility -->
-            <section id="eligibility" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">3. Eligibility and Age Requirements</h2>
-
-                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-6 mb-6">
-                    <h3 class="text-xl font-semibold mb-2 text-yellow-400">Minimum Age: 13 Years</h3>
-                    <p class="text-gray-300">
-                        You must be at least 13 years old to create an account and use our Services. We do not knowingly collect personal information from children under 13.
-                    </p>
-                </div>
-
-                <p class="text-gray-300 leading-relaxed">
-                    If you are between 13 and 18 years old, you represent that your parent or legal guardian has reviewed and agreed to these Terms on your behalf.
-                </p>
-            </section>
-
-            <!-- User Accounts -->
-            <section id="accounts" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">4. User Accounts</h2>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white/5 rounded-lg p-6">
-                        <h3 class="font-semibold mb-3 text-purple-400">Account Creation</h3>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li>✓ Valid email or phone</li>
-                            <li>✓ Unique username</li>
-                            <li>✓ Secure password</li>
-                            <li>✓ Age verification</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white/5 rounded-lg p-6">
-                        <h3 class="font-semibold mb-3 text-purple-400">Your Responsibilities</h3>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li>✓ Accurate information</li>
-                            <li>✓ Secure credentials</li>
-                            <li>✓ Report breaches</li>
-                            <li>✓ One account per person</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <p class="text-gray-300 mt-6">
-                    You may also create an account using Sign in with Apple or Google Sign-In. Accounts are non-transferable and may not be shared with others.
-                </p>
-            </section>
-
-            <!-- Subscription Terms -->
-            <section id="subscriptions" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">5. Subscription Terms</h2>
-
-                <div class="space-y-6">
-                    <!-- Free Tier -->
-                    <div class="bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-lg p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-semibold">Free Tier</h3>
-                            <span class="text-gray-400">Ad-Supported</span>
-                        </div>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li>• 3 vehicle captures per day</li>
-                            <li>• Unlimited additional captures via rewarded ads</li>
-                            <li>• Full access to maps and community</li>
-                            <li>• Native ads in content feeds</li>
-                        </ul>
-                    </div>
-
-                    <!-- Pro Tier -->
-                    <div class="bg-gradient-to-r from-purple-800/30 to-purple-700/30 rounded-lg p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-semibold text-purple-400">Pro Tier</h3>
-                            <span class="text-purple-400">$4.99/month</span>
-                        </div>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li>• 30 vehicle captures per day</li>
-                            <li>• Ad-free experience</li>
-                            <li>• Advanced filters and search</li>
-                            <li>• Priority support</li>
-                            <li>• Special community badge</li>
-                        </ul>
-                    </div>
-
-                    <!-- Premium Tier -->
-                    <div class="bg-gradient-to-r from-yellow-800/30 to-orange-800/30 rounded-lg p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-semibold text-yellow-400">Premium Tier</h3>
-                            <span class="text-yellow-400">$9.99/month</span>
-                        </div>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li>• 100 vehicle captures per day</li>
-                            <li>• All Pro benefits included</li>
-                            <li>• Premium-exclusive badges</li>
-                            <li>• Advanced analytics</li>
-                            <li>• Beta access to new features</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-6 mt-6">
-                    <h4 class="font-semibold mb-2">Billing Information</h4>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li>• All subscriptions billed through Apple App Store</li>
-                        <li>• Automatic renewal unless cancelled 24 hours before period end</li>
-                        <li>• Manage subscriptions in iOS Settings > Subscriptions</li>
-                        <li>• No refunds for partial periods</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- User Content -->
-            <section id="content" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">6. User Content and License</h2>
-
-                <h3 class="text-xl font-semibold mb-4">Content Ownership</h3>
-                <p class="text-gray-300 mb-6">
-                    You retain ownership of content you create (photos, comments, descriptions). By posting content, you grant us a worldwide, non-exclusive, royalty-free license to use, display, and distribute it through our Services.
-                </p>
-
-                <h3 class="text-xl font-semibold mb-4 text-red-400">Prohibited Content</h3>
-                <div class="bg-white/5 rounded-lg p-6">
-                    <p class="text-gray-300 mb-4">You agree NOT to post content that:</p>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li>• Violates laws or regulations</li>
-                        <li>• Infringes on intellectual property rights</li>
-                        <li>• Contains personal information without consent</li>
-                        <li>• Is defamatory, harassing, or threatening</li>
-                        <li>• Contains hate speech or discrimination</li>
-                        <li>• Is sexually explicit or obscene</li>
-                        <li>• Depicts illegal activities</li>
-                        <li>• Misrepresents vehicle information</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Community Guidelines -->
-            <section id="community" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">7. Community Guidelines</h2>
-
-                <div class="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-lg p-6 mb-6">
-                    <h3 class="text-xl font-semibold mb-4">Community Standards</h3>
-                    <p class="text-gray-300 mb-4">
-                        RevvRadar is built on mutual respect and passion for automotive culture. We expect all users to:
-                    </p>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>✓ Be respectful to other members</li>
-                        <li>✓ Share authentic vehicle sightings</li>
-                        <li>✓ Follow event rules and respect property</li>
-                        <li>✓ Give credit to original creators</li>
-                        <li>✓ Report policy violations</li>
-                    </ul>
-                </div>
-
-                <h3 class="text-xl font-semibold mb-4 text-red-400">Prohibited Conduct</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white/5 rounded-lg p-6">
-                        <h4 class="font-semibold mb-3">Account Misuse</h4>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li>× Fake accounts</li>
-                            <li>× Multiple accounts</li>
-                            <li>× Account sharing</li>
-                            <li>× Ban evasion</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white/5 rounded-lg p-6">
-                        <h4 class="font-semibold mb-3">System Abuse</h4>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li>× Unauthorized access</li>
-                            <li>× Reverse engineering</li>
-                            <li>× Bots or automation</li>
-                            <li>× Service disruption</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-6 mt-6">
-                    <h4 class="font-semibold mb-2">Consequences of Violations</h4>
-                    <p class="text-sm text-gray-300">
-                        Warning → Content Removal → Temporary Suspension → Permanent Ban
-                    </p>
-                </div>
-            </section>
-
-            <!-- AI Features -->
-            <section id="ai-features" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">8. AI-Powered Features</h2>
-
-                <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg p-6 mb-6">
-                    <h3 class="text-xl font-semibold mb-4">Vehicle Identification Technology</h3>
-                    <p class="text-gray-300 mb-4">
-                        RevvRadar uses Google Gemini AI to identify vehicles from photos:
-                    </p>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>• AI analyzes images for make, model, year, and value</li>
-                        <li>• Accuracy is not guaranteed - verify important information</li>
-                        <li>• Images processed in real-time, not permanently stored by Google</li>
-                        <li>• Content safety filters block inappropriate material</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white/5 rounded-lg p-6">
-                    <h4 class="font-semibold mb-3">Error Handling</h4>
-                    <p class="text-gray-300 text-sm">
-                        Our system rejects images without vehicles, poor quality images, or content violations. If AI successfully identifies a vehicle despite suboptimal conditions, we accept the capture.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Privacy -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">9. Privacy</h2>
-
-                <p class="text-gray-300 mb-6">
-                    Your use of our Services is governed by our Privacy Policy. Key points:
-                </p>
-
-                <div class="bg-white/5 rounded-lg p-6">
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex items-start space-x-3">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>We don't sell your personal information</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Residential locations automatically hidden for privacy</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>You control location permissions</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Right to access, correct, and delete your data</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <p class="text-gray-300 mt-4">
-                    <a href="/privacy" class="text-purple-400 hover:text-purple-300 transition">
-                        Read our full Privacy Policy →
-                    </a>
-                </p>
-            </section>
-
-            <!-- Disclaimers -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">10. Disclaimers and Limitations</h2>
-
-                <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-6">
-                    <p class="text-red-300 font-semibold mb-4">
-                        THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE"
-                    </p>
-                    <p class="text-gray-300 text-sm">
-                        We do not guarantee uninterrupted service, accuracy of AI identifications, or freedom from errors. Our total liability is limited to the greater of $100 or the amount you paid us in the past 12 months.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Termination -->
-            <section id="termination" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">11. Termination</h2>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white/5 rounded-lg p-6">
-                        <h3 class="font-semibold mb-3 text-purple-400">By You</h3>
-                        <p class="text-sm text-gray-300 mb-3">
-                            Delete your account anytime:
-                        </p>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li>• Settings > Account > Delete</li>
-                            <li>• Content deleted in 30 days</li>
-                            <li>• No refunds for remaining time</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white/5 rounded-lg p-6">
-                        <h3 class="font-semibold mb-3 text-purple-400">By Us</h3>
-                        <p class="text-sm text-gray-300 mb-3">
-                            We may terminate for:
-                        </p>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li>• Terms violations</li>
-                            <li>• Fraudulent activity</li>
-                            <li>• Extended inactivity</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Dispute Resolution -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">12. Dispute Resolution</h2>
-
-                <div class="bg-white/5 rounded-lg p-6">
-                    <h3 class="text-xl font-semibold mb-4">Governing Law & Arbitration</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li>• Governed by Washington State law</li>
-                        <li>• Disputes resolved through binding arbitration (AAA)</li>
-                        <li>• No class actions - individual claims only</li>
-                        <li>• Claims must be filed within 1 year</li>
-                    </ul>
-                    <p class="text-sm text-gray-400 mt-4">
-                        Contact us first to resolve disputes informally before formal proceedings.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Contact -->
-            <section id="contact" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">13. Contact Us</h2>
-
-                <div class="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg p-8">
-                    <h3 class="text-xl font-semibold mb-4">Questions about these Terms?</h3>
-
-                    <div class="space-y-3 mb-6">
-                        <div>
-                            <span class="text-gray-400">General Inquiries:</span>
-                            <a href="mailto:legal@reignvillage.com" class="text-purple-400 hover:text-purple-300 ml-2">
-                                legal@reignvillage.com
-                            </a>
-                        </div>
-                        <div>
-                            <span class="text-gray-400">Support:</span>
-                            <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300 ml-2">
-                                support@reignvillage.com
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="pt-6 border-t border-white/10">
-                        <p class="text-gray-400">
-                            ReignVillage LLC<br>
-                            Washington State, USA
+                    <div class="bg-white/10 border-2 border-white/40 rounded-lg p-4 mt-6">
+                        <p class="text-sm text-white font-semibold">
+                            <strong>Important:</strong> IF YOU DO NOT AGREE TO THESE TERMS, DO NOT INSTALL, ACCESS, OR USE OUR SERVICES.
                         </p>
                     </div>
-                </div>
-            </section>
+                    <p class="text-gray-300 leading-relaxed mt-4">
+                        These Terms constitute a legally binding agreement between you and ReignVillage LLC, a Washington State limited liability company. By using our Services, you represent that you have the legal capacity to enter into this agreement.
+                    </p>
+                </section>
 
-            <!-- Final Acknowledgment -->
-            <section class="mb-12">
-                <div class="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-8 text-center">
-                    <h2 class="text-2xl font-bold mb-4">Acknowledgment</h2>
+                <!-- Changes to Terms -->
+                <section id="changes" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">2. Changes to Terms</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        We reserve the right to modify these Terms at any time. When we make material changes, we will:
+                    </p>
+                    <div class="bg-white/5 rounded-lg p-6 mt-4">
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• Update the "Last Updated" date at the top of this document</li>
+                            <li>• Notify you via email or in-app notification</li>
+                            <li>• Provide at least 30 days' notice for material changes</li>
+                            <li>• Give you the opportunity to review changes before they take effect</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mt-4">
+                        Your continued use of the Services after changes take effect constitutes acceptance of the modified Terms. If you do not agree to the changes, you must stop using our Services and may delete your account.
+                    </p>
+                </section>
+
+                <!-- Description of Service -->
+                <section id="services" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">3. Description of Service</h2>
+
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">RevvRadar Features</h3>
+                    <div class="bg-white/5 rounded-lg p-6 mb-6">
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• AI-powered vehicle identification using Google Gemini</li>
+                            <li>• Interactive map-based discovery of automotive sightings</li>
+                            <li>• Real-time car show and event discovery</li>
+                            <li>• Location-based vehicle spotting and tracking</li>
+                            <li>• Community-driven social features and interactions</li>
+                            <li>• Gamification with badges and achievements</li>
+                            <li>• Subscription tiers (Free, Pro, Premium)</li>
+                            <li>• User profiles and collections</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6">
+                        <h4 class="font-semibold mb-2 text-purple-400">Service Availability</h4>
+                        <p class="text-gray-300 text-sm">
+                            We strive to provide reliable service but do not guarantee 100% uptime, error-free operation, or compatibility with all devices. We reserve the right to modify, suspend, or discontinue any features at any time with or without notice. The Services are provided "AS IS" and "AS AVAILABLE."
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Eligibility -->
+                <section id="eligibility" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">4. Eligibility and Age Requirements</h2>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6 mb-6">
+                        <h3 class="text-xl font-semibold mb-2 text-purple-400">Minimum Age: 13 Years</h3>
+                        <p class="text-gray-300">
+                            You must be at least <strong>13 years old</strong> to create an account and use our Services. We do not knowingly collect personal information from children under 13 in compliance with COPPA (Children's Online Privacy Protection Act).
+                        </p>
+                    </div>
+
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        If you are between 13 and 18 years old (or the age of majority in your jurisdiction), you represent that your parent or legal guardian has reviewed and agreed to these Terms on your behalf.
+                    </p>
+
+                    <p class="text-gray-300 leading-relaxed">
+                        You must also have the legal capacity to enter into binding contracts in your jurisdiction. By using our Services, you represent and warrant that you meet all eligibility requirements.
+                    </p>
+                </section>
+
+                <!-- User Accounts -->
+                <section id="accounts" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">5. User Accounts</h2>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h3 class="font-semibold mb-3 text-purple-400">Account Creation</h3>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>✓ Valid email address or phone number</li>
+                                <li>✓ Unique username</li>
+                                <li>✓ Secure password (or Sign in with Apple/Google)</li>
+                                <li>✓ Age verification confirmation</li>
+                                <li>✓ Acceptance of Terms and Privacy Policy</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h3 class="font-semibold mb-3 text-purple-400">Your Responsibilities</h3>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>✓ Provide accurate information</li>
+                                <li>✓ Keep credentials secure</li>
+                                <li>✓ Report security breaches immediately</li>
+                                <li>✓ One account per person only</li>
+                                <li>✓ No account sharing or transfers</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/10 border-2 border-white/40 rounded-lg p-4">
+                        <p class="text-sm text-white font-semibold">
+                            <strong>Account Security:</strong> You are responsible for all activity under your account. If you suspect unauthorized access, contact us immediately at <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300">support@reignvillage.com</a>.
+                        </p>
+                    </div>
+
+                    <p class="text-gray-300 mt-4">
+                        Accounts are personal and non-transferable. Creating multiple accounts to circumvent limitations or bans is strictly prohibited and may result in permanent termination of all accounts.
+                    </p>
+                </section>
+
+                <!-- Subscription Terms -->
+                <section id="subscriptions" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">6. Subscriptions and Billing</h2>
+
+                    <div class="space-y-6">
+                        <!-- Free Tier -->
+                        <div class="bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-lg p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold">Free Tier</h3>
+                                <span class="text-gray-400 font-semibold">Ad-Supported</span>
+                            </div>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>• 3 vehicle captures per day</li>
+                                <li>• Unlimited additional captures via rewarded video ads</li>
+                                <li>• Full access to maps and community features</li>
+                                <li>• Native ads in content feeds</li>
+                            </ul>
+                        </div>
+
+                        <!-- Pro Tier -->
+                        <div class="bg-gradient-to-r from-purple-800/30 to-purple-700/30 rounded-lg p-6 border border-purple-500/30">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-purple-400">Pro Tier</h3>
+                                <span class="text-purple-400 font-semibold">$4.99/month</span>
+                            </div>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>• 10 vehicle captures per day</li>
+                                <li>• Unlimited additional captures via rewarded ads</li>
+                                <li>• Ad-free browsing experience</li>
+                                <li>• Advanced filters and search</li>
+                                <li>• Priority customer support</li>
+                                <li>• Special Pro community badge</li>
+                            </ul>
+                        </div>
+
+                        <!-- Premium Tier -->
+                        <div class="bg-gradient-to-r from-purple-900/40 to-purple-800/40 rounded-lg p-6 border border-purple-400/40">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-purple-300">Premium Tier</h3>
+                                <span class="text-purple-300 font-semibold">$9.99/month</span>
+                            </div>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>• 25 vehicle captures per day</li>
+                                <li>• Unlimited additional captures via rewarded ads</li>
+                                <li>• All Pro benefits included</li>
+                                <li>• Premium-exclusive badges and achievements</li>
+                                <li>• Advanced analytics dashboard</li>
+                                <li>• Beta access to new features</li>
+                                <li>• VIP support with faster response times</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6 mt-6">
+                        <h4 class="font-semibold mb-3 text-purple-400">Subscription Billing Terms</h4>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• All subscriptions processed through Apple App Store (iOS)</li>
+                            <li>• Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period</li>
+                            <li>• Your Apple account will be charged upon confirmation of purchase</li>
+                            <li>• Renewal charges occur within 24 hours before the end of the current period</li>
+                            <li>• Manage or cancel subscriptions in iOS Settings > [Your Name] > Subscriptions</li>
+                            <li>• Prices may vary by region due to currency exchange rates and local taxes</li>
+                            <li>• We reserve the right to change subscription prices with 30 days' notice</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- In-App Purchases -->
+                <section id="purchases" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">7. In-App Purchases</h2>
+
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        RevvRadar offers in-app purchases through Apple's App Store, including subscriptions and virtual items. All purchases are processed by Apple and subject to Apple's Terms of Service.
+                    </p>
+
+                    <div class="bg-white/5 rounded-lg p-6 mb-6">
+                        <h4 class="font-semibold mb-3">Virtual Items</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• Virtual items have no monetary value outside the app</li>
+                            <li>• Items are non-transferable and cannot be exchanged for cash</li>
+                            <li>• We may modify, remove, or discontinue virtual items at any time</li>
+                            <li>• You do not own virtual items—you receive a limited license to use them</li>
+                            <li>• Virtual items are forfeited upon account termination</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/10 border-2 border-white/40 rounded-lg p-4">
+                        <p class="text-sm text-white font-semibold">
+                            <strong>Important:</strong> All purchases and redemptions of virtual items are FINAL AND NON-REFUNDABLE except as required by law or as described in our Refund Policy.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Refund Policy -->
+                <section id="refunds" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">8. Refund Policy</h2>
+
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Refund requests for subscriptions and in-app purchases must be made through Apple's App Store, as all transactions are processed by Apple.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-3 text-purple-400">How to Request a Refund</h4>
+                            <ol class="space-y-2 text-sm text-gray-300 list-decimal list-inside">
+                                <li>Visit <a href="https://reportaproblem.apple.com" class="text-purple-400 hover:text-purple-300">reportaproblem.apple.com</a></li>
+                                <li>Sign in with your Apple ID</li>
+                                <li>Select the purchase</li>
+                                <li>Choose "Request a Refund"</li>
+                                <li>Explain your reason</li>
+                            </ol>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-3 text-purple-400">Refund Eligibility</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>✓ Technical issues preventing use</li>
+                                <li>✓ Accidental purchases (within 48 hours)</li>
+                                <li>✓ Service unavailability</li>
+                                <li>× No partial subscription refunds</li>
+                                <li>× No refunds for unused captures</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-300 mt-6 text-sm">
+                        For assistance with refund requests, contact our support team at <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300">support@reignvillage.com</a>. We'll work with you to resolve any issues, though Apple makes final refund decisions.
+                    </p>
+                </section>
+
+                <!-- User Content -->
+                <section id="content" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">9. User Content and License</h2>
+
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Content Ownership</h3>
                     <p class="text-gray-300 mb-6">
-                        BY USING REIGNVILLAGE SERVICES, INCLUDING REVVRADAR, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS OF SERVICE.
+                        You retain ownership of all content you create and submit to our Services, including photos, comments, descriptions, and vehicle information ("User Content"). However, by posting User Content, you grant ReignVillage LLC a worldwide, non-exclusive, royalty-free, transferable, sublicensable license to use, reproduce, distribute, prepare derivative works of, display, and perform your User Content in connection with the Services.
                     </p>
-                    <p class="text-sm text-gray-400">
-                        If you do not agree, you must immediately cease using our Services.
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6 mb-6">
+                        <h4 class="font-semibold mb-3">What This Means</h4>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• We can display your vehicle photos on maps and in feeds</li>
+                            <li>• We can use your content in marketing materials (with attribution)</li>
+                            <li>• Other users can view and interact with your public posts</li>
+                            <li>• We can moderate, edit, or remove content that violates our policies</li>
+                            <li>• You still own your original content</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-4 text-white">Prohibited Content</h3>
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <p class="text-gray-300 mb-4">You agree NOT to post content that:</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Violates laws or regulations</li>
+                            <li>• Infringes on intellectual property rights (copyrights, trademarks)</li>
+                            <li>• Contains personal information of others without consent (license plates are blurred automatically)</li>
+                            <li>• Is defamatory, harassing, threatening, or abusive</li>
+                            <li>• Contains hate speech, discrimination, or violence</li>
+                            <li>• Is sexually explicit or obscene</li>
+                            <li>• Depicts illegal activities or dangerous behavior</li>
+                            <li>• Misrepresents vehicle information or creates fake sightings</li>
+                            <li>• Contains malware, viruses, or malicious code</li>
+                            <li>• Is spam or commercial solicitation</li>
+                        </ul>
+                    </div>
+
+                    <p class="text-gray-300 mt-6">
+                        We reserve the right to remove any User Content that violates these Terms or is otherwise objectionable, with or without notice.
                     </p>
-                </div>
-            </section>
+                </section>
+
+                <!-- Community Guidelines -->
+                <section id="community" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">10. Community Guidelines</h2>
+
+                    <div class="bg-gradient-to-r from-purple-500/10 to-purple-600/10 rounded-lg p-6 mb-6 border border-purple-500/30">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Community Standards</h3>
+                        <p class="text-gray-300 mb-4">
+                            RevvRadar is built on mutual respect and passion for automotive culture. We expect all users to:
+                        </p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>✓ Be respectful and courteous to other members</li>
+                            <li>✓ Share authentic vehicle sightings and accurate information</li>
+                            <li>✓ Follow event rules and respect private property</li>
+                            <li>✓ Give credit to original creators and photographers</li>
+                            <li>✓ Report policy violations and inappropriate content</li>
+                            <li>✓ Contribute positively to the automotive community</li>
+                            <li>✓ Respect others' privacy and consent</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Safety Guidelines</h3>
+                    <div class="bg-white/5 rounded-lg p-6 mb-6">
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• Never photograph vehicles in a way that endangers yourself or others</li>
+                            <li>• Do not enter private property without permission</li>
+                            <li>• Follow all traffic laws when spotting vehicles</li>
+                            <li>• Respect "no photography" signs at events</li>
+                            <li>• Be mindful of children and bystanders in photos</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Prohibited Conduct -->
+                <section id="conduct" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">11. Prohibited Conduct</h2>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-3 text-white">Account Misuse</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>× Creating fake or impersonation accounts</li>
+                                <li>× Maintaining multiple accounts</li>
+                                <li>× Sharing or selling accounts</li>
+                                <li>× Ban evasion or circumventing restrictions</li>
+                                <li>× Automated account creation</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-3 text-white">System Abuse</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>× Hacking or unauthorized access attempts</li>
+                                <li>× Reverse engineering the app</li>
+                                <li>× Using bots or automation tools</li>
+                                <li>× Intentional service disruption</li>
+                                <li>× Exploiting bugs or vulnerabilities</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-3 text-white">Content Manipulation</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>× Artificially inflating engagement metrics</li>
+                                <li>× Coordinated inauthentic behavior</li>
+                                <li>× Vote manipulation or gaming systems</li>
+                                <li>× Fake vehicle sightings or locations</li>
+                                <li>× Misleading or deceptive content</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-3 text-white">Commercial Misuse</h4>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>× Unauthorized commercial activity</li>
+                                <li>× Spam or unsolicited advertising</li>
+                                <li>× Scraping data for commercial purposes</li>
+                                <li>× Competing services using our data</li>
+                                <li>× Phishing or scam attempts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6">
+                        <h4 class="font-semibold mb-2 text-purple-400">Consequences of Violations</h4>
+                        <p class="text-gray-300 mb-3">We enforce these rules through a progressive discipline system:</p>
+                        <p class="text-sm text-gray-300">
+                            <strong>Warning</strong> → <strong>Content Removal</strong> → <strong>Temporary Suspension</strong> → <strong>Permanent Ban</strong>
+                        </p>
+                        <p class="text-sm text-gray-400 mt-3">
+                            Severe violations may result in immediate permanent termination without prior warning.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- AI Features -->
+                <section id="ai-features" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">12. AI-Powered Features</h2>
+
+                    <div class="bg-gradient-to-r from-purple-500/10 to-purple-600/10 rounded-lg p-6 mb-6 border border-purple-500/30">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Vehicle Identification Technology</h3>
+                        <p class="text-gray-300 mb-4">
+                            RevvRadar uses Google Gemini AI to identify vehicles from photos you capture:
+                        </p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• AI analyzes images to determine make, model, year, trim, and estimated value</li>
+                            <li>• Processing occurs in real-time through Google's secure API</li>
+                            <li>• Images are not permanently stored by Google after identification</li>
+                            <li>• Content safety filters automatically block inappropriate material</li>
+                            <li>• Accuracy is not guaranteed—always verify important information</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6 mb-6">
+                        <h4 class="font-semibold mb-3">AI Accuracy Disclaimer</h4>
+                        <p class="text-gray-300 text-sm mb-3">
+                            While our AI is highly sophisticated, it is not perfect. Vehicle identifications may occasionally be incorrect due to:
+                        </p>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>• Poor image quality or lighting conditions</li>
+                            <li>• Custom modifications or rare vehicles</li>
+                            <li>• Similar-looking models from different years</li>
+                            <li>• Partial or obstructed views</li>
+                        </ul>
+                        <p class="text-sm text-purple-400 mt-3">
+                            Do not rely solely on AI identifications for financial, legal, or safety decisions.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3">Error Handling</h4>
+                        <p class="text-gray-300 text-sm">
+                            Our system rejects images that do not contain identifiable vehicles, are of poor quality, or violate content policies. If the AI successfully identifies a vehicle despite suboptimal conditions (interior views, dim lighting), we accept the capture as valid.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Location Services -->
+                <section id="location" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">13. Location-Based Services</h2>
+
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        RevvRadar uses your device's location to provide map-based discovery, event recommendations, and vehicle spotting features. Location services are essential to the app's functionality.
+                    </p>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6 mb-6">
+                        <h4 class="font-semibold mb-3 text-purple-400">Privacy Protections</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• Residential locations are automatically hidden to protect privacy</li>
+                            <li>• You control location permissions through iOS settings</li>
+                            <li>• Location data is only used for app functionality, never sold</li>
+                            <li>• You can disable location services, though some features will be limited</li>
+                            <li>• Precise location coordinates are not publicly displayed</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3">Location Usage</h4>
+                        <p class="text-gray-300 text-sm mb-3">We use your location to:</p>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>• Show nearby vehicle sightings and events on the map</li>
+                            <li>• Attach approximate location data to your captures</li>
+                            <li>• Recommend relevant car shows and meetups</li>
+                            <li>• Calculate distances and travel times</li>
+                            <li>• Prevent abuse and verify authentic sightings</li>
+                        </ul>
+                    </div>
+
+                    <p class="text-gray-300 mt-6 text-sm">
+                        For complete details on location data handling, see our <a href="privacy.html#location-privacy" class="text-purple-400 hover:text-purple-300">Privacy Policy</a>.
+                    </p>
+                </section>
+
+                <!-- Intellectual Property -->
+                <section id="intellectual-property" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">14. Intellectual Property Rights</h2>
+
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">ReignVillage Ownership</h3>
+                    <p class="text-gray-300 mb-6">
+                        The Services, including all software, design, text, graphics, logos, icons, images, audio, video, and other materials (excluding User Content), are owned by ReignVillage LLC and protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property laws.
+                    </p>
+
+                    <div class="bg-white/5 rounded-lg p-6 mb-6">
+                        <h4 class="font-semibold mb-3">Trademarks</h4>
+                        <p class="text-gray-300 text-sm mb-3">
+                            The following are trademarks or service marks of ReignVillage LLC:
+                        </p>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>• ReignVillage®</li>
+                            <li>• RevvRadar™</li>
+                            <li>• ReignVillage logo and branding</li>
+                            <li>• All associated product names and logos</li>
+                        </ul>
+                        <p class="text-sm text-gray-400 mt-3">
+                            You may not use our trademarks without prior written permission.
+                        </p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-4 text-purple-400">Limited License to Use Services</h3>
+                    <p class="text-gray-300 mb-4">
+                        Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to access and use the Services for your personal, non-commercial use.
+                    </p>
+
+                    <div class="bg-white/10 border-2 border-white/40 rounded-lg p-4">
+                        <p class="text-sm text-white font-semibold">
+                            <strong>You may NOT:</strong> copy, modify, distribute, sell, lease, reverse engineer, decompile, or create derivative works based on the Services without our express written permission.
+                        </p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-4 mt-6">DMCA Copyright Policy</h3>
+                    <p class="text-gray-300 mb-4">
+                        We respect intellectual property rights. If you believe your copyrighted work has been infringed, contact our DMCA agent at <a href="mailto:legal@reignvillage.com" class="text-purple-400 hover:text-purple-300">legal@reignvillage.com</a> with:
+                    </p>
+                    <ul class="space-y-1 text-sm text-gray-300">
+                        <li>• Description of the copyrighted work</li>
+                        <li>• Location of the infringing material in our Services</li>
+                        <li>• Your contact information</li>
+                        <li>• Statement of good faith belief</li>
+                        <li>• Statement of accuracy under penalty of perjury</li>
+                        <li>• Physical or electronic signature</li>
+                    </ul>
+                </section>
+
+                <!-- Privacy -->
+                <section id="privacy" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">15. Privacy</h2>
+
+                    <p class="text-gray-300 mb-6">
+                        Your use of our Services is governed by our <a href="privacy.html" class="text-purple-400 hover:text-purple-300">Privacy Policy</a>, which is incorporated into these Terms by reference. Key privacy commitments:
+                    </p>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start space-x-3">
+                                <span class="text-purple-400 mt-1">✓</span>
+                                <span>We don't sell your personal information to third parties</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-purple-400 mt-1">✓</span>
+                                <span>Residential locations are automatically hidden to protect privacy</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-purple-400 mt-1">✓</span>
+                                <span>You control location and camera permissions</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-purple-400 mt-1">✓</span>
+                                <span>You have the right to access, correct, and delete your data</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-purple-400 mt-1">✓</span>
+                                <span>License plates are automatically blurred in photos</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-purple-400 mt-1">✓</span>
+                                <span>We comply with GDPR, CCPA, and other privacy laws</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="text-gray-300 mt-6">
+                        <a href="privacy.html" class="text-purple-400 hover:text-purple-300 font-semibold">
+                            Read our full Privacy Policy →
+                        </a>
+                    </p>
+                </section>
+
+                <!-- Disclaimers -->
+                <section id="disclaimers" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">16. Disclaimers</h2>
+
+                    <div class="bg-white/10 border-2 border-white/40 rounded-lg p-6 mb-6">
+                        <p class="text-white font-bold mb-4 uppercase">
+                            The Services are provided "AS IS" and "AS AVAILABLE" without warranties of any kind
+                        </p>
+                        <p class="text-gray-300 text-sm">
+                            TO THE MAXIMUM EXTENT PERMITTED BY LAW, REIGNVILLAGE LLC DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <p class="text-gray-300 mb-4">We specifically do NOT warrant that:</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• The Services will be uninterrupted, secure, or error-free</li>
+                            <li>• AI vehicle identifications will be accurate or reliable</li>
+                            <li>• Defects will be corrected</li>
+                            <li>• The Services are free from viruses or harmful components</li>
+                            <li>• User Content is accurate, reliable, or appropriate</li>
+                            <li>• Event information is current or accurate</li>
+                            <li>• Location data is precise or real-time</li>
+                        </ul>
+                    </div>
+
+                    <p class="text-gray-300 mt-6 text-sm">
+                        Some jurisdictions do not allow the exclusion of certain warranties, so some of the above exclusions may not apply to you. You may have other rights that vary by jurisdiction.
+                    </p>
+                </section>
+
+                <!-- Limitation of Liability -->
+                <section id="liability" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">17. Limitation of Liability</h2>
+
+                    <div class="bg-white/10 border-2 border-white/40 rounded-lg p-6 mb-6">
+                        <p class="text-white font-bold mb-4 uppercase">
+                            Limitation of damages
+                        </p>
+                        <p class="text-gray-300 text-sm">
+                            TO THE MAXIMUM EXTENT PERMITTED BY LAW, REIGNVILLAGE LLC, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AND AFFILIATES SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6 mb-6">
+                        <h4 class="font-semibold mb-3 text-purple-400">Maximum Liability Cap</h4>
+                        <p class="text-gray-300 text-sm">
+                            Our total liability to you for all claims arising out of or relating to these Terms or the Services shall not exceed the greater of:
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300 mt-3">
+                            <li>• <strong>$100 USD</strong>, or</li>
+                            <li>• The total amount you paid to ReignVillage LLC in the 12 months preceding the claim</li>
+                        </ul>
+                    </div>
+
+                    <p class="text-gray-300 text-sm">
+                        These limitations apply regardless of the legal theory (contract, tort, negligence, strict liability, or otherwise) and even if we have been advised of the possibility of such damages. Some jurisdictions do not allow certain liability limitations, so these limitations may not fully apply to you.
+                    </p>
+                </section>
+
+                <!-- Indemnification -->
+                <section id="indemnification" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">18. Indemnification</h2>
+
+                    <p class="text-gray-300 mb-6">
+                        You agree to indemnify, defend, and hold harmless ReignVillage LLC, its officers, directors, employees, agents, affiliates, and partners from and against any claims, liabilities, damages, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising from:
+                    </p>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• Your use or misuse of the Services</li>
+                            <li>• Your violation of these Terms</li>
+                            <li>• Your User Content or any content you submit</li>
+                            <li>• Your violation of any third-party rights, including intellectual property rights</li>
+                            <li>• Your violation of any applicable laws or regulations</li>
+                            <li>• Any harm caused to other users or third parties</li>
+                            <li>• Unauthorized access to your account due to your failure to safeguard credentials</li>
+                        </ul>
+                    </div>
+
+                    <p class="text-gray-300 mt-6 text-sm">
+                        We reserve the right to assume exclusive defense and control of any matter subject to indemnification by you, in which case you agree to cooperate with our defense of such claim.
+                    </p>
+                </section>
+
+                <!-- Termination -->
+                <section id="termination" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">19. Termination</h2>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h3 class="font-semibold mb-3 text-purple-400">Termination by You</h3>
+                            <p class="text-sm text-gray-300 mb-3">
+                                You may delete your account at any time:
+                            </p>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>• Go to Settings > Account > Delete Account</li>
+                                <li>• Confirm deletion request</li>
+                                <li>• Account and content deleted within 30 days</li>
+                                <li>• No refunds for remaining subscription time</li>
+                                <li>• Some data retained for legal compliance</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h3 class="font-semibold mb-3 text-purple-400">Termination by Us</h3>
+                            <p class="text-sm text-gray-300 mb-3">
+                                We may suspend or terminate your account for:
+                            </p>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>• Violation of these Terms</li>
+                                <li>• Fraudulent or illegal activity</li>
+                                <li>• Extended inactivity (180+ days)</li>
+                                <li>• Repeated policy violations</li>
+                                <li>• Chargebacks or payment disputes</li>
+                                <li>• At our sole discretion</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-purple-400">Effect of Termination</h4>
+                        <p class="text-gray-300 text-sm">
+                            Upon termination: (1) your right to access the Services immediately ceases; (2) we may delete your account and User Content; (3) you remain liable for any outstanding payments; (4) no refunds will be issued; (5) certain provisions of these Terms survive termination, including intellectual property rights, disclaimers, limitation of liability, and dispute resolution.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Dispute Resolution -->
+                <section id="disputes" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">20. Dispute Resolution and Arbitration</h2>
+
+                    <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-6 mb-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-400">Informal Resolution First</h3>
+                        <p class="text-gray-300 text-sm">
+                            Before filing any formal dispute, you agree to first contact us at <a href="mailto:legal@reignvillage.com" class="text-purple-400 hover:text-purple-300">legal@reignvillage.com</a> to attempt to resolve the issue informally. We commit to working with you in good faith to reach a fair resolution.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6 mb-6">
+                        <h4 class="font-semibold mb-3">Binding Arbitration</h4>
+                        <p class="text-gray-300 text-sm mb-3">
+                            If informal resolution fails, you agree that any dispute arising out of or relating to these Terms or the Services will be resolved through binding arbitration administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Arbitration will be conducted by a single neutral arbitrator</li>
+                            <li>• Location: Seattle, Washington or via videoconference</li>
+                            <li>• Arbitrator's decision is final and binding</li>
+                            <li>• Limited discovery and appeal rights</li>
+                            <li>• AAA rules available at <a href="https://www.adr.org" class="text-purple-400 hover:text-purple-300">adr.org</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/10 border-2 border-white/40 rounded-lg p-4 mb-6">
+                        <h4 class="font-semibold mb-2 text-white">Class Action Waiver</h4>
+                        <p class="text-sm text-gray-300">
+                            YOU AGREE THAT DISPUTES WILL BE RESOLVED ON AN INDIVIDUAL BASIS ONLY. YOU WAIVE ANY RIGHT TO PARTICIPATE IN A CLASS ACTION LAWSUIT OR CLASS-WIDE ARBITRATION. Claims must be brought in your individual capacity, not as a representative or member of any class.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3">Exceptions to Arbitration</h4>
+                        <p class="text-gray-300 text-sm mb-2">
+                            Either party may bring a lawsuit in court for:
+                        </p>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>• Intellectual property claims (trademarks, copyrights, patents)</li>
+                            <li>• Small claims court matters (within jurisdictional limits)</li>
+                            <li>• Injunctive or equitable relief</li>
+                        </ul>
+                    </div>
+
+                    <p class="text-gray-300 mt-6 text-sm">
+                        <strong>Time Limit for Claims:</strong> You must bring any claim within <strong>one (1) year</strong> after the cause of action arises, or the claim is permanently barred.
+                    </p>
+                </section>
+
+                <!-- Governing Law -->
+                <section id="governing-law" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">21. Governing Law and Venue</h2>
+
+                    <div class="bg-white/5 rounded-lg p-6 mb-6">
+                        <h4 class="font-semibold mb-3 text-purple-400">Applicable Law</h4>
+                        <p class="text-gray-300 text-sm">
+                            These Terms and any disputes arising from them shall be governed by and construed in accordance with the laws of the <strong>State of Washington</strong>, without regard to its conflict of law principles.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/5 rounded-lg p-6">
+                        <h4 class="font-semibold mb-3 text-purple-400">Exclusive Venue</h4>
+                        <p class="text-gray-300 text-sm">
+                            To the extent arbitration does not apply (see Section 20), you agree that any legal action or proceeding shall be brought exclusively in the federal or state courts located in King County, Washington, and you consent to personal jurisdiction in those courts.
+                        </p>
+                    </div>
+
+                    <p class="text-gray-300 mt-6 text-sm">
+                        The United Nations Convention on Contracts for the International Sale of Goods does not apply to these Terms.
+                    </p>
+                </section>
+
+                <!-- Miscellaneous -->
+                <section id="miscellaneous" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">22. Miscellaneous Provisions</h2>
+
+                    <div class="space-y-6">
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-2 text-purple-400">Entire Agreement</h4>
+                            <p class="text-gray-300 text-sm">
+                                These Terms, together with our Privacy Policy and any other policies referenced herein, constitute the entire agreement between you and ReignVillage LLC regarding the Services, superseding any prior agreements.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-2 text-purple-400">Severability</h4>
+                            <p class="text-gray-300 text-sm">
+                                If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions will continue in full force and effect. The invalid provision will be modified to the minimum extent necessary to make it enforceable.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-2 text-purple-400">Waiver</h4>
+                            <p class="text-gray-300 text-sm">
+                                Our failure to enforce any right or provision of these Terms will not be deemed a waiver of such right or provision. Any waiver must be in writing and signed by an authorized representative of ReignVillage LLC.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-2 text-purple-400">Assignment</h4>
+                            <p class="text-gray-300 text-sm">
+                                You may not assign or transfer these Terms or your account without our prior written consent. We may assign our rights and obligations under these Terms without restriction, including in connection with a merger, acquisition, or sale of assets.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-2 text-purple-400">Force Majeure</h4>
+                            <p class="text-gray-300 text-sm">
+                                We are not liable for any failure or delay in performance due to circumstances beyond our reasonable control, including natural disasters, war, terrorism, riots, government actions, internet disruptions, or failure of third-party services.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-2 text-purple-400">Export Control</h4>
+                            <p class="text-gray-300 text-sm">
+                                You agree to comply with all applicable export and import control laws and regulations. You may not use the Services if you are prohibited from receiving U.S. exports or if you are located in a prohibited or embargoed country.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-2 text-purple-400">Language</h4>
+                            <p class="text-gray-300 text-sm">
+                                These Terms are drafted in English. Any translations are provided for convenience only. In the event of conflict, the English version controls.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 rounded-lg p-6">
+                            <h4 class="font-semibold mb-2 text-purple-400">Third-Party Beneficiaries</h4>
+                            <p class="text-gray-300 text-sm">
+                                There are no third-party beneficiaries to these Terms. Apple, Google, and their subsidiaries are not parties to these Terms and have no obligations with respect to the Services.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact -->
+                <section id="contact" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-6">23. Contact Us</h2>
+
+                    <div class="bg-gradient-to-r from-purple-500/20 to-purple-600/20 rounded-lg p-8 border border-purple-500/30">
+                        <h3 class="text-xl font-semibold mb-4">Questions about these Terms?</h3>
+
+                        <div class="space-y-3 mb-6">
+                            <div>
+                                <span class="text-gray-400">Legal Inquiries:</span>
+                                <a href="mailto:legal@reignvillage.com" class="text-purple-400 hover:text-purple-300 ml-2">
+                                    legal@reignvillage.com
+                                </a>
+                            </div>
+                            <div>
+                                <span class="text-gray-400">Customer Support:</span>
+                                <a href="mailto:support@reignvillage.com" class="text-purple-400 hover:text-purple-300 ml-2">
+                                    support@reignvillage.com
+                                </a>
+                            </div>
+                            <div>
+                                <span class="text-gray-400">General Inquiries:</span>
+                                <a href="mailto:hello@reignvillage.com" class="text-purple-400 hover:text-purple-300 ml-2">
+                                    hello@reignvillage.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 border-t border-white/10">
+                            <p class="text-gray-400 text-sm">
+                                <strong>ReignVillage LLC</strong><br>
+                                Washington State, USA<br>
+                                UBI: 605 660 817
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Final Acknowledgment -->
+                <section class="mb-12">
+                    <div class="bg-gradient-to-r from-purple-600/20 to-purple-700/20 rounded-lg p-8 text-center border border-purple-500/30">
+                        <h2 class="text-2xl font-bold mb-4 text-purple-400">Acknowledgment</h2>
+                        <p class="text-gray-300 mb-6">
+                            BY INSTALLING, ACCESSING, OR USING REIGNVILLAGE SERVICES, INCLUDING REVVRADAR, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS OF SERVICE.
+                        </p>
+                        <p class="text-sm text-gray-400">
+                            If you do not agree to these Terms, you must immediately cease using our Services and may not create an account.
+                        </p>
+                    </div>
+                </section>
+
+            </main>
 
         </div>
-    </main>
+    </div>
 
     <!-- Footer -->
     <footer class="py-16 px-6 border-t border-white/10">
@@ -515,6 +1051,41 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll Spy Script -->
+    <script>
+        // Scroll spy functionality
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -75% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const navLink = document.querySelector(`.sidebar-nav a[href="#${id}"]`);
+
+                if (entry.isIntersecting && navLink) {
+                    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    navLink.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section[id]').forEach((section) => {
+            observer.observe(section);
+        });
+
+        // Set initial active state
+        window.addEventListener('load', () => {
+            const firstLink = document.querySelector('.sidebar-nav a');
+            if (firstLink) firstLink.classList.add('active');
+        });
+    </script>
 
 </body>
 </html>

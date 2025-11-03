@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company - ReignVillage</title>
-    <meta name="description" content="ReignVillage LLC - Building apps for passionate communities">
+    <meta name="description" content="ReignVillage LLC - Building apps for niche communities">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
@@ -18,7 +18,7 @@
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #2A4A5E 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -73,7 +73,7 @@
                 <div class="hidden md:flex space-x-8 mx-auto">
                     <a href="index-new.html" class="text-gray-300 hover:text-white transition">Home</a>
                     <a href="company.html" class="text-white">Company</a>
-                    <a href="company.html#careers" class="text-gray-300 hover:text-white transition">Careers</a>
+                    <a href="careers.html" class="text-gray-300 hover:text-white transition">Careers</a>
                     <a href="index-new.html#apps" class="text-gray-300 hover:text-white transition">Apps</a>
                 </div>
                 <div class="flex space-x-4">
@@ -94,50 +94,50 @@
     <!-- Hero Section -->
     <section class="relative min-h-[60vh] flex items-center justify-center px-6 pt-20 overflow-hidden">
         <!-- Background gradient -->
-        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-black to-pink-900/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-[#2A4A5E]/20 to-[#2B4A38]/30"></div>
 
         <!-- Animated background elements -->
         <div class="absolute inset-0 opacity-20">
             <div class="absolute top-20 left-10 w-64 h-64 bg-purple-500 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-pink-500 rounded-full blur-3xl animate-pulse delay-700"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#2A4A5E] rounded-full blur-3xl animate-pulse delay-700"></div>
         </div>
 
         <!-- Hero text -->
         <div class="relative z-10 text-center max-w-5xl mx-auto">
-            <h1 class="text-3xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight animate-fade-in" style="text-transform: uppercase; letter-spacing: -0.02em;">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-black mb-8 leading-tight animate-fade-in" style="text-transform: uppercase; letter-spacing: -0.02em;">
                 Passionate Communities<br/>
-                Deserve Their Own Apps*
+                Deserve Their Own Apps
             </h1>
         </div>
     </section>
 
     <!-- Company Intro -->
-    <section class="py-20 px-6 bg-white/5">
+    <section class="py-20 px-6 bg-black">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-12">
                 REIGNVILLAGE
             </h2>
             <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
-                ReignVillage is an app studio based in Washington State. We build mobile applications and games for passionate communities. Our dream is to create apps that people genuinely care about and use for years.
+                ReignVillage is an app studio based in Washington State. We build mobile applications and games for dedicated communities. Our dream is to create apps that people genuinely care about and use for years.
             </p>
         </div>
     </section>
 
     <!-- Stats Section -->
     <section class="py-16 px-6 border-y border-white/10">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-                <div>
-                    <div class="text-4xl md:text-5xl font-bold text-purple-400 mb-2">1</div>
-                    <div class="text-sm text-gray-400 mb-1">Villages Built</div>
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center justify-center divide-x divide-white/20">
+                <div class="px-8 md:px-16 text-center">
+                    <div class="text-2xl md:text-3xl font-bold text-black dark:text-white mb-2">1</div>
+                    <div class="text-xs md:text-sm text-purple-500 font-medium">Villages Built</div>
                 </div>
-                <div>
-                    <div class="text-4xl md:text-5xl font-bold text-purple-400 mb-2">1</div>
-                    <div class="text-sm text-gray-400 mb-1">Team</div>
+                <div class="px-8 md:px-16 text-center">
+                    <div class="text-2xl md:text-3xl font-bold text-black dark:text-white mb-2">1</div>
+                    <div class="text-xs md:text-sm text-purple-500 font-medium">Team</div>
                 </div>
-                <div>
-                    <div class="text-4xl md:text-5xl font-bold text-purple-400 mb-2">Bellevue, WA</div>
-                    <div class="text-sm text-gray-400 mb-1">Based</div>
+                <div class="px-8 md:px-16 text-center">
+                    <div class="text-2xl md:text-3xl font-bold text-black dark:text-white mb-2">Bellevue, WA</div>
+                    <div class="text-xs md:text-sm text-purple-500 font-medium">Based</div>
                 </div>
             </div>
         </div>
@@ -150,152 +150,57 @@
 
             <div class="space-y-8 text-lg text-gray-300 leading-relaxed">
                 <p>
-                    ReignVillage was founded on the idea that passionate communities deserve platforms made specifically for them. In a world dominated by generic social feeds and endless scrolling, we believe in the power of purpose-built apps that serve real interests.
+                    ReignVillage was founded on the idea that many people like things that deserve platforms made specifically for them. In a world dominated by generic social feeds and endless scrolling, we believe in the power of purpose-built apps that serve real interests.
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Map-First Discovery Series -->
-    <section class="py-20 px-6 bg-gradient-to-b from-black to-purple-950/20">
-        <div class="max-w-5xl mx-auto text-center">
+    <section class="py-20 px-6 bg-gradient-to-b from-black via-[#2B4A38]/10 to-purple-950/20">
+        <div class="max-w-5xl mx-auto text-center mb-16">
             <div class="text-6xl mb-6">🗺️</div>
             <h2 class="text-4xl md:text-5xl font-bold mb-8">Map-First Discovery Series</h2>
             <p class="text-xl text-gray-300 leading-relaxed">
                 Our first collection of apps puts location at the center of the experience. The mission for this series: reconnect people with what's happening around them—right now, in their own communities.
             </p>
         </div>
-    </section>
 
-
-    <!-- Portfolio Section -->
-    <section class="py-20 px-6 bg-gradient-to-b from-black to-purple-950/20">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4">Our Portfolio</h2>
-            <p class="text-center text-gray-400 mb-12">Apps that bring communities together</p>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- RevvRadar -->
-                <div class="bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-purple-500/50">
-                    <div class="text-5xl mb-4">🚗</div>
-                    <h3 class="text-2xl font-bold mb-3">RevvRadar</h3>
-                    <p class="text-gray-400 mb-4">
-                        AI-powered vehicle spotting for automotive enthusiasts. Identify cars, discover events, and connect with your local car scene.
-                    </p>
-                    <p class="text-purple-400 font-semibold">Coming Fall 2025</p>
+                <div class="relative rounded-2xl overflow-hidden border border-purple-500/50 min-h-[300px] flex items-center justify-center bg-cover bg-center" style="background-image: url(''); background-size: cover; background-position: center;">
+                    <!-- Dark overlay for background image -->
+                    <div class="absolute inset-0 bg-black/60"></div>
+
+                    <!-- Content -->
+                    <div class="relative z-10 text-center px-8">
+                        <h3 class="text-3xl font-bold text-white">RevvRadar</h3>
+                    </div>
                 </div>
 
                 <!-- Future Apps -->
-                <div class="bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/10 opacity-60">
-                    <div class="text-5xl mb-4 opacity-50">?</div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-500">Maritime</h3>
-                    <p class="text-gray-500 text-sm">
-                        Track vessels, discover marinas, connect with boating enthusiasts.
-                    </p>
-                    <p class="text-gray-600 text-sm mt-4">Future</p>
+                <div class="bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/10 opacity-60 flex items-center justify-center min-h-[300px]">
+                    <p class="text-2xl font-semibold text-gray-500">Coming Soon</p>
                 </div>
 
-                <div class="bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/10 opacity-60">
-                    <div class="text-5xl mb-4 opacity-50">?</div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-500">Aviation</h3>
-                    <p class="text-gray-500 text-sm">
-                        Spot aircraft, track flights, share aviation photography.
-                    </p>
-                    <p class="text-gray-600 text-sm mt-4">Future</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Company Details Section -->
-    <section class="py-20 px-6 border-t border-white/10">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Company Information</h2>
-
-            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <div class="bg-white/5 rounded-2xl p-8">
-                    <h3 class="text-xl font-bold mb-4 text-purple-400">Legal Entity</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li>
-                            <span class="text-gray-500">Company:</span>
-                            <span class="ml-2">ReignVillage LLC</span>
-                        </li>
-                        <li>
-                            <span class="text-gray-500">Type:</span>
-                            <span class="ml-2">Limited Liability Company</span>
-                        </li>
-                        <li>
-                            <span class="text-gray-500">State:</span>
-                            <span class="ml-2">Washington</span>
-                        </li>
-                        <li>
-                            <span class="text-gray-500">Founded:</span>
-                            <span class="ml-2">2024</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="bg-white/5 rounded-2xl p-8">
-                    <h3 class="text-xl font-bold mb-4 text-purple-400">Contact</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li>
-                            <span class="text-gray-500">General:</span>
-                            <a href="mailto:hello@reignvillage.com" class="ml-2 text-purple-400 hover:text-purple-300">
-                                hello@reignvillage.com
-                            </a>
-                        </li>
-                        <li>
-                            <span class="text-gray-500">Support:</span>
-                            <a href="mailto:support@reignvillage.com" class="ml-2 text-purple-400 hover:text-purple-300">
-                                support@reignvillage.com
-                            </a>
-                        </li>
-                        <li>
-                            <span class="text-gray-500">Privacy:</span>
-                            <a href="mailto:privacy@reignvillage.com" class="ml-2 text-purple-400 hover:text-purple-300">
-                                privacy@reignvillage.com
-                            </a>
-                        </li>
-                        <li>
-                            <span class="text-gray-500">Location:</span>
-                            <span class="ml-2">Washington State, USA</span>
-                        </li>
-                    </ul>
+                <div class="bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-white/10 opacity-60 flex items-center justify-center min-h-[300px]">
+                    <p class="text-2xl font-semibold text-gray-500">Coming Soon</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Philosophy Section -->
-    <section class="py-20 px-6 bg-gradient-to-b from-black to-purple-950/20">
+    <section class="py-20 px-6 bg-gradient-to-b from-black via-[#5A534C]/10 to-purple-950/20">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-4xl font-bold mb-8">Our Philosophy</h2>
 
-            <div class="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-3xl p-12">
-                <p class="text-2xl text-gray-300 leading-relaxed mb-8">
-                    "Mainstream is boring. We build apps for everyone else."
+            <div class="bg-gradient-to-r from-purple-600/10 via-[#2A4A5E]/10 to-pink-600/10 rounded-3xl p-12">
+                <p class="text-xl text-gray-300 leading-relaxed">
+                    We'd rather be loved by a thousand than liked by a million. Each app serves a specific community with passion and purpose.
                 </p>
-                <p class="text-lg text-gray-400 leading-relaxed">
-                    We believe the best communities form around specific passions. That's why we don't build for everyone—we build for enthusiasts who care deeply about their interests. Each app in our portfolio serves a community that deserves better than generic social platforms.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 mt-12">
-                <div class="text-center">
-                    <div class="text-4xl mb-3">🚀</div>
-                    <h4 class="font-bold mb-2">Bootstrap Mentality</h4>
-                    <p class="text-sm text-gray-400">Zero investment, sustainable from day one</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl mb-3">👥</div>
-                    <h4 class="font-bold mb-2">Community First</h4>
-                    <p class="text-sm text-gray-400">Built with and for passionate users</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl mb-3">📱</div>
-                    <h4 class="font-bold mb-2">Mobile Native</h4>
-                    <p class="text-sm text-gray-400">Designed for real-world discovery</p>
-                </div>
             </div>
         </div>
     </section>
@@ -303,10 +208,7 @@
     <!-- CTA Section -->
     <section class="py-20 px-6 border-t border-white/10">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-6">Join Our Journey</h2>
-            <p class="text-xl text-gray-300 mb-8">
-                Be part of building the future of community-driven apps
-            </p>
+            <h2 class="text-4xl font-bold mb-6">Get Started</h2>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="index-new.html#apps" class="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold hover:opacity-90 transition">
@@ -316,6 +218,18 @@
                     Get in Touch
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-32 px-6 border-t border-white/10 bg-black">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-black mb-12 text-white leading-tight tracking-tight">
+                INTERESTED IN WORKING<br/>WITH US?
+            </h2>
+            <a href="careers.html" class="inline-block px-8 py-4 bg-white text-black text-base md:text-lg font-bold rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl">
+                SEE ALL POSITIONS
+            </a>
         </div>
     </section>
 
