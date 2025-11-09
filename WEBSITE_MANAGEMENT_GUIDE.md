@@ -84,7 +84,7 @@ reignvillage-website/
 
 **Current emails:**
 - `hello@reignvillage.com` - General inquiries
-- `support@reignvillage.com` - Support requests
+- `support@revvradar.com` - Support requests
 - `admin@reignvillage.com` - DMCA/legal notices
 
 **Files to update:**
