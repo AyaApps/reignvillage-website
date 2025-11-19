@@ -284,16 +284,133 @@
                         See your city's car scene in real-time. Capture vehicles, discover events, and connect with local enthusiasts.
                     </p>
 
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                        <a href="mailto:hello@reignvillage.com?subject=RevvRadar%20Early%20Access&body=I'd%20like%20to%20be%20notified%20when%20RevvRadar%20launches!"
-                           class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-purple-600 hover:bg-purple-700 transition-colors rounded-xl font-semibold text-white text-lg">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
-                            </svg>
-                            Notify Me at Launch
-                        </a>
+                    <!-- Email Signup Form -->
+                    <div class="mb-12">
+                        <form id="waitlist-form" class="max-w-md">
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <div class="flex-1">
+                                    <input
+                                        type="email"
+                                        id="email-input"
+                                        name="email"
+                                        required
+                                        placeholder="Enter your email"
+                                        class="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/40 transition-all"
+                                    >
+                                </div>
+                                <button
+                                    type="submit"
+                                    id="submit-btn"
+                                    class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all rounded-xl font-semibold text-white whitespace-nowrap">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                                    </svg>
+                                    Notify Me
+                                </button>
+                            </div>
+                            <div id="form-status" class="mt-3 text-sm hidden">
+                                <p id="form-success" class="text-green-300 hidden">Thanks! We'll notify you at launch.</p>
+                                <p id="form-error" class="text-red-300 hidden">Something went wrong. Please try again.</p>
+                                <p id="form-duplicate" class="text-yellow-300 hidden">You're already on the waitlist!</p>
+                            </div>
+                        </form>
                     </div>
+
+                    <!-- Firebase Web SDK -->
+                    <script type="module">
+                        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+                        import { getFirestore, collection, addDoc, serverTimestamp, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+                        // Firebase configuration
+                        const firebaseConfig = {
+                            apiKey: "AIzaSyDo1UQPvf1FZC94aXR_ZJGPAc4cN8FYpMM",
+                            authDomain: "enthusiast-c3c4a.firebaseapp.com",
+                            projectId: "enthusiast-c3c4a",
+                            storageBucket: "enthusiast-c3c4a.firebasestorage.app",
+                            messagingSenderId: "419713872024",
+                            appId: "1:719821057751:web:7d9cd982fa36245bc70a92"
+                        };
+
+                        // Initialize Firebase
+                        const app = initializeApp(firebaseConfig);
+                        const db = getFirestore(app);
+
+                        // Handle form submission
+                        document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+                            e.preventDefault();
+
+                            const emailInput = document.getElementById('email-input');
+                            const submitBtn = document.getElementById('submit-btn');
+                            const statusDiv = document.getElementById('form-status');
+                            const successMsg = document.getElementById('form-success');
+                            const errorMsg = document.getElementById('form-error');
+                            const duplicateMsg = document.getElementById('form-duplicate');
+                            const email = emailInput.value.trim().toLowerCase();
+
+                            // Check localStorage for duplicate prevention
+                            const submittedEmails = JSON.parse(localStorage.getItem('waitlist_emails') || '[]');
+                            if (submittedEmails.includes(email)) {
+                                statusDiv.classList.remove('hidden');
+                                duplicateMsg.classList.remove('hidden');
+                                successMsg.classList.add('hidden');
+                                errorMsg.classList.add('hidden');
+                                return;
+                            }
+
+                            // Disable button during submission
+                            submitBtn.disabled = true;
+                            const originalHTML = submitBtn.innerHTML;
+                            submitBtn.innerHTML = '<svg class="animate-spin h-5 w-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+
+                            try {
+                                // Check if email already exists in Firestore
+                                const waitlistRef = collection(db, 'waitlist');
+                                const q = query(waitlistRef, where('email', '==', email));
+                                const querySnapshot = await getDocs(q);
+
+                                if (!querySnapshot.empty) {
+                                    // Email already exists
+                                    statusDiv.classList.remove('hidden');
+                                    duplicateMsg.classList.remove('hidden');
+                                    successMsg.classList.add('hidden');
+                                    errorMsg.classList.add('hidden');
+
+                                    // Add to localStorage
+                                    submittedEmails.push(email);
+                                    localStorage.setItem('waitlist_emails', JSON.stringify(submittedEmails));
+                                    return;
+                                }
+
+                                // Add to Firestore
+                                await addDoc(collection(db, 'waitlist'), {
+                                    email: email,
+                                    timestamp: serverTimestamp(),
+                                    source: 'website'
+                                });
+
+                                // Success
+                                emailInput.value = '';
+                                statusDiv.classList.remove('hidden');
+                                successMsg.classList.remove('hidden');
+                                errorMsg.classList.add('hidden');
+                                duplicateMsg.classList.add('hidden');
+
+                                // Add to localStorage
+                                submittedEmails.push(email);
+                                localStorage.setItem('waitlist_emails', JSON.stringify(submittedEmails));
+
+                            } catch (error) {
+                                console.error('Error adding email to waitlist:', error);
+                                statusDiv.classList.remove('hidden');
+                                errorMsg.classList.remove('hidden');
+                                successMsg.classList.add('hidden');
+                                duplicateMsg.classList.add('hidden');
+                            } finally {
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = originalHTML;
+                            }
+                        });
+                    </script>
 
                     <!-- Features - Compact -->
                     <div class="flex flex-wrap gap-6 text-sm text-gray-300">
