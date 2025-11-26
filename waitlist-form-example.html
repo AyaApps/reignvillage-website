@@ -1,0 +1,116 @@
+<!--
+  Waitlist Form Example
+
+  Add this to index.html or create a dedicated landing page.
+  Uses Tailwind CSS styling consistent with existing website design.
+-->
+
+<!-- Section: Waitlist CTA -->
+<section class="py-20 bg-gradient-to-b from-gray-900 to-black">
+  <div class="container mx-auto px-6 text-center">
+    <!-- Heading -->
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+      Be the First to Rev Up
+    </h2>
+    <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+      Join the waitlist for RevvRadar. Get notified when we launch in the Pacific Northwest.
+    </p>
+
+    <!-- Waitlist Form -->
+    <form id="waitlist-form" class="max-w-md mx-auto">
+      <div class="flex flex-col sm:flex-row gap-4">
+        <input
+          type="email"
+          id="waitlist-email"
+          placeholder="Enter your email"
+          required
+          class="flex-1 px-6 py-4 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition"
+        >
+        <button
+          type="submit"
+          class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition duration-300 whitespace-nowrap"
+        >
+          Join Waitlist
+        </button>
+      </div>
+
+      <!-- Message Display -->
+      <div id="waitlist-message" class="mt-4 p-4 rounded-lg" style="display: none;"></div>
+    </form>
+
+    <!-- Social Proof / Trust Badge -->
+    <p class="text-gray-400 text-sm mt-8">
+      🔒 Your email is safe. No spam, just launch updates.
+    </p>
+  </div>
+</section>
+
+<!-- Firebase SDK Scripts (Add before closing </body> tag) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Waitlist Integration Script -->
+<script src="waitlist.js"></script>
+
+<!-- Custom Styling for Messages -->
+<style>
+  #waitlist-message {
+    display: none;
+  }
+  #waitlist-message.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  #waitlist-message.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+</style>
+
+<!-- Alternative: Inline Hero Section (For index.html existing hero) -->
+<!--
+  Add this inline form to your existing hero section:
+
+  <div class="mt-8 max-w-md mx-auto">
+    <form id="waitlist-form" class="flex flex-col sm:flex-row gap-4">
+      <input
+        type="email"
+        id="waitlist-email"
+        placeholder="Enter your email"
+        required
+        class="flex-1 px-6 py-4 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+      >
+      <button type="submit" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
+        Join Waitlist
+      </button>
+    </form>
+    <div id="waitlist-message" class="mt-4 p-4 rounded-lg" style="display: none;"></div>
+  </div>
+-->
+
+<!-- Alternative: Modal Popup (Coming Soon Page) -->
+<!--
+  For a "Coming Soon" landing page with centered modal:
+
+  <div class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-black">
+    <div class="text-center px-6">
+      <img src="logo.png" alt="ReignVillage" class="h-16 mx-auto mb-8">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">Coming Soon</h1>
+      <p class="text-xl text-gray-300 mb-12">RevvRadar is launching in Fall 2025. Join the waitlist.</p>
+
+      <form id="waitlist-form" class="max-w-md mx-auto">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <input type="email" id="waitlist-email" placeholder="Enter your email" required
+            class="flex-1 px-6 py-4 rounded-lg bg-gray-800 border border-gray-700 text-white">
+          <button type="submit"
+            class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg">
+            Notify Me
+          </button>
+        </div>
+        <div id="waitlist-message" class="mt-4 p-4 rounded-lg" style="display: none;"></div>
+      </form>
+    </div>
+  </div>
+-->
