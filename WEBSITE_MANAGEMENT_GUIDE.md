@@ -119,8 +119,8 @@ reignvillage-website/
 ### Add New App to Portfolio
 
 **Files to update:**
-1. `index.html` - Map-First Discovery Series section (line ~237)
-2. `company.html` - Map-First Discovery Series section (line ~168)
+1. `index.html` - Local Discovery Series section (line ~446)
+2. `company.html` - Local Discovery Series section (line ~263)
 
 **Current structure:**
 ```html
