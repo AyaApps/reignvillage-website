@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "EFAG643MBK.com.reignvillage.enthusiast",
+        "paths": [
+          "/c/*",
+          "/e/*",
+          "/u/*",
+          "/share/c/*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "EFAG643MBK.com.reignvillage.enthusiast"
+    ]
+  }
+}
