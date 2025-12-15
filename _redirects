@@ -1,5 +1,3 @@
 # Firebase Auth action handler redirect
-/__/auth/action /auth/action.html 200
-
-# Handle with query params
-/__/auth/action/* /auth/action.html 200
+# Cloudflare Pages: splat preserves query params
+/__/auth/action* /auth/action.html 200
