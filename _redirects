@@ -1,3 +1,4 @@
 # Firebase Auth action handler redirect
-# Cloudflare Pages: splat preserves query params
-/__/auth/action* /auth/action.html 200
+# Cloudflare ignores __ directories, so redirect to /auth/action
+/__/auth/action/* /auth/action/ 301
+/__/auth/action /auth/action/ 301
