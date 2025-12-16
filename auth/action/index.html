@@ -71,9 +71,9 @@
                 </div>
                 <h2 class="text-xl font-bold text-black mb-2">Email Verified!</h2>
                 <p class="text-gray-500 mb-6">Your email has been successfully verified. You can now sign in with your new email.</p>
-                <a href="https://revvradar.com" class="btn-primary inline-block px-6 py-3 rounded-xl text-white font-semibold">
-                    Return to RevvRadar
-                </a>
+                <button onclick="openApp()" class="btn-primary inline-block px-6 py-3 rounded-xl text-white font-semibold">
+                    Open RevvRadar
+                </button>
             </div>
 
             <!-- Password Reset Form -->
@@ -116,9 +116,9 @@
                 </div>
                 <h2 class="text-xl font-bold text-black mb-2">Password Updated!</h2>
                 <p class="text-gray-500 mb-6">Your password has been successfully reset. You can now sign in with your new password.</p>
-                <a href="https://revvradar.com" class="btn-primary inline-block px-6 py-3 rounded-xl text-white font-semibold">
-                    Return to RevvRadar
-                </a>
+                <button onclick="openApp()" class="btn-primary inline-block px-6 py-3 rounded-xl text-white font-semibold">
+                    Open RevvRadar
+                </button>
             </div>
 
             <!-- Email Recovered -->
@@ -130,9 +130,9 @@
                 </div>
                 <h2 class="text-xl font-bold text-black mb-2">Email Restored!</h2>
                 <p class="text-gray-500 mb-6">Your email has been restored to <span id="recovered-email" class="text-black font-medium"></span>. If you didn't make this change, please secure your account.</p>
-                <a href="https://revvradar.com" class="btn-primary inline-block px-6 py-3 rounded-xl text-white font-semibold">
-                    Return to RevvRadar
-                </a>
+                <button onclick="openApp()" class="btn-primary inline-block px-6 py-3 rounded-xl text-white font-semibold">
+                    Open RevvRadar
+                </button>
             </div>
 
             <!-- Error State -->
@@ -144,9 +144,9 @@
                 </div>
                 <h2 class="text-xl font-bold text-black mb-2">Something Went Wrong</h2>
                 <p id="error-message" class="text-gray-500 mb-6">This link may have expired or already been used.</p>
-                <a href="https://revvradar.com" class="btn-primary inline-block px-6 py-3 rounded-xl text-white font-semibold">
-                    Return to RevvRadar
-                </a>
+                <button onclick="openApp()" class="btn-primary inline-block px-6 py-3 rounded-xl text-white font-semibold">
+                    Open RevvRadar
+                </button>
             </div>
         </div>
 
@@ -155,6 +155,32 @@
             &copy; 2025 ReignVillage LLC. All rights reserved.
         </p>
     </div>
+
+    <!-- Open App Function -->
+    <script>
+        function openApp() {
+            // App Store URL as fallback
+            const appStoreUrl = 'https://apps.apple.com/app/revvradar/id6742654181';
+
+            // Try custom URL scheme first (works if app is installed)
+            const appScheme = 'revvradar://';
+
+            // Set timeout to redirect to App Store if app doesn't open
+            const timeout = setTimeout(() => {
+                window.location.href = appStoreUrl;
+            }, 1500);
+
+            // Try to open the app
+            window.location.href = appScheme;
+
+            // If page becomes hidden (app opened), clear the timeout
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    clearTimeout(timeout);
+                }
+            });
+        }
+    </script>
 
     <!-- Firebase SDK -->
     <script type="module">
