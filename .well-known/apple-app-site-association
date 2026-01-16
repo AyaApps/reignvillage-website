@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appID": "EFAG643MBK.com.reignvillage.enthusiast",
+        "appID": "V4V92LHR6M.com.reignvillage.revvradar",
         "paths": [
           "/c/*",
           "/e/*",
@@ -15,7 +15,7 @@
   },
   "webcredentials": {
     "apps": [
-      "EFAG643MBK.com.reignvillage.enthusiast"
+      "V4V92LHR6M.com.reignvillage.revvradar"
     ]
   }
 }
