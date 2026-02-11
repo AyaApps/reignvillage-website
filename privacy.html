@@ -13,6 +13,18 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
+        /* Equateur font for ReignVillage branding */
+        @font-face {
+            font-family: 'Equateur';
+            src: url('fonts/Equateur-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        .equateur-font {
+            font-family: 'Equateur', Georgia, serif;
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -120,7 +132,7 @@
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <a href="index.html" class="text-xl md:text-2xl font-bold z-50">ReignVillage</a>
+                <a href="index.html" class="equateur-font text-2xl md:text-3xl font-bold z-50">ReignVillage</a>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center gap-8">
@@ -156,7 +168,7 @@
         <div class="mobile-menu-content h-full flex flex-col">
             <!-- Mobile Menu Header -->
             <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
-                <a href="index.html" class="text-xl font-bold">ReignVillage</a>
+                <a href="index.html" class="equateur-font text-2xl font-bold">ReignVillage</a>
                 <button id="closeMenu" class="p-2 text-white" style="min-height: 44px; min-width: 44px; display: flex; align-items: center; justify-content: center;" aria-label="Close menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -433,8 +445,11 @@
                 <h2 class="text-3xl font-bold mb-6">5. How We Share Your Information</h2>
 
                 <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-6 mb-6">
-                    <p class="text-red-300 font-semibold">
-                        Important: We do not sell your personal information.
+                    <p class="text-red-300 font-semibold mb-2">
+                        Important: We do not sell your personal information for monetary consideration.
+                    </p>
+                    <p class="text-xs text-gray-400">
+                        However, as described in our <a href="#california-rights" class="text-cyan-400 hover:text-cyan-300">California Privacy Rights section</a>, certain data sharing with advertising partners may constitute "sharing" under the CCPA/CPRA. You have the right to opt out of this sharing at no cost.
                     </p>
                 </div>
 
@@ -1409,14 +1424,80 @@
                 </div>
 
                 <h3 class="text-xl font-semibold mb-4">State-Specific Rights</h3>
-                <div class="bg-white/5 rounded-lg p-6">
-                    <p class="text-gray-300 mb-4">
-                        Residents of California, Virginia, Colorado, Connecticut, and Utah have additional privacy rights under state law. EU residents have rights under GDPR. See <a href="#california-rights" class="text-cyan-400 hover:text-cyan-300">Section 12</a> for detailed California privacy rights.
-                    </p>
-                    <a href="#contact" class="text-cyan-400 hover:text-cyan-300 transition">
-                        Contact us to exercise your rights →
-                    </a>
+                <p class="text-gray-300 mb-4">
+                    In addition to the general rights above, residents of certain U.S. states have additional rights under state privacy laws. See <a href="#california-rights" class="text-cyan-400 hover:text-cyan-300">Section 12</a> for detailed California (CCPA/CPRA) rights.
+                </p>
+
+                <!-- Virginia -->
+                <div class="bg-white/5 rounded-lg p-6 mb-4">
+                    <h4 class="font-semibold mb-3 text-cyan-400">Virginia (VCDPA)</h4>
+                    <p class="text-sm text-gray-300 mb-3">Virginia residents have the right to:</p>
+                    <ul class="space-y-1 text-xs text-gray-400 ml-4 mb-3">
+                        <li>• Access, correct, and delete personal data</li>
+                        <li>• Obtain a portable copy of personal data</li>
+                        <li>• Opt out of targeted advertising, sale of personal data, and profiling</li>
+                    </ul>
+                    <p class="text-sm text-gray-300 mb-2"><strong>How to Exercise:</strong> Email <a href="mailto:support@revvradar.com" class="text-cyan-400 hover:text-cyan-300">support@revvradar.com</a> with subject "Virginia Privacy Rights Request."</p>
+                    <p class="text-sm text-gray-300 mb-2"><strong>Response Timeline:</strong> We will respond within 45 days. We may extend by an additional 45 days if reasonably necessary, with notice.</p>
+                    <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 mt-3">
+                        <p class="text-xs text-yellow-300"><strong>Right to Appeal:</strong> If we deny your request, you may appeal by emailing <a href="mailto:support@revvradar.com" class="text-cyan-400 hover:text-cyan-300">support@revvradar.com</a> with subject "Privacy Request Appeal." We will respond to your appeal within 60 days. If the appeal is denied, you may file a complaint with the Virginia Attorney General at <a href="https://www.oag.state.va.us/consumer-protection/index.php/file-a-complaint" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener noreferrer">oag.state.va.us</a>.</p>
+                    </div>
                 </div>
+
+                <!-- Colorado -->
+                <div class="bg-white/5 rounded-lg p-6 mb-4">
+                    <h4 class="font-semibold mb-3 text-cyan-400">Colorado (CPA)</h4>
+                    <p class="text-sm text-gray-300 mb-3">Colorado residents have the right to:</p>
+                    <ul class="space-y-1 text-xs text-gray-400 ml-4 mb-3">
+                        <li>• Access, correct, and delete personal data</li>
+                        <li>• Obtain a portable copy of personal data</li>
+                        <li>• Opt out of targeted advertising, sale of personal data, and profiling</li>
+                    </ul>
+                    <p class="text-sm text-gray-300 mb-2"><strong>Universal Opt-Out:</strong> We honor Universal Opt-Out Mechanisms including Global Privacy Control (GPC) signals as a valid opt-out of the sale of personal data and targeted advertising.</p>
+                    <p class="text-sm text-gray-300 mb-2"><strong>Response Timeline:</strong> We will respond within 45 days, with a possible 45-day extension with notice.</p>
+                    <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 mt-3">
+                        <p class="text-xs text-yellow-300"><strong>Right to Appeal:</strong> If we deny your request, you may appeal by emailing <a href="mailto:support@revvradar.com" class="text-cyan-400 hover:text-cyan-300">support@revvradar.com</a> with subject "Privacy Request Appeal." We will respond within 45 days. If denied, you may file a complaint with the Colorado Attorney General at <a href="https://coag.gov/file-complaint/" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener noreferrer">coag.gov</a>.</p>
+                    </div>
+                </div>
+
+                <!-- Connecticut -->
+                <div class="bg-white/5 rounded-lg p-6 mb-4">
+                    <h4 class="font-semibold mb-3 text-cyan-400">Connecticut (CTDPA)</h4>
+                    <p class="text-sm text-gray-300 mb-3">Connecticut residents have the right to:</p>
+                    <ul class="space-y-1 text-xs text-gray-400 ml-4 mb-3">
+                        <li>• Access, correct, and delete personal data</li>
+                        <li>• Obtain a portable copy of personal data</li>
+                        <li>• Opt out of targeted advertising, sale of personal data, and profiling</li>
+                    </ul>
+                    <p class="text-sm text-gray-300 mb-2"><strong>Response Timeline:</strong> We will respond within 45 days, with a possible 45-day extension with notice.</p>
+                    <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 mt-3">
+                        <p class="text-xs text-yellow-300"><strong>Right to Appeal:</strong> If we deny your request, you may appeal by emailing <a href="mailto:support@revvradar.com" class="text-cyan-400 hover:text-cyan-300">support@revvradar.com</a> with subject "Privacy Request Appeal." We will respond within 60 days. If denied, you may file a complaint with the Connecticut Attorney General at <a href="https://www.dir.ct.gov/ag/complaint/" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener noreferrer">dir.ct.gov/ag</a>.</p>
+                    </div>
+                </div>
+
+                <!-- Utah -->
+                <div class="bg-white/5 rounded-lg p-6 mb-4">
+                    <h4 class="font-semibold mb-3 text-cyan-400">Utah (UCPA)</h4>
+                    <p class="text-sm text-gray-300 mb-3">Utah residents have the right to:</p>
+                    <ul class="space-y-1 text-xs text-gray-400 ml-4 mb-3">
+                        <li>• Access and delete personal data</li>
+                        <li>• Obtain a portable copy of personal data</li>
+                        <li>• Opt out of targeted advertising and the sale of personal data</li>
+                    </ul>
+                    <p class="text-sm text-gray-300 mb-2"><strong>Response Timeline:</strong> We will respond within 45 days, with a possible 45-day extension with notice.</p>
+                </div>
+
+                <!-- Other States -->
+                <div class="bg-white/5 rounded-lg p-6 mb-4">
+                    <h4 class="font-semibold mb-3 text-cyan-400">Other U.S. States</h4>
+                    <p class="text-sm text-gray-300">
+                        Residents of other states with applicable privacy laws (including Oregon, Texas, Montana, Iowa, Indiana, Tennessee, and others) may exercise their rights by contacting us at <a href="mailto:support@revvradar.com" class="text-cyan-400 hover:text-cyan-300">support@revvradar.com</a>. We will process your request in accordance with applicable state law, including any required appeal processes and response timelines.
+                    </p>
+                </div>
+
+                <a href="#contact" class="text-cyan-400 hover:text-cyan-300 transition">
+                    Contact us to exercise your rights →
+                </a>
             </section>
 
             <!-- California Residents (CCPA/CPRA) -->
@@ -1586,7 +1667,10 @@
                             <li>• <strong>Ad Interaction Data:</strong> Clicks, views, engagement metrics shared with advertising networks</li>
                         </ul>
                         <p class="text-xs text-gray-400 mt-3">
-                            <strong>How to Opt Out:</strong> Disable tracking in iOS Settings > Privacy & Security > Tracking > RevvRadar, or upgrade to Pro/Premium for a reduced advertising experience.
+                            <strong>How to Opt Out (Free of Charge):</strong> You can opt out of this sharing at no cost by disabling tracking in iOS Settings > Privacy &amp; Security > Tracking > RevvRadar. This fully opts you out of cross-context behavioral advertising sharing. You may also submit an opt-out request by emailing <a href="mailto:support@revvradar.com" class="text-cyan-400 hover:text-cyan-300">support@revvradar.com</a> with subject line "Do Not Share My Information." We honor Global Privacy Control (GPC) signals as a valid opt-out request.
+                        </p>
+                        <p class="text-xs text-gray-500 mt-2">
+                            <em>Note: Pro/Premium subscribers see fewer ads as a subscription benefit, but a paid subscription is not required to exercise your opt-out rights.</em>
                         </p>
                     </div>
 
@@ -1643,7 +1727,7 @@
                             <div class="bg-white/5 rounded-lg p-4">
                                 <h4 class="font-semibold mb-2">Right to Opt-Out of Sale/Sharing</h4>
                                 <p class="text-xs text-gray-400">
-                                    Opt out of the "sale" or "sharing" of your personal information for cross-context behavioral advertising. Control via iOS Settings > Tracking or upgrade to Pro/Premium.
+                                    Opt out of the "sharing" of your personal information for cross-context behavioral advertising at no cost. Disable tracking in iOS Settings > Privacy &amp; Security > Tracking > RevvRadar, or email <a href="mailto:support@revvradar.com" class="text-cyan-400 hover:text-cyan-300">support@revvradar.com</a> with subject "Do Not Share My Information."
                                 </p>
                             </div>
 
@@ -1971,9 +2055,65 @@
                 </div>
             </section>
 
+            <!-- Changes to This Policy -->
+            <section id="policy-changes" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">15. Changes to This Privacy Policy</h2>
+
+                <div class="bg-white/5 rounded-lg p-6 mb-4">
+                    <p class="text-gray-300 mb-4">
+                        We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors.
+                    </p>
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="font-semibold mb-2 text-cyan-400">How We Notify You</h4>
+                            <ul class="space-y-1 text-sm text-gray-300 ml-4">
+                                <li>• <strong>Material changes:</strong> We will notify you via email (to the address associated with your account) and/or an in-app notification at least 30 days before the changes take effect.</li>
+                                <li>• <strong>Minor changes:</strong> Updates to formatting, clarifications, or non-substantive edits will be reflected by updating the "Last Updated" date at the top of this page.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-cyan-400">Your Options</h4>
+                            <p class="text-sm text-gray-300">
+                                If you disagree with a material change, you may delete your account before the new policy takes effect. Continued use of RevvRadar after the effective date of a material change constitutes acceptance of the updated Privacy Policy.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-cyan-400">Prior Versions</h4>
+                            <p class="text-sm text-gray-300">
+                                You may request a copy of any prior version of this Privacy Policy by emailing <a href="mailto:support@revvradar.com" class="text-cyan-400 hover:text-cyan-300">support@revvradar.com</a> with subject "Privacy Policy Version Request."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- International Users & EU/UK Rights -->
+            <section id="international-rights" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">16. International Users &amp; EU/UK Rights</h2>
+
+                <div class="bg-white/5 rounded-lg p-6 mb-4">
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">EU/EEA Residents (GDPR)</h3>
+                    <p class="text-sm text-gray-300 mb-3">In addition to the rights described in Section 11, EU/EEA residents have the following rights under the General Data Protection Regulation:</p>
+                    <ul class="space-y-1 text-xs text-gray-400 ml-4 mb-3">
+                        <li>• <strong>Right to Object:</strong> You may object to processing of your personal data based on legitimate interests (GDPR Article 21).</li>
+                        <li>• <strong>Right to Restrict Processing:</strong> You may request restriction of processing in certain circumstances (GDPR Article 18).</li>
+                        <li>• <strong>Right Regarding Automated Decisions:</strong> You have the right not to be subject to decisions based solely on automated processing, including profiling, that produce legal or similarly significant effects (GDPR Article 22).</li>
+                        <li>• <strong>Right to Lodge a Complaint:</strong> You have the right to lodge a complaint with your local data protection supervisory authority. A list of EU/EEA supervisory authorities is available at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener noreferrer">edpb.europa.eu</a>.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/5 rounded-lg p-6 mb-4">
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">UK Residents (UK GDPR)</h3>
+                    <p class="text-sm text-gray-300 mb-3">UK residents have the same rights as listed above under the UK GDPR. Additionally:</p>
+                    <ul class="space-y-1 text-xs text-gray-400 ml-4">
+                        <li>• <strong>Right to Lodge a Complaint:</strong> You may lodge a complaint with the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk/make-a-complaint/" class="text-cyan-400 hover:text-cyan-300" target="_blank" rel="noopener noreferrer">ico.org.uk</a>.</li>
+                    </ul>
+                </div>
+            </section>
+
             <!-- Contact -->
             <section id="contact" class="mb-12">
-                <h2 class="text-3xl font-bold mb-6">15. Contact Us</h2>
+                <h2 class="text-3xl font-bold mb-6">17. Contact Us</h2>
 
                 <div class="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg p-8">
                     <h3 class="text-xl font-semibold mb-4">Privacy Questions and Requests</h3>
@@ -2040,6 +2180,7 @@
             </div>
             <div class="text-center text-gray-500 text-sm">
                 <p>&copy; 2025 ReignVillage LLC. All rights reserved.</p>
+                <p class="mt-1 text-gray-600 text-xs">Equateur typeface by <a href="https://velvetyne.fr/fonts/degheest/" class="hover:text-gray-400 transition" target="_blank" rel="noopener noreferrer">Degheest</a>, distributed by <a href="https://velvetyne.fr" class="hover:text-gray-400 transition" target="_blank" rel="noopener noreferrer">Velvetyne</a></p>
             </div>
         </div>
     </footer>
