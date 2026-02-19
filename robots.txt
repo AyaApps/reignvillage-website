@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /waitlist-form-example.html
+Disallow: /faq.html
+
+Sitemap: https://reignvillage.com/sitemap.xml
