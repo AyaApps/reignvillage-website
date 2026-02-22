@@ -344,143 +344,23 @@
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <!-- App Info -->
                 <div class="max-w-xl">
-                    <div class="inline-block px-4 py-2 bg-white/10 text-white rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
-                        Coming Soon
+                    <div class="inline-block px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm border border-green-500/30">
+                        Available Now on the App Store
                     </div>
                     <h2 class="racing-font text-6xl md:text-7xl font-bold mb-6 leading-tight">RevvRadar</h2>
                     <p class="text-xl md:text-2xl text-white mb-8 leading-relaxed">
                         See your city's car scene in real-time. Capture vehicles, discover events, and connect with local enthusiasts.
                     </p>
 
-                    <!-- Email Signup Form -->
+                    <!-- App Store Download -->
                     <div class="mb-12">
-                        <form id="waitlist-form" class="max-w-md">
-                            <div class="flex flex-col sm:flex-row gap-3">
-                                <div class="flex-1">
-                                    <input
-                                        type="email"
-                                        id="email-input"
-                                        name="email"
-                                        required
-                                        placeholder="Enter your email"
-                                        class="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/40 transition-all"
-                                    >
-                                </div>
-                                <button
-                                    type="submit"
-                                    id="submit-btn"
-                                    class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all rounded-xl font-semibold text-white whitespace-nowrap">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
-                                    </svg>
-                                    Notify Me
-                                </button>
-                            </div>
-                            <div id="form-status" class="mt-3 text-sm hidden">
-                                <p id="form-success" class="text-green-300 hidden">Thanks! We'll notify you at launch.</p>
-                                <p id="form-error" class="text-red-300 hidden">Something went wrong. Please try again.</p>
-                                <p id="form-duplicate" class="text-yellow-300 hidden">You're already on the waitlist!</p>
-                            </div>
-                        </form>
+                        <a href="https://apps.apple.com/app/revvradar/id6756965007" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-gray-200 transition-all text-lg">
+                            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            Download on the App Store
+                        </a>
                     </div>
-
-                    <!-- Firebase Web SDK -->
-                    <script type="module">
-                        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-                        import { getFirestore, collection, addDoc, serverTimestamp, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
-
-                        // Firebase configuration
-                        const firebaseConfig = {
-                            apiKey: "AIzaSyDo1UQPvf1FZC94aXR_ZJGPAc4cN8FYpMM",
-                            authDomain: "enthusiasts-76ad0.firebaseapp.com",
-                            projectId: "enthusiasts-76ad0",
-                            storageBucket: "enthusiasts-76ad0.firebasestorage.app",
-                            messagingSenderId: "719821057751",
-                            appId: "1:719821057751:web:7d9cd982fa36245bc70a92"
-                        };
-
-                        // Initialize Firebase
-                        const app = initializeApp(firebaseConfig);
-                        const db = getFirestore(app);
-
-                        // Handle form submission
-                        document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
-                            e.preventDefault();
-
-                            const emailInput = document.getElementById('email-input');
-                            const submitBtn = document.getElementById('submit-btn');
-                            const statusDiv = document.getElementById('form-status');
-                            const successMsg = document.getElementById('form-success');
-                            const errorMsg = document.getElementById('form-error');
-                            const duplicateMsg = document.getElementById('form-duplicate');
-                            const email = emailInput.value.trim().toLowerCase();
-
-                            // Check localStorage for duplicate prevention
-                            const submittedEmails = JSON.parse(localStorage.getItem('waitlist_emails') || '[]');
-                            if (submittedEmails.includes(email)) {
-                                statusDiv.classList.remove('hidden');
-                                duplicateMsg.classList.remove('hidden');
-                                successMsg.classList.add('hidden');
-                                errorMsg.classList.add('hidden');
-                                return;
-                            }
-
-                            // Disable button during submission
-                            submitBtn.disabled = true;
-                            const originalHTML = submitBtn.innerHTML;
-                            submitBtn.innerHTML = '<svg class="animate-spin h-5 w-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
-
-                            try {
-                                // Check if email already exists in Firestore
-                                const waitlistRef = collection(db, 'waitlist');
-                                const q = query(waitlistRef, where('email', '==', email));
-                                const querySnapshot = await getDocs(q);
-
-                                if (!querySnapshot.empty) {
-                                    // Email already exists
-                                    statusDiv.classList.remove('hidden');
-                                    duplicateMsg.classList.remove('hidden');
-                                    successMsg.classList.add('hidden');
-                                    errorMsg.classList.add('hidden');
-
-                                    // Add to localStorage
-                                    submittedEmails.push(email);
-                                    localStorage.setItem('waitlist_emails', JSON.stringify(submittedEmails));
-                                    return;
-                                }
-
-                                // Add to Firestore
-                                await addDoc(collection(db, 'waitlist'), {
-                                    email: email,
-                                    timestamp: serverTimestamp(),
-                                    source: 'website'
-                                });
-
-                                // Success
-                                emailInput.value = '';
-                                statusDiv.classList.remove('hidden');
-                                successMsg.classList.remove('hidden');
-                                errorMsg.classList.add('hidden');
-                                duplicateMsg.classList.add('hidden');
-
-                                // Add to localStorage
-                                submittedEmails.push(email);
-                                localStorage.setItem('waitlist_emails', JSON.stringify(submittedEmails));
-
-                            } catch (error) {
-                                console.error('Error adding email to waitlist:', error);
-                                console.error('Error details:', error.code, error.message);
-                                statusDiv.classList.remove('hidden');
-                                errorMsg.textContent = 'Error: ' + (error.message || 'Please try again.');
-                                errorMsg.classList.remove('hidden');
-                                successMsg.classList.add('hidden');
-                                duplicateMsg.classList.add('hidden');
-                            } finally {
-                                submitBtn.disabled = false;
-                                submitBtn.innerHTML = originalHTML;
-                            }
-                        });
-                    </script>
 
                     <!-- Features - Compact -->
                     <div class="flex flex-wrap gap-6 text-sm text-gray-300">
