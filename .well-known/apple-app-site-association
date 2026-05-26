@@ -5,6 +5,7 @@
       {
         "appID": "V4V92LHR6M.com.reignvillage.revvradar",
         "paths": [
+          "/r/*",
           "/c/*",
           "/e/*",
           "/u/*",
