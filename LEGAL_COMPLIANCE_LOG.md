@@ -49,6 +49,25 @@ Tracks all compliance changes to legal pages (privacy policy, terms of service) 
 
 ---
 
+## June 17, 2026 — App Review Legal Copy Alignment
+
+**Files:** `terms.html`, `privacy.html`
+**Triggered By:** CTO Operational Readiness Review / App Review Risk pass
+
+### Changes Made
+
+| # | Severity | Finding | Fix Applied | Requirement |
+|---|----------|---------|-------------|-------------|
+| 1 | High | Terms claimed license plates are automatically blurred, but auto-blur is still an on-hold product feature | Removed automatic blur claims and replaced with user responsibility language for visible license plates, VINs, addresses, and other identifying details | Metadata/legal accuracy |
+| 2 | Medium | Privacy copy implied optional background location even though the checked app plist only declares When In Use location | Reworded as optional nearby location features that work when location access is available, and clarified background location is not required | App Review location-purpose clarity |
+
+### Verification
+
+- Local source check: `rg "license plates are automatically blurred|Background Location" terms.html privacy.html` should return no current-page matches.
+- Deployment still requires the founder's website publish flow before live `revvradar.com` reflects this update.
+
+---
+
 ## February 11, 2026 — Terms of Service Compliance Fixes
 
 **File:** `terms.html`
@@ -83,6 +102,7 @@ Tracks all compliance changes to legal pages (privacy policy, terms of service) 
 | Feb 11, 2026 | privacy-v1-nov2025.html | archive | `418c0db` | Archived v1 for prior version requests (Section 15 commitment) |
 | Jan 31, 2025 | terms.html | v1 | (pre-audit) | Original ToS |
 | Feb 11, 2026 | terms.html | v2 (current) | `933fc11` | Apple EULA, capture limits, renewal terms, banned words, sale/share |
+| Jun 17, 2026 | terms.html + privacy.html | v2 patch | pending | Removed unshipped plate-blur claim; clarified nearby/location wording |
 
 ---
 
