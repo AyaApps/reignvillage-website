@@ -102,7 +102,7 @@ Tracks all compliance changes to legal pages (privacy policy, terms of service) 
 | Feb 11, 2026 | privacy-v1-nov2025.html | archive | `418c0db` | Archived v1 for prior version requests (Section 15 commitment) |
 | Jan 31, 2025 | terms.html | v1 | (pre-audit) | Original ToS |
 | Feb 11, 2026 | terms.html | v2 (current) | `933fc11` | Apple EULA, capture limits, renewal terms, banned words, sale/share |
-| Jun 17, 2026 | terms.html + privacy.html | v2 patch | pending | Removed unshipped plate-blur claim; clarified nearby/location wording |
+| Jun 17, 2026 | terms.html + privacy.html | v2 patch | `ab21f9b` | Removed unshipped plate-blur claim; clarified nearby/location wording |
 
 ---
 
