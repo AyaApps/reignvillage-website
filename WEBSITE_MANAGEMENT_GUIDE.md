@@ -6,6 +6,12 @@
 
 ---
 
+## Maintenance Notes
+
+- **2026-07-01:** Fixed homepage RevvRadar mock image distortion on mobile by switching the mock from fixed height sizing to an explicit `.revvradar-app-mockup` CSS class with width-driven sizing, `height: auto !important`, `aspect-ratio: 1280 / 1600`, and `object-fit: contain`. Verified locally at 390x844, 430x932, and 1280x900; rendered image ratio stayed at 0.8, matching the 1280x1600 source asset.
+
+---
+
 ## Table of Contents
 
 1. [Website Overview](#website-overview)
