@@ -88,3 +88,25 @@ if (appRail && appRailCards.length > 0) {
   window.addEventListener("resize", updateAppRailState);
   updateAppRailState();
 }
+
+const appStoreCTAs = document.querySelectorAll("[data-app-store-cta]");
+
+appStoreCTAs.forEach((cta) => {
+  cta.addEventListener("click", () => {
+    const detail = {
+      cta_source: cta.dataset.ctaSource || "unknown",
+      destination: "app_store",
+      app_store_id: "6756965007",
+      page_path: window.location.pathname
+    };
+
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "app_store_cta_click", detail);
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event: "app_store_cta_click", ...detail});
+    }
+
+    window.dispatchEvent(new CustomEvent("revvradar:app-store-cta-click", {detail}));
+  });
+});

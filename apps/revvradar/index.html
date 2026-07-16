@@ -16,7 +16,7 @@
   <meta name="twitter:description" content="AI car identification, local events, community captures, and real-time automotive discovery.">
   <meta name="twitter:image" content="https://pub-aef47bf47d644c55906d6ddc11228afd.r2.dev/website/revvradar-og-image.png">
   <link rel="icon" href="../../assets/revvradar-icon.png">
-  <link rel="stylesheet" href="../../site-20260716-result-hero.css">
+    <link rel="stylesheet" href="../../site.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,6 +36,62 @@
       "@type": "Organization",
       "name": "ReignVillage LLC"
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does RevvRadar protect location privacy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RevvRadar uses controls such as approximate location display, private captures, profile privacy, and reduced or hidden location details around sensitive places. Location access can be disabled in iOS Settings. See the Privacy Policy for full details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can AI results be wrong?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Results depend on image quality, lighting, vehicle angle, and the AI model. RevvRadar makes results reviewable and provides a way to suggest a correction when something looks wrong."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are captures public?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not automatically in every case. Members can use private profile and capture controls, and captures made without location remain private unless the member chooses to share them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does RevvRadar show events near me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. RevvRadar includes automotive event discovery with map placement and details such as location, time, cost, and event type where available."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is RevvRadar free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Free tier includes three vehicle captures per day, additional captures through rewarded ads, and access to the map, events, and community features. Optional Pro and Premium plans raise the daily capture limit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Android available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RevvRadar is currently available for iPhone. Android is not available at this time and may be considered later based on demand."
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -79,7 +135,7 @@
         <a href="#more">More</a>
         <a href="#faq">FAQ</a>
       </div>
-      <a class="button button-lime" href="https://apps.apple.com/app/revvradar/id6756965007" target="_blank" rel="noopener noreferrer">Download</a>
+      <a class="button button-lime" href="https://apps.apple.com/app/revvradar/id6756965007" target="_blank" rel="noopener noreferrer" data-app-store-cta data-cta-source="product_nav">Download</a>
     </div>
   </nav>
 
@@ -90,7 +146,7 @@
           <h1 id="hero-title">Scan any car instantly.</h1>
           <p>Identify vehicles with AI, discover local car events, and see what the automotive community is finding nearby.</p>
           <div class="hero-actions">
-            <a class="button button-lime" href="https://apps.apple.com/app/revvradar/id6756965007" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
+            <a class="button button-lime" href="https://apps.apple.com/app/revvradar/id6756965007" target="_blank" rel="noopener noreferrer" data-app-store-cta data-cta-source="product_hero">Download on the App Store</a>
             <a class="button button-outline" href="#identify">See how it works</a>
           </div>
           <div class="hero-proof" aria-label="RevvRadar availability">
@@ -137,6 +193,36 @@
       </div>
     </section>
 
+    <section class="seo-link-band" aria-labelledby="explore-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <span class="eyebrow">Explore RevvRadar</span>
+          <h2 id="explore-title">Start with the question you have.</h2>
+          <p>Learn how to identify a vehicle from a photo, find a local car show, or work through the visual clues behind a hard-to-name car.</p>
+        </div>
+        <div class="seo-link-grid">
+          <a class="seo-link-card" href="/car-identifier/">
+            <span>AI car identifier</span>
+            <strong>Identify a car from a photo</strong>
+            <p>See the practical clues that help you narrow down a vehicle before you capture it.</p>
+            <b>Explore the identifier <span aria-hidden="true">→</span></b>
+          </a>
+          <a class="seo-link-card" href="/car-shows/">
+            <span>Local car events</span>
+            <strong>Find car shows near you</strong>
+            <p>Build a repeatable way to find nearby automotive events and keep the details in one place.</p>
+            <b>Explore local events <span aria-hidden="true">→</span></b>
+          </a>
+          <a class="seo-link-card" href="/guides/what-car-is-this/">
+            <span>Vehicle guide</span>
+            <strong>What car is this?</strong>
+            <p>Use the same visual reasoning that turns a quick curiosity moment into a useful answer.</p>
+            <b>Read the guide <span aria-hidden="true">→</span></b>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="feature-band dark" id="map" aria-labelledby="map-title">
       <div class="section-shell split-layout reverse">
         <img class="feature-phone" src="../../assets/discover-cars.webp" alt="RevvRadar map showing nearby vehicles and automotive activity">
@@ -172,7 +258,7 @@
             <h2 id="events-title">Find where the local car scene is gathering.</h2>
             <p>Open event details before you go, then check in at the venue to follow what the community is capturing there.</p>
             <div class="hero-actions">
-              <a class="button button-dark" href="https://apps.apple.com/app/revvradar/id6756965007" target="_blank" rel="noopener noreferrer">Open events in RevvRadar</a>
+              <a class="button button-dark" href="https://apps.apple.com/app/revvradar/id6756965007" target="_blank" rel="noopener noreferrer" data-app-store-cta data-cta-source="product_events">Open events in RevvRadar</a>
             </div>
           </div>
           <div class="event-media-rail" aria-label="RevvRadar event planning and check-in screens">
@@ -289,7 +375,7 @@
       <div class="final-cta-inner">
         <h2 id="download-title">Your local car scene starts with one capture.</h2>
         <p>Identify the vehicle, explore what is happening nearby, and build a history of the cars that catch your attention.</p>
-        <a class="button button-white" href="https://apps.apple.com/app/revvradar/id6756965007" target="_blank" rel="noopener noreferrer">Download RevvRadar on the App Store</a>
+        <a class="button button-white" href="https://apps.apple.com/app/revvradar/id6756965007" target="_blank" rel="noopener noreferrer" data-app-store-cta data-cta-source="product_final">Download RevvRadar on the App Store</a>
       </div>
     </section>
   </main>

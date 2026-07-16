@@ -11,6 +11,21 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://reignvillage.com/car-identifier/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://reignvillage.com/car-shows/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://reignvillage.com/guides/what-car-is-this/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://reignvillage.com/company.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
