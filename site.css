@@ -1008,9 +1008,9 @@ p {
 .hero-phone {
   position: absolute;
   z-index: 2;
-  right: -4%;
-  bottom: -30%;
-  width: min(520px, 44vw);
+  right: 1%;
+  bottom: -4%;
+  width: min(430px, 37vw);
   filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.58));
 }
 
@@ -1466,8 +1466,8 @@ p {
   }
 
   .hero-phone {
-    right: -12%;
-    width: 52vw;
+    right: -6%;
+    width: 46vw;
   }
 
   .split-layout,
@@ -1699,12 +1699,12 @@ p {
   }
 
   .product-hero {
-    min-height: 900px;
+    min-height: 1045px;
     max-height: none;
   }
 
   .hero-inner {
-    min-height: 900px;
+    min-height: 1045px;
     align-items: flex-start;
     padding: 56px 0 0;
   }
@@ -1740,11 +1740,11 @@ p {
   }
 
   .hero-phone {
-    top: 440px;
-    right: -12%;
+    top: 420px;
+    right: -4%;
     bottom: auto;
-    width: 80vw;
-    max-width: 360px;
+    width: 74vw;
+    max-width: 330px;
   }
 
   .hero-accent {
@@ -1877,8 +1877,8 @@ p {
   }
 
   .hero-phone {
-    top: 410px;
-    width: 82vw;
+    top: 400px;
+    width: 76vw;
   }
 
   .hero-proof {
