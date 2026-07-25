@@ -1,3 +1,8 @@
+const analyticsScript = document.createElement("script");
+analyticsScript.src = "/analytics.js";
+analyticsScript.defer = true;
+document.head.append(analyticsScript);
+
 const menuButton = document.querySelector(".menu-button");
 const mobileMenu = document.querySelector(".mobile-menu");
 
