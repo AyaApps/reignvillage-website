@@ -26,27 +26,27 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://reignvillage.com/company.html</loc>
+    <loc>https://reignvillage.com/company</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://reignvillage.com/careers.html</loc>
+    <loc>https://reignvillage.com/careers</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://reignvillage.com/contact.html</loc>
+    <loc>https://reignvillage.com/contact</loc>
     <priority>0.6</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://reignvillage.com/privacy.html</loc>
+    <loc>https://reignvillage.com/privacy</loc>
     <priority>0.4</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://reignvillage.com/terms.html</loc>
+    <loc>https://reignvillage.com/terms</loc>
     <priority>0.4</priority>
     <changefreq>yearly</changefreq>
   </url>
