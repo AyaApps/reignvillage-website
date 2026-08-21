@@ -1459,6 +1459,10 @@ p {
   filter: drop-shadow(0 24px 36px rgba(0, 0, 0, 0.16));
 }
 
+.event-media-card:nth-child(2) img {
+  transform: translateY(20px);
+}
+
 .event-media-card figcaption {
   min-height: 104px;
   padding: 20px 4px 22px;
