@@ -321,6 +321,16 @@ p {
   font-weight: 700;
 }
 
+.studio-hero .studio-publisher-line {
+  max-width: 560px;
+  margin: 34px auto 0;
+  color: var(--gray-500);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
 .studio-hero .equateur {
   font-family: "Equateur", Georgia, serif;
 }
@@ -962,6 +972,15 @@ p {
   width: min(600px, 52%);
 }
 
+.product-publisher {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--lime);
+  font-family: "Equateur", Georgia, serif;
+  font-size: 18px;
+  line-height: 1;
+}
+
 .hero-copy h1 {
   font-size: 82px;
   line-height: 0.94;
@@ -1005,13 +1024,35 @@ p {
   background: var(--lime);
 }
 
-.hero-phone {
+.hero-device {
   position: absolute;
   z-index: 2;
   right: 1%;
   bottom: -4%;
   width: min(430px, 37vw);
+  aspect-ratio: 886 / 1920;
+  overflow: hidden;
+  border: clamp(8px, 0.8vw, 13px) solid #151515;
+  border-radius: clamp(42px, 4.2vw, 68px);
+  background: #050505;
+  box-shadow: inset 0 0 0 2px #525252;
   filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.58));
+}
+
+.hero-preview {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: #050505;
+}
+
+.product-hero-monochrome .product-publisher {
+  color: var(--gray-300);
+}
+
+.product-hero-monochrome .hero-proof span::before {
+  background: var(--white);
 }
 
 .hero-accent {
@@ -1020,7 +1061,7 @@ p {
   bottom: -42%;
   width: 680px;
   height: 680px;
-  border: 90px solid rgba(156, 255, 59, 0.13);
+  border: 90px solid rgba(255, 255, 255, 0.08);
   border-radius: 50%;
 }
 
@@ -1713,7 +1754,7 @@ p {
     font-size: 68px;
   }
 
-  .hero-phone {
+  .hero-device {
     right: -6%;
     width: 46vw;
   }
@@ -1791,6 +1832,12 @@ p {
 
   .studio-hero p {
     font-size: 22px;
+  }
+
+  .studio-hero .studio-publisher-line {
+    max-width: 330px;
+    margin-top: 28px;
+    font-size: 15px;
   }
 
   .portfolio {
@@ -1995,6 +2042,11 @@ p {
     line-height: 0.98;
   }
 
+  .product-publisher {
+    margin-bottom: 14px;
+    font-size: 16px;
+  }
+
   .hero-copy p {
     max-width: 330px;
     margin-top: 18px;
@@ -2015,7 +2067,7 @@ p {
     font-size: 12px;
   }
 
-  .hero-phone {
+  .hero-device {
     top: 420px;
     right: -4%;
     bottom: auto;
@@ -2178,7 +2230,7 @@ p {
     display: none;
   }
 
-  .hero-phone {
+  .hero-device {
     top: 400px;
     width: 76vw;
   }
