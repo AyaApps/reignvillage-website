@@ -50,4 +50,8 @@
     <priority>0.4</priority>
     <changefreq>yearly</changefreq>
   </url>
+  <url>
+    <loc>https://reignvillage.com/carspotting-app/</loc>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
