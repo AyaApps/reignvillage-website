@@ -4,3 +4,4 @@ Disallow: /waitlist-form-example.html
 Disallow: /faq.html
 
 Sitemap: https://reignvillage.com/sitemap.xml
+Sitemap: https://reignvillage.com/events/sitemap.xml

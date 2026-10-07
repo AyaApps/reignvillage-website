@@ -54,4 +54,5 @@
     <loc>https://reignvillage.com/carspotting-app/</loc>
     <changefreq>monthly</changefreq>
   </url>
+  <url><loc>https://reignvillage.com/events/</loc><changefreq>daily</changefreq></url>
 </urlset>

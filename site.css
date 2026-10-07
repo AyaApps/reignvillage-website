@@ -36,9 +36,10 @@
   --black-soft: #0d0f0f;
   --ink: #101212;
   --white: #ffffff;
-  --white-soft: #f5f6f3;
-  --product-accent: #9cff3b;
-  --product-accent-dark: #315f08;
+  --white-soft: #f5f5f5;
+  /* Neutral palette pending an explicit founder brand-color decision. */
+  --product-accent: #f4f4f4;
+  --product-accent-dark: #333333;
   --lime: var(--product-accent);
   --lime-dark: var(--product-accent-dark);
   --gray-100: #e9ebe7;
@@ -237,7 +238,7 @@ p {
 
 .button-lime {
   background: var(--lime);
-  color: #091000;
+  color: #101010;
   border-color: var(--lime);
 }
 
@@ -485,7 +486,7 @@ p {
   border: 1px solid var(--line-dark);
   border-radius: 8px;
   background:
-    radial-gradient(circle at 78% 18%, rgba(156, 255, 59, 0.2), transparent 32%),
+    radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.10), transparent 32%),
     radial-gradient(circle at 46% 68%, rgba(255, 255, 255, 0.07), transparent 34%),
     linear-gradient(135deg, var(--black-soft), var(--black));
   color: var(--white);
@@ -1043,7 +1044,7 @@ p {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   background: #050505;
 }
 
@@ -1660,7 +1661,7 @@ p {
   padding: 100px 24px;
   text-align: center;
   background: var(--lime);
-  color: #071000;
+  color: #101010;
 }
 
 .final-cta-inner {
