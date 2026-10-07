@@ -30,3 +30,9 @@ Future captures: stable event ID is the join key; add a paginated, moderated pub
 ## Run / rollback
 
 `npm test` uses Node's built-in runner; no framework dependencies. Cloudflare Pages builds `functions/`. `_routes.json` invokes only event/share paths. Cloudflare Workers static-assets autoconfig is a separate integration: verify the actual production domain after Pages deployment, not only GitHub check success. Revert this release commit to roll back; preserve later commits. No Firestore rollback is needed.
+
+## October 7 — Workers asset upload correction
+
+Founder-supplied CI log confirms automatic Wrangler setup installed node_modules inside the root asset directory, then tried to upload workerd (129 MiB), exceeding the 25 MiB per-asset limit. The inferred Worker name was correct; earlier name-mismatch suspicion is superseded. Added root `.assetsignore` using Cloudflare's documented gitignore syntax to omit dependencies, Git/cache/config files, server source, tests and internal Markdown. Public HTML/CSS/JS, media, fonts, redirects and `.well-known` remain assets. Pages functions stay in place and this does not migrate hosting or change dashboard settings. Workers remains the existing secondary static deployment; production dynamic events are served by Pages.
+
+Validation: 19 tests pass; explicit-assets Wrangler dry-run uses the existing deployment date. Production build checks must confirm the upload after push.

@@ -1,0 +1,25 @@
+# Workers serves this repository root; development files are not public assets.
+node_modules/
+.git/
+.github/
+.wrangler/
+.DS_Store
+.env
+.env.*
+functions/
+event-server/
+tests/
+scripts/
+*.md
+package.json
+package-lock.json
+bun.lock
+bun.lockb
+pnpm-lock.yaml
+yarn.lock
+wrangler.json
+wrangler.jsonc
+wrangler.toml
+.gitignore
+.assetsignore
+_routes.json
