@@ -16,8 +16,19 @@ const icon = (name) =>
 function dateTile(event) {
   return `<div class="event-date" aria-hidden="true"><span>${e(format(event, event.startDate, { month: "short" }))}</span><strong>${e(format(event, event.startDate, { day: "numeric" }))}</strong><small>${e(format(event, event.startDate, { weekday: "short" }))}</small></div>`;
 }
+function flyerImage(event, detail = false) {
+  const flyer = event.flyer;
+  if (!flyer || (!detail && !flyer.discovery)) {
+    const capture = event.artwork;
+    if (!capture || capture.kind !== 'capture') return "";
+    const image = `<img src="${e(capture.url)}" alt="${e(capture.description)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">`;
+    return detail ? `<figure class="event-flyer" data-flyer-until="${Date.parse(event.endDate)/1000}">${image}<figcaption>Captured at this event</figcaption></figure>` : `<span class="event-card-flyer" data-flyer-until="${Date.parse(event.endDate)/1000}">${image}</span>`;
+  }
+  const image = `<img src="${e(flyer.preview.url)}" width="${flyer.preview.width}" height="${flyer.preview.height}" alt="${e(flyer.description)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">`;
+  return detail ? `<figure class="event-flyer" data-flyer-until="${flyer.displayUntil}"><a href="${e(flyer.full.url)}" target="_blank" rel="noopener noreferrer" aria-label="View full event flyer">${image}</a>${flyer.credit ? `<figcaption>${e(flyer.credit)}</figcaption>` : ""}</figure>` : `<span class="event-card-flyer" data-flyer-until="${flyer.displayUntil}">${image}</span>`;
+}
 function card(event) {
-  return `<a class="event-card" href="${e(eventPath(event))}" data-event-link data-event-id="${e(event.id)}">${dateTile(event)}<div class="event-card-body">${event.status === "ongoing" ? '<span class="event-live">Happening now</span>' : ""}<h3>${e(event.name)}</h3><p>${icon("pin")}<span>${e(event.city)}, ${e(event.state)}</span></p><p>${icon("clock")}<span>${e(schedule(event))}</span></p><p>${icon("ticket")}<span>${e(price(event))}</span></p></div><span class="event-arrow" aria-hidden="true">→</span></a>`;
+  return `<a class="event-card" href="${e(eventPath(event))}" data-event-link data-event-id="${e(event.id)}">${flyerImage(event) || dateTile(event)}<div class="event-card-body">${event.status === "ongoing" ? '<span class="event-live">Happening now</span>' : ""}<h3>${e(event.name)}</h3><p>${icon("pin")}<span>${e(event.city)}, ${e(event.state)}</span></p><p>${icon("clock")}<span>${e(schedule(event))}</span></p><p>${icon("ticket")}<span>${e(price(event))}</span></p></div><span class="event-arrow" aria-hidden="true">→</span></a>`;
 }
 const freshness = (fetchedAt) =>
   `<div class="event-freshness" data-fetched-at="${e(fetchedAt)}"><span>Times shown at the venue.</span><span data-refresh-note hidden>Check for changes before you go.</span><a href="" data-refresh>Refresh listings</a></div>`;
@@ -61,8 +72,8 @@ export function renderListing(catalog, url, now) {
           },
         ).join("")}</nav>`
       : "";
-  const content = `${city ? '<a class="text-link event-back" href="/events/">← All events</a>' : ""}<section class="events-hero"><h1>${e(title)}</h1><p>${e(description)}</p></section>${filters}${cityNav}
-<section class="event-results" aria-labelledby="results-heading"><div class="event-section-heading"><h2 id="results-heading">${query || period !== "any" ? "Search results" : "Events to explore"}</h2><span>${total} ${total === 1 ? "event" : "events"}${city ? " in " + e(city.city) : " listed"}</span></div>${freshness(catalog.fetchedAt)}${events.length ? `<div class="event-grid">${events.map(card).join("")}</div>` : `<div class="event-empty"><h3>No events match this search.</h3><p>Try another city or a wider date range. New listings are added as they’re reviewed.</p><a class="button button-outline" href="/events/">Browse all events</a></div>`}${pagination}</section>${appBanner()}`;
+  const content = `${city ? '<a class="text-link event-back" href="/events/">← All events</a>' : ""}<section class="events-hero"><div class="event-hero-heading"><h1>${e(title)}</h1><a class="button button-outline event-submit-top" href="/events/submit/">Submit an event <span aria-hidden="true">→</span></a></div><p>${e(description)}</p></section>${filters}${cityNav}
+<section class="event-results" aria-labelledby="results-heading"><div class="event-section-heading"><h2 id="results-heading">${query || period !== "any" ? "Search results" : "Events to explore"}</h2><span>${total} ${total === 1 ? "event" : "events"}${city ? " in " + e(city.city) : " listed"}</span></div>${freshness(catalog.fetchedAt)}${events.length ? `<div class="event-grid">${events.map(card).join("")}</div>` : `<div class="event-empty"><h3>No events match this search.</h3><p>Try another city or a wider date range. New listings are added as they’re reviewed.</p><a class="button button-outline" href="/events/">Browse all events</a></div>`}${pagination}</section><section class="submission-invite" aria-labelledby="submit-event-heading"><div><p class="event-eyebrow">For organizers</p><h2 id="submit-event-heading">Hosting an event?</h2><p>Bring your car show, authorized meet or pop-up to the community. Submit it free for review.</p></div><a class="button button-outline" href="/events/submit/">Submit an event <span aria-hidden="true">→</span></a></section>${appBanner()}`;
   return {
     status: 200,
     html: shell({
@@ -148,7 +159,7 @@ export function renderDetail(catalog, event, url) {
     ? `<p><strong>Starts</strong> ${e(format(event, event.startDate, { dateStyle: "full" }))}<br>${e(format(event, event.startDate, { hour: "numeric", minute: "2-digit", timeZoneName: "short" }))}</p><p><strong>Ends</strong> ${e(format(event, event.endDate, { dateStyle: "full" }))}<br>${e(format(event, event.endDate, { hour: "numeric", minute: "2-digit", timeZoneName: "short" }))}</p><p class="event-muted">Daily hours may vary. Check the organizer’s schedule.</p>`
     : `<p>${e(format(event, event.startDate, { dateStyle: "full" }))}</p><p>${e(format(event, event.startDate, { hour: "numeric", minute: "2-digit" }))} – ${e(format(event, event.endDate, { hour: "numeric", minute: "2-digit", timeZoneName: "short" }))}</p>`;
   const content = `<nav class="event-breadcrumb" aria-label="Breadcrumb"><a href="/events/">Events</a><span aria-hidden="true">/</span><a href="${e(cityPath(event))}">${e(event.city)}, ${e(event.state)}</a></nav><header class="events-hero event-detail-hero"><h1>${e(event.name)}</h1><p>${e([event.venueName, `${event.city}, ${event.state}`].filter(Boolean).join(" · "))}</p></header>${notice ? `<p class="event-notice">${e(notice)}</p>` : ""}
-<div class="event-detail-layout"><article class="event-about"><h2>About this event</h2>${
+<div class="event-detail-layout"><article class="event-about">${flyerImage(event, true)}<h2>About this event</h2>${
     event.description
       ? event.description
           .split(/\n+/)

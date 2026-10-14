@@ -35,12 +35,21 @@
       }
     });
   }
+  document.querySelectorAll("[data-flyer-until] img").forEach((image) => {
+    const hide = () => { image.closest("[data-flyer-until]").hidden = true; };
+    image.addEventListener("error", hide);
+    if (image.complete && image.naturalWidth === 0) hide();
+  });
   const marker = document.querySelector("[data-fetched-at]");
   let timer;
   const check = () => {
+    document.querySelectorAll("[data-flyer-until]").forEach((element) => {
+      if (Date.now() >= Number(element.dataset.flyerUntil) * 1000) element.hidden = true;
+    });
     if (!marker) return;
     const old = Date.now() - Date.parse(marker.dataset.fetchedAt) >= 300000;
     marker.querySelector("[data-refresh-note]").hidden = !old;
+    if (old) document.querySelectorAll("[data-flyer-until]").forEach(element => { element.hidden = true; });
     document
       .querySelectorAll(".event-results,.event-details")
       .forEach((element) =>

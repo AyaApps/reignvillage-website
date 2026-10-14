@@ -36,3 +36,38 @@ Future captures: stable event ID is the join key; add a paginated, moderated pub
 Founder-supplied CI log confirms automatic Wrangler setup installed node_modules inside the root asset directory, then tried to upload workerd (129 MiB), exceeding the 25 MiB per-asset limit. The inferred Worker name was correct; earlier name-mismatch suspicion is superseded. Added root `.assetsignore` using Cloudflare's documented gitignore syntax to omit dependencies, Git/cache/config files, server source, tests and internal Markdown. Public HTML/CSS/JS, media, fonts, redirects and `.well-known` remain assets. Pages functions stay in place and this does not migrate hosting or change dashboard settings. Workers remains the existing secondary static deployment; production dynamic events are served by Pages.
 
 Validation: 19 tests pass; explicit-assets Wrangler dry-run uses the existing deployment date. Production build checks must confirm the upload after push.
+
+## October 14 — organizer submissions and phone event navigation
+
+Founder authorized the public website release and then source review/commit to preserve
+it. This source update exactly matches the tested live organizer overlay deployed as
+Pages c7dfdf51-1316-4e45-b397-e8e340377bca, based on remote main 835dbce. Original dirty
+website checkout is preserved; use the committed remote source for later deployments.
+
+- Visible Explore events / Submit an event shortcuts on phones, desktop/menu Submit
+  entry, and corrected event-directory links on the RevvRadar product page.
+- Private organizer intake proxy, spam-check widget, concise conduct guidelines and
+  same-page receipt. No automatic event publication. Optional flyer, description,
+  admission details, street address and end time; event basics, start time, source,
+  contact and venue/conduct permission still required. Supplied flyers still need
+  valid format/size/ratio, description and display permission in the backend.
+- Public event projection excludes private contact/review evidence. Approved supplied
+  artwork validates the event occurrence; linked-capture fallback is prepared but
+  disabled in production. Listings can appear without artwork.
+- Unconfirmed receipts preserve the request ID and payload for retry; malformed,
+  cross-origin and oversized requests fail before proxy transport.
+
+Validation: all 30 Node tests pass, exact 16-file live-overlay hashes match, and Pages
+Worker compilation passes. Git index/secret/CI-dependency safety check is required
+before commit and outgoing history is checked before push. Earlier live checks verified
+public shortcuts/form/redirect/client and invalid/guest request rejection; no new
+production submissions or emails are needed for source persistence. Phone DOM at 320px
+was checked; actual-device visual acceptance remains founder-owned. No iOS build.
+
+Existing production Pages bindings remain EVENT_SUBMISSIONS_ENABLED=true, matching
+EVENT_SUBMISSION_SITE_KEY, EVENT_WEBSITE_MEDIA_ENABLED=false. Backend intake/email are
+active while EVENT_SUBMISSION_PUBLICATION_ENABLED=false. No settings/credentials are
+added to source, and no event publication gate is changed by this commit.
+Signed-in Retool review and its latest local source sync remain pending. Social media
+work is paused. Future automatic/static deployments must retain this source; dynamic
+Events still run through the existing Pages Functions, not the secondary static Worker.

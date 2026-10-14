@@ -639,3 +639,51 @@
     min-height: 50px;
   }
 }
+
+/* Organizer intake reuses the event page's neutral controls and spacing. */
+.submission-policy,.submission-form{max-width:800px;margin:2rem auto;line-height:1.6}
+.submission-policy h2{font-size:1.35rem;margin-bottom:.75rem}
+.submission-form fieldset{border:1px solid #464646;border-radius:16px;padding:1.5rem;margin:0 0 1.5rem;min-width:0}
+.submission-form legend{font-weight:600;padding:0 .5rem}
+.submission-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.submission-field{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem;font-size:.95rem}
+.submission-field input,.submission-field textarea,.submission-field select{font:inherit;min-height:48px;min-width:0;width:100%;box-sizing:border-box;color:inherit;background:#181818;border:1px solid #686868;border-radius:8px;padding:.75rem}
+.submission-check{display:flex;align-items:flex-start;gap:.75rem;padding:.75rem 0;min-height:44px}
+.submission-check input{width:24px;height:24px;flex-shrink:0;margin-top:.25rem;accent-color:white}
+.submission-form button{margin-top:1rem;min-height:48px}.submission-form button:disabled{opacity:.5}
+.submission-form :focus-visible{outline:2px solid white;outline-offset:3px}
+#submission-status{margin-top:1rem;white-space:pre-wrap}
+@media(max-width:600px){.submission-grid{grid-template-columns:1fr}.submission-form fieldset{padding:1rem}}
+
+.submission-invite {display:flex;align-items:center;justify-content:space-between;gap:2rem;margin:3rem 0;padding:2rem;border:1px solid var(--border, #333);border-radius:1rem;}
+.submission-invite h2 {margin:.4rem 0 .75rem;}
+.submission-invite p {max-width:42rem;}
+.submission-invite .button {flex-shrink:0;}
+@media(max-width:640px){.submission-invite{align-items:flex-start;flex-direction:column;padding:1.5rem;gap:1rem;}}
+
+.event-hero-heading{display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.event-hero-heading h1{min-width:0;}
+.event-submit-top{flex-shrink:0;}
+@media(max-width:800px){.event-hero-heading{align-items:flex-start;flex-direction:column;gap:1.25rem;}.event-submit-top{margin-bottom:1rem;}}
+
+.event-card-flyer{display:block;flex:0 0 88px;max-width:88px;}
+.event-card-flyer img{display:block;width:100%;height:auto;object-fit:contain;border-radius:.4rem;}
+.event-flyer{margin:0 0 2rem;max-width:540px;}
+.event-flyer img{display:block;width:100%;height:auto;object-fit:contain;border-radius:.75rem;}
+.event-flyer figcaption{margin-top:.75rem;color:#b5b5b5;font-size:.875rem;}
+@media(max-width:640px){.event-card-flyer{flex-basis:64px;max-width:64px;}}
+
+[data-flyer-until][hidden]{display:none;}
+.event-card:has(.event-card-flyer[hidden]){grid-template-columns:minmax(0,1fr) 16px;}
+.event-card-flyer{max-width:68px;width:100%;}
+
+/* Short, single-page intake and a clear received state. */
+.submission-form [hidden],.submission-field[hidden],.submission-received[hidden],.submission-form[hidden]{display:none!important}
+.submission-policy summary{cursor:pointer;padding:.6rem 0;min-height:44px}
+.submission-privacy,.submission-help{font-size:.9rem;color:#b5b5b5}
+.submission-received{max-width:800px;margin:2rem auto;padding:2rem;border:1px solid #464646;border-radius:16px;scroll-margin-top:2rem}
+.submission-received h2{font-size:clamp(1.6rem,5vw,2.4rem);line-height:1.2}
+.submission-received p{margin:1rem 0;overflow-wrap:anywhere}
+.submission-field input[type=file]{white-space:normal;overflow:hidden}
+.submission-field input,.submission-field textarea,.submission-field select{font-size:1rem}
+@media(max-width:600px){.submission-form button,.submission-received .button{width:100%}.submission-received{padding:1.25rem}.submission-form{margin-top:1.5rem}}

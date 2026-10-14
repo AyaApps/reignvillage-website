@@ -1,10 +1,12 @@
+import { handleSubmission } from "./submission.mjs";
 import { loadCatalog } from "./source.mjs";
 import { origin, eventPath, cityPath, escape as e, listing } from "./model.mjs";
 import { renderListing, renderDetail, unavailable } from "./render.mjs";
 export async function handleEvents(
   request,
-  { loader = loadCatalog, cache, now = new Date() } = {},
+  { loader = loadCatalog, cache, now = new Date(), env = {} } = {},
 ) {
+  if (new URL(request.url).pathname === "/events/submit/") return handleSubmission(request, env);
   if (!["GET", "HEAD"].includes(request.method))
     return new Response(null, { status: 405, headers: { Allow: "GET, HEAD" } });
   const url = new URL(request.url);
@@ -32,7 +34,7 @@ export async function handleEvents(
     });
   }
   try {
-    const catalog = await loader({ cache, origin: url.origin, now });
+    const catalog = await loader({ cache, origin: url.origin, now, includeCommunity: env.EVENT_SUBMISSIONS_ENABLED === "true", includeMedia: env.EVENT_WEBSITE_MEDIA_ENABLED === "true" });
     if (xml) {
       const active = catalog.events.filter((event) =>
         ["ongoing", "upcoming"].includes(event.status),
