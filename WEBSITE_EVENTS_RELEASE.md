@@ -71,3 +71,26 @@ added to source, and no event publication gate is changed by this commit.
 Signed-in Retool review and its latest local source sync remain pending. Social media
 work is paused. Future automatic/static deployments must retain this source; dynamic
 Events still run through the existing Pages Functions, not the secondary static Worker.
+
+## November 15 — main preview, current event screens and Audi guide
+
+Founder approved push/publication after reviewing the local media changes and
+requesting equal phone alignment/caption spacing. Reconciles the already-published
+October 19 copy/icon/phone treatment and November 15 submission-domain move before
+adding the approved update; 50 baseline static assets were verified byte-for-byte
+against production b49e5bae. This avoids reverting direct releases from stale main.
+
+- Main app preview v2: web H.264/AAC, ~23 seconds, ~3.9 MB, matching poster/metadata.
+- Current Events calendar and Checked In map screenshots in larger reusable iPhone
+  frames; equal top/bottom alignment and 32px caption spacing; CSS version updated.
+- Car-show guide now uses the Events phone; identification guide uses Audi R8 camera.
+- Five immutable assets dated 20261115. Preserves existing event runtime, domain
+  redirects, intake settings, privacy and all other published assets. No Event Story,
+  unpublished capture feature, Firebase write/deployment, app build or app release.
+
+Validation: 30 Node tests pass after reconciliation; complete video decode passes;
+local browser checks confirm loaded images, equal phone alignment/caption padding,
+no horizontal overflow at default width, video readiness and no console errors.
+Physical Safari/full clip quality and full responsive acceptance remain founder-owned.
+Commit/index and outgoing-object safety scans run before push; production verification
+is recorded in the app repo ticket `2026-11-15-website-media-refresh.md`.

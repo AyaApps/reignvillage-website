@@ -21,16 +21,17 @@ ${input("name", "Event name")}${input("organizerName", "Organizer or club name")
     title: "Submit an Event",
     description: "Submit an authorized car event for review by RevvRadar.",
     path: "/events/submit/",
+    canonicalOrigin: "https://revvradar.com",
     content,
   });
 }
 export async function handleSubmission(request, env = {}, fetcher = fetch) {
   const headers = { "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" };
-  // Both public domains share Pages; complete the challenge on its configured website hostname.
+  // Canonicalize navigation only; already-open legacy forms retain same-origin POST support.
   if (["GET", "HEAD"].includes(request.method) &&
-      ["revvradar.com", "www.revvradar.com"].includes(new URL(request.url).hostname))
-    return new Response(null, { status: 302, headers: {
-      ...headers, Location: "https://reignvillage.com/events/submit/",
+      ["reignvillage.com", "www.reignvillage.com", "www.revvradar.com"].includes(new URL(request.url).hostname))
+    return new Response(null, { status: 308, headers: {
+      ...headers, Location: "https://revvradar.com/events/submit/" + new URL(request.url).search,
     } });
   if (["GET", "HEAD"].includes(request.method))
     return new Response(

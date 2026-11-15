@@ -10,16 +10,30 @@ const request = (body = "{}", origin = "https://reignvillage.com") =>
     headers: { Origin: origin, "Content-Type": "application/json" },
     body,
   });
-test("RevvRadar domain opens the form on the configured challenge hostname", async () => {
-  for (const domain of ["revvradar.com", "www.revvradar.com"])
+test("form stays on RevvRadar; legacy navigation redirects without redirecting POST", async () => {
+  for (const domain of ["reignvillage.com", "www.reignvillage.com", "www.revvradar.com"])
     for (const method of ["GET", "HEAD"]) {
-      const response = await handleSubmission(new Request(`https://${domain}/events/submit/`, { method }), env);
-      assert.equal(response.status, 302);
-      assert.equal(response.headers.get("Location"), "https://reignvillage.com/events/submit/");
+      const response = await handleSubmission(new Request(`https://${domain}/events/submit/?utm_source=instagram`, { method }), env);
+      assert.equal(response.status, 308);
+      assert.equal(response.headers.get("Location"), "https://revvradar.com/events/submit/?utm_source=instagram");
       assert.equal(response.headers.get("Cache-Control"), "no-store");
     }
-  assert.match(await (await handleSubmission(new Request("https://reignvillage.com/events/submit/"), env)).text(),
-    /id="organizer-submission"/);
+  const response = await handleSubmission(new Request("https://revvradar.com/events/submit/"), env);
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /id="organizer-submission"/);
+  assert.match(html, /rel="canonical" href="https:\/\/revvradar.com\/events\/submit\/"/);
+  assert.match(html, /property="og:url" content="https:\/\/revvradar.com\/events\/submit\/"/);
+  assert.equal(await (await handleSubmission(new Request("https://revvradar.com/events/submit/", {method:"HEAD"}),env)).text(), "");
+  for (const domain of ["revvradar.com", "reignvillage.com"]) {
+    const url = `https://${domain}/events/submit/`;
+    const post = (origin) => new Request(url, {method:"POST", headers:{Origin:origin,"Content-Type":"application/json"},body:"{}"});
+    let calls = 0;
+    const upstream = async () => {calls++; return Response.json({received:true},{status:202});};
+    assert.equal((await handleSubmission(post(`https://${domain}`),env,upstream)).status,202);
+    assert.equal((await handleSubmission(post("https://evil.example"),env,upstream)).status,400);
+    assert.equal(calls,1);
+  }
 });
 test("disabled intake fails closed and form explains conduct and review limits", async () => {
   assert.equal((await handleSubmission(request())).status, 503);
