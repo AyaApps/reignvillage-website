@@ -43,7 +43,7 @@ ${noindex ? '<meta name="robots" content="noindex,follow">' : ""}<meta property=
   </header>
 <main id="main" class="events-main">${content}</main>
 <footer class="events-footer"><div class="events-footer-top"><a class="footer-wordmark" href="/">ReignVillage</a><nav aria-label="Footer"><a href="/company.html">About</a><a href="/careers.html">Careers</a><a href="/car-shows/">Car-show guide</a><a href="/guides/what-car-is-this/">Identification guide</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav></div><p>Event details can change. Confirm with the organizer before traveling.</p><p>© 2026 ReignVillage LLC.</p></footer>
-<script src="/site.js?v=20261116-nav" defer></script><script src="/events.js" defer></script></body></html>`;
+<script src="/site.js?v=20261117-navigation-fix" defer></script><script src="/events.js" defer></script></body></html>`;
 }
 export const appBanner = () =>
   `<section class="events-app-banner"><div><h2>Make a day of it.</h2><p>Keep event details close in RevvRadar.</p></div>${appLink()}</section>`;

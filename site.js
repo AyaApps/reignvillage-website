@@ -136,10 +136,13 @@ navigationDisclosures.forEach((disclosure) => {
     }
   });
   disclosure.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => closeNavigation(disclosure));
+    // Let the browser follow the link before hiding its activation target.
+    link.addEventListener("click", () => setTimeout(() => closeNavigation(disclosure), 0));
   });
   disclosure.addEventListener("focusout", (event) => {
-    if (!disclosure.contains(event.relatedTarget)) closeNavigation(disclosure);
+    // Pointer activation can blur the summary without focusing the link.
+    // A null destination is not evidence that focus moved outside the menu.
+    if (event.relatedTarget && !disclosure.contains(event.relatedTarget)) closeNavigation(disclosure);
   });
 });
 document.addEventListener("click", (event) => {
@@ -151,4 +154,9 @@ window.addEventListener("resize", () => {
   navigationDisclosures.forEach((disclosure) => {
     if (disclosure.open && !disclosure.getClientRects().length) closeNavigation(disclosure);
   });
+});
+
+// Back/forward cache restores the page without rerunning script initialization.
+window.addEventListener("pageshow", () => {
+  navigationDisclosures.forEach((disclosure) => closeNavigation(disclosure));
 });
