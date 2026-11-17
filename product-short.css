@@ -1,0 +1,94 @@
+/* Isolated alternative: shared navigation and detail pages retain their styles. */
+.short-product .product-hero { min-height: 0; max-height: none; }
+.short-product .hero-inner { min-height: 0; padding: 52px 0; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 64px; }
+.short-product .hero-copy { width: auto; }
+.short-product .hero-copy h1 { font-size: clamp(44px, 5vw, 68px); line-height: 1.02; max-width: 650px; }
+.short-product .hero-copy p { font-size: 20px; max-width: 500px; }
+.short-product .hero-device { position: relative; inset: auto; width: 245px; justify-self: center; border-radius: 38px; border-width: 7px; filter: none; }
+.short-product .hero-proof { font-size: 13px; gap: 18px; }
+.short-showcase { background: #f6f6f4; color: #121414; padding: 64px 0 40px; }
+.short-heading { text-align: center; margin-bottom: 36px; }
+.short-heading h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.12; margin: 10px 0 14px; }
+.short-heading p { color: #565e59; font-size: 18px; }
+.short-screen-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 42px; }
+.short-screen-card { text-align: center; min-width: 0; }
+.short-screen-card .guide-phone-mock { width: 210px; margin: 0 auto 30px; padding: 5px; border-radius: 36px; box-shadow: 0 0 0 1px #171717, 0 16px 30px #0002; }
+.short-screen-card .guide-phone-screen { aspect-ratio: 1320 / 2868; object-fit: contain; border-radius: 27px; }
+.short-screen-card .guide-phone-island { top: 10px; height: 12px; }
+.short-screen-card h3 { font-size: 23px; margin-bottom: 12px; line-height: 1.2; }
+.short-screen-card p { font-size: 16px; line-height: 1.55; color: #565e59; max-width: 300px; margin: 0 auto 12px; }
+.short-screen-card a, .short-note a { text-decoration: underline; text-underline-offset: 4px; }
+.short-screen-card a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; }
+.short-note { text-align: center; margin-top: 30px; font-size: 14px; color: #565e59; }
+.short-events { padding: 46px 0; background: #191c1b; color: #fff; }
+.short-events .section-shell { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.short-events h2 { font-size: clamp(28px, 3vw, 38px); line-height: 1.15; margin: 10px 0; }
+.short-events p { color: #c2c7c4; }
+.short-events .hero-actions { margin: 0; flex-shrink: 0; }
+.short-events .eyebrow { color: #c2c7c4; }
+.short-product .faq-band { padding: 54px 0; }
+.short-product .faq-intro h2 { font-size: 36px; }
+.short-product .faq-intro p { font-size: 17px; }
+.short-product .short-download { padding: 40px 24px; }
+.short-product .short-download h2 { font-size: 34px; }
+.short-product .short-download p { font-size: 17px; margin: 14px 0 22px; }
+.short-product .studio-footer { padding-top: 36px; }
+.showcase-controls { display: none; }
+@media(max-width: 760px) {
+ .short-product .hero-inner { grid-template-columns: 1fr; gap: 30px; padding: 36px 0; }
+ .short-product .hero-copy h1 { font-size: 43px; }
+ .short-product .hero-copy p { font-size: 18px; margin-top: 18px; }
+ .short-product .hero-actions { margin-top: 24px; }
+ .short-product .hero-proof { margin-top: 20px; }
+ .short-product .hero-device { width: 190px; border-radius: 30px; }
+ .short-showcase { padding: 40px 0 30px; }
+ .short-heading { margin-bottom: 24px; }
+ .short-heading p { font-size: 16px; }
+ .short-screen-grid { grid-template-columns: 1fr; gap: 42px; }
+ .short-screen-card .guide-phone-mock { width: 210px; }
+ .showcase-controls:not([hidden]) { display: flex; gap: 6px; margin: 0 0 26px; justify-content: center; flex-wrap: wrap; }
+ .showcase-controls button { border: 1px solid #a9afab; border-radius: 24px; background: transparent; color: #131715; padding: 10px 16px; min-height: 44px; font: inherit; font-size: 14px; cursor: pointer; }
+ .showcase-controls button[aria-pressed="true"] { color: #fff; background: #171b19; border-color: #171b19; }
+ .short-screen-card[hidden] { display: none; }
+ .short-events .section-shell { display: block; }
+ .short-events .hero-actions { margin-top: 24px; }
+ .short-product .faq-band { padding: 38px 0; }
+ .short-product .faq-layout { gap: 24px; }
+ .short-product .faq-intro h2 { font-size: 30px; }
+ .short-product .short-download h2 { font-size: 30px; }
+}
+/* Short visual feature pages share the product's responsive rhythm. */
+.visual-guide .guide-hero { padding: 48px 0; }
+.visual-guide .guide-hero-inner { gap: 64px; padding-block: 0; min-height: 0; }
+.visual-guide .guide-hero h1 { font-size: clamp(40px, 5vw, 64px); }
+.visual-guide .guide-hero-copy p { font-size: 20px; }
+.visual-guide .guide-phone-mock { width: 240px; padding: 6px; border-radius: 40px; }
+.visual-guide .guide-phone-screen { border-radius: 30px; }
+.visual-guide .guide-phone-island { top: 12px; height: 14px; }
+.visual-detail { background: #f6f6f4; color: #121414; padding: 56px 0; }
+.visual-detail-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; align-items: center; gap: 64px; }
+.visual-detail-copy { max-width: 520px; }
+.visual-detail h2 { font-size: clamp(30px, 3.5vw, 44px); line-height: 1.12; margin: 12px 0 24px; }
+.detail-video { width: 240px; justify-self: center; }
+.detail-video video { display: block; width: 100%; height: auto; border-radius: 28px; background: #050505; }
+.visual-steps { padding-left: 24px; display: grid; gap: 22px; }
+.visual-steps li { padding-left: 8px; }
+.visual-steps h3 { font-size: 21px; line-height: 1.3; margin-bottom: 6px; }
+.visual-steps p { color: #565e59; font-size: 17px; line-height: 1.5; }
+.detail-note { color: #565e59; font-size: 14px; margin: 24px 0 14px; }
+.detail-text-link { display: inline-block; padding: 12px 0; text-decoration: underline; text-underline-offset: 4px; }
+.detail-end { padding: 36px 0; background: #191c1b; color: white; }
+.detail-end h2 { font-size: 28px; margin-bottom: 20px; }
+.detail-end-links { display: flex; gap: 18px 40px; flex-wrap: wrap; }
+.detail-end-links a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+@media(max-width:760px) {
+ .visual-guide .guide-hero { padding: 32px 0; }
+ .visual-guide .guide-hero-inner, .visual-detail-grid { grid-template-columns: 1fr; gap: 32px; }
+ .visual-guide .guide-hero-copy p { font-size: 18px; }
+ .visual-guide .guide-phone-mock, .detail-video { width: 210px; }
+ .visual-detail { padding: 36px 0; }
+ .visual-detail-copy { grid-row: 1; }
+ .visual-detail-copy .hero-actions { margin-top: 24px; }
+}
+
+.visual-guide .guide-hero .hero-actions .button-outline { display: inline-flex; }

@@ -23,7 +23,7 @@ ${noindex ? '<meta name="robots" content="noindex,follow">' : ""}<meta property=
 <body class="events-page product-site"><a class="skip-link" href="#main">Skip to content</a>
 <header class="product-nav" aria-label="RevvRadar header">
     <nav class="product-nav-inner" aria-label="RevvRadar navigation">
-      <a class="product-brand" href="/apps/revvradar/"><img src="/assets/revvradar-icon-white-charcoal-20261019.png" alt=""><span>RevvRadar</span></a>
+      <a class="product-brand" href="/apps/revvradar/" aria-label="RevvRadar home"><img src="/assets/revvradar-icon-white-charcoal-20261019.png" alt=""><span>RevvRadar</span></a>
       <div class="product-links">
         <a href="/apps/revvradar/#identify">How it works</a>
         <details class="navigation-disclosure product-events">
