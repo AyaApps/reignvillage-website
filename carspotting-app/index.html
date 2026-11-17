@@ -17,7 +17,7 @@
   <meta name="twitter:description" content="Identify a car from a photo, save it to your collection, and explore the local car community.">
   <meta name="twitter:image" content="https://reignvillage.com/assets/revvradar-icon-white-charcoal-20261019.png">
   <link rel="icon" href="/assets/revvradar-icon-white-charcoal-20261019.png"><link rel="apple-touch-icon" href="/assets/revvradar-icon-white-charcoal-20261019.png">
-  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/site.css?v=20261116-nav">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,7 +63,7 @@
     }
     #main, #how-it-works { scroll-margin-top: calc(var(--header-height) + 84px); }
     .capture-figure { margin: 0; text-align: center; }
-    .capture-figure img { display: block; width: min(340px, 100%); height: auto; margin: 0 auto; }
+    .capture-figure .guide-phone-mock { margin-inline: auto; }
     .capture-figure figcaption { max-width: 36ch; margin: 1rem auto 0; color: #bfbfbf; font-size: .875rem; line-height: 1.5; }
     .community-figure { margin: 2rem 0 0; }
     .community-figure img { display: block; width: min(320px, 100%); height: auto; margin: 0 auto; }
@@ -80,42 +80,29 @@
     @media (max-width: 600px) { .guide-hero-inner { gap: 2rem; padding-block: 3rem; } }
   </style>
 </head>
-<body>
+<body class="product-site">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="studio-header">
-    <nav class="studio-nav" aria-label="ReignVillage navigation">
-      <a class="studio-wordmark" href="/">ReignVillage</a>
-      <div class="studio-links">
-        <a href="/">Home</a>
-        <a href="/company.html">Company</a>
-        <a href="/careers.html">Careers</a>
-        <a href="/apps/revvradar/">Apps</a>
+  <header class="product-nav" aria-label="RevvRadar header">
+    <nav class="product-nav-inner" aria-label="RevvRadar navigation">
+      <a class="product-brand" href="/apps/revvradar/"><img src="/assets/revvradar-icon-white-charcoal-20261019.png" alt=""><span>RevvRadar</span></a>
+      <div class="product-links">
+        <a href="/apps/revvradar/#identify">How it works</a>
+        <details class="navigation-disclosure product-events">
+          <summary>Events <span aria-hidden="true">⌄</span></summary>
+          <div class="product-dropdown"><a href="/events/">Browse events</a><a href="/events/submit/">Submit an event</a></div>
+        </details>
+        <a href="/apps/revvradar/#faq">FAQ</a>
       </div>
-      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
-      </button>
+      <div class="product-nav-actions">
+        <a class="button button-white" href="https://apps.apple.com/app/apple-store/id6756965007?pt=126925134&amp;ct=web_carspotting&amp;mt=8" target="_blank" rel="noopener noreferrer" data-app-store-cta data-cta-source="carspotting_nav">Download</a>
+        <details class="navigation-disclosure product-menu">
+          <summary aria-label="RevvRadar menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></summary>
+          <div class="product-dropdown"><a href="/apps/revvradar/#identify">How it works</a><a href="/events/">Events</a><a class="organizer-link" href="/events/submit/">Submit an event</a><a href="/apps/revvradar/#faq">FAQ</a></div>
+        </details>
+      </div>
     </nav>
   </header>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="/">Home</a>
-    <a href="/company.html">Company</a>
-    <a href="/careers.html">Careers</a>
-    <a href="/apps/revvradar/">Apps</a>
-  </div>
-
-  <nav class="product-nav" aria-label="RevvRadar resources">
-    <div class="product-nav-inner">
-      <a class="product-brand" href="/apps/revvradar/"><img src="/assets/revvradar-icon-white-charcoal-20261019.png" alt="RevvRadar app icon"><span>RevvRadar</span></a>
-      <div class="product-links"><a href="/events/">Events</a>
-        <a href="/car-identifier/">Identify Vehicles</a>
-        <a href="/car-shows/">Car Show Guide</a>
-        <a href="/guides/what-car-is-this/">Guide</a>
-      </div>
-      <a class="button button-white" href="https://apps.apple.com/app/apple-store/id6756965007?pt=126925134&amp;ct=web_carspotting&amp;mt=8" target="_blank" rel="noopener noreferrer" data-app-store-cta data-cta-source="carspotting_nav">Download</a>
-    </div>
-  </nav>
 
   <main id="main">
     <section class="guide-hero" aria-labelledby="hero-title">
@@ -132,8 +119,11 @@
           <p class="free-note">Six daily captures and all available specs, free. Results are estimates. Optional paid plans.</p>
         </div>
         <figure class="capture-figure">
-          <img src="/assets/what-car-is-this-ferrari.webp" width="1320" height="2868" fetchpriority="high" alt="iPhone mockup showing RevvRadar’s suggested Ferrari 812 Superfast identification, with estimated year range and specifications">
-          <figcaption>Review the suggested identification before saving your capture. Vehicle details are estimates.</figcaption>
+          <div class="guide-phone-mock">
+            <img class="guide-phone-screen" src="/assets/revvradar-audi-r8-capture-20261115.webp" width="1320" height="2868" fetchpriority="high" alt="RevvRadar camera identifying a black Audi R8, with identification in progress">
+            <span class="guide-phone-island" aria-hidden="true"></span>
+          </div>
+          <figcaption>Identify a car with your camera or a saved photo, then review the suggested match. Vehicle details are estimates.</figcaption>
         </figure>
       </div>
     </section>
@@ -195,7 +185,7 @@
             <h3>Will the result always be an exact match?</h3>
             <p>No. Results are estimates and may be wrong, especially for similar models, modified cars or unclear photos. Review the answer against the vehicle’s visible details.</p>
             <h3>Can I use a photo already in my library?</h3>
-            <p>The flow described here starts with taking a photo in RevvRadar’s camera. Photo-library import is not part of this workflow.</p>
+            <p>Yes. Choose a photo from your library or take one with RevvRadar’s camera, then review the suggested identification. Photos imported from your library stay off the map and do not count toward events or rewards.</p>
             <h3>Do I have to share every capture?</h3>
             <p>No. You can keep a capture private or choose to share it publicly.</p>
             <h3>Will there be cars and events near me?</h3>
@@ -215,8 +205,8 @@
     </section>
   </main>
   <footer class="studio-footer">
-    <div class="section-shell"><div class="footer-grid"><div class="footer-column"><div class="footer-brand">ReignVillage</div><span>The village where ideas reign.</span></div><div class="footer-column"><strong>Apps</strong><a href="/apps/revvradar/">RevvRadar</a></div><div class="footer-column"><strong>Company</strong><a href="/company.html">About</a><a href="/careers.html">Careers</a></div><div class="footer-column"><strong>Support</strong><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div><div class="footer-bottom">© 2026 ReignVillage LLC. All rights reserved.</div></div>
+    <div class="section-shell"><div class="footer-grid"><div class="footer-column"><a class="footer-brand" href="/">ReignVillage</a><span>The village where ideas reign.</span></div><div class="footer-column"><strong>RevvRadar</strong><a href="/apps/revvradar/">The app</a><a href="/car-identifier/">Car identifier</a><a href="/carspotting-app/">Car discovery</a><a href="/car-shows/">Car-show guide</a><a href="/guides/what-car-is-this/">Vehicle identification guide</a></div><div class="footer-column"><strong>Company</strong><a href="/company.html">About</a><a href="/careers.html">Careers</a></div><div class="footer-column"><strong>Support</strong><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div><div class="footer-bottom">© 2026 ReignVillage LLC. All rights reserved.</div></div>
   </footer>
-  <script src="/site.js"></script>
+  <script src="/site.js?v=20261116-nav"></script>
 </body>
 </html>

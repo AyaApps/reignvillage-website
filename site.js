@@ -115,3 +115,40 @@ appStoreCTAs.forEach((cta) => {
     window.dispatchEvent(new CustomEvent("revvradar:app-store-cta-click", {detail}));
   });
 });
+
+// Native disclosures remain usable without JavaScript; add predictable dismissal.
+const navigationDisclosures = [...document.querySelectorAll(".navigation-disclosure")];
+const closeNavigation = (disclosure, restoreFocus = false) => {
+  disclosure.open = false;
+  if (restoreFocus) disclosure.querySelector("summary")?.focus();
+};
+navigationDisclosures.forEach((disclosure) => {
+  disclosure.addEventListener("toggle", () => {
+    if (!disclosure.open) return;
+    navigationDisclosures.forEach((other) => {
+      if (other !== disclosure) closeNavigation(other);
+    });
+  });
+  disclosure.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeNavigation(disclosure, true);
+    }
+  });
+  disclosure.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => closeNavigation(disclosure));
+  });
+  disclosure.addEventListener("focusout", (event) => {
+    if (!disclosure.contains(event.relatedTarget)) closeNavigation(disclosure);
+  });
+});
+document.addEventListener("click", (event) => {
+  navigationDisclosures.forEach((disclosure) => {
+    if (!disclosure.contains(event.target)) closeNavigation(disclosure);
+  });
+});
+window.addEventListener("resize", () => {
+  navigationDisclosures.forEach((disclosure) => {
+    if (disclosure.open && !disclosure.getClientRects().length) closeNavigation(disclosure);
+  });
+});
